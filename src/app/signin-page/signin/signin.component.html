@@ -1,0 +1,55 @@
+
+ <header  class="header">
+    <h1 class="header-text"> Wasally </h1>
+    </header>
+    
+    <main >
+      <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <form (ngSubmit)="onSignin(f)" #f="ngForm" > 
+              <div class="form">    
+              <div class="form__group">
+                <input type="email" class=" form__input" id="email" name="email"
+                aria-describedby="emailHelp" placeholder="Email Address" required ngModel>
+                <label   for="emailAddress" class="form__lable" > Email address </label> 
+              </div>
+              <div class="form__group">
+                <input type="password" class="form__input" id="Password" 
+                placeholder="Password" name="password" required ngModel>
+                <label   for="Password" class="form__lable" > Password</label>
+              </div>
+              
+              <button type="submit" class="Cbtn Cbtn--pink">log in </button>
+              <div class="option row">
+              <div class="col">
+                  <a class="option__link" href="#"><img class="option__img" src="assets/img/loginWFb.png"> </a>
+              </div>
+              <div class="col">
+              <a class="option__link" href="#"><img class="option__img" src="assets/img/logWG.png"> </a>
+            </div>
+            </div>
+            
+            </div>
+    
+            </form>
+               
+             
+            </div>       
+          </div>
+    </main>
+
+    
+      <footer>
+          <app-landing-footer></app-landing-footer>
+      </footer>
+          
+      
+       
+  
+
+     
+  
+
+        
+   
+ 

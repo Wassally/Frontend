@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import './sass/variable.scss' ; 
+@import './sass/mixins.scss' ; 
+@import './sass/typography' ;
+
+@import './sass/component/form.scss';
+@import './sass/component/buttons.scss';
+
+
+
+
+
+html{font-size: 62.5%;}
+body{box-sizing: border-box ;}
+

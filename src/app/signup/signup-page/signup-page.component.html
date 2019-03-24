@@ -1,0 +1,94 @@
+<header  class="header">
+  <div class=" justify-content-center " >
+   <a href="#"> <h1 class="header-text" > Wassally </h1> </a>
+  </div>
+</header>
+
+  <main class="mainR">
+  <div class="container">
+    <div class="row">
+        <div class="col-6 col-md-5 heading">
+          
+          <h2 class="heading__text">
+            Registration
+          </h2>
+          <div class="heading__img">
+            <img src="assets/img/registratoin.jpg" alt="Image for Registratin" class="heading__img-cont">
+          </div>
+        </div>
+      <div class="col-12 col-md-7">
+        <form (ngSubmit)="onSignup(f)" #f="ngForm" >
+          
+          <div class="form d-flex flex-column ">
+            <div class="d-flex flex-row respondCase ">
+              <div class="form__group   form__firstName">
+                  <input type="text" class=" form__input    form__firstName-input" 
+                  name="firstName" id="firstname" aria-describedby="emailHelp" placeholder="First Name" required ngModel>
+                  <label   for="FirstName" class="form__lable " > First Name </label> 
+                </div>
+              <div class="form__group  form__lastName ">
+                  <input type="text" class=" form__input  form__lastName-input" 
+                  name="lastName" id="lastName" aria-describedby="emailHelp" placeholder="Last Name" required ngModel>
+                  <label   for="lastName" class="form__lable" > LastName </label> 
+              </div>
+            </div>
+              <div class="form__group  form__emailAddress">
+                  <input type="email" class=" form__input form__emailAddress-input  " 
+                  name="email" id="emailAddress" aria-describedby="emailHelp" placeholder="Email Address" required ngModel>
+                  <label   for="emailAddress" class="form__lable" > Email address </label> 
+                </div>
+                <div class="form__group  form__password">
+                    <input type="password" class=" form__input form__password-input " 
+                    name="password" id="password" aria-describedby="emailHelp" placeholder="Password" required ngModel>
+                    <label   for="password" class="form__lable" > Password </label> 
+                  </div>
+                  <div class="d-flex flex-row ">
+                    <div class="form__group  form__phoneKey">
+                        <input type="text333" class=" form__input  form__phoneKey-input " 
+                        name="phonekey" value="+20" id="phoneKey" aria-describedby="emailHelp" placeholder="+20" required ngModel>
+                        <label   for="phoneKey" class="form__lable " > </label> 
+                      </div>
+                      <div class="form__group  form__phoneNumber">
+                          <input type="text" class=" form__input  form__phoneNumber-input"
+                          
+                          name="phone" id="phoneNumber" aria-describedby="emailHelp" placeholder="Phone Number" required ngModel>
+                          <label   for="phoneNumber" class="form__lable" > Phone Number </label> 
+                        </div>
+                    </div>
+                     <div class="d-flex flex-row justify-content-between locationSelect respondCase ">
+                    <select class="   select select__governate" name="governate" ngModel >
+                       <option> select Governate</option>
+                       <option>Cairo</option>
+                       <option>-----</option>
+                      </select>
+                      <select class="  select select__city" name="city" ngModel >
+                         <option>select City </option>
+                         <option>6 october</option>
+                         <option>Small select</option>
+                       </select>
+                      </div>
+                      <div class="d-flex flex-column">
+                      <div class="submit-buttons d-flex ">
+                      <button type="submit" class="Cbtn Cbtn--pink ">sign up </button>
+
+                      </div>
+
+                      <div class="otherSignup d-flex ">
+                        <a class="otherSignup__link" href="#"><img class="otherSignup__img" src="assets/img/sign upWG.png"> </a>
+                        <a class="otherSignup__link" href="#"><img class="otherSignup__img" src="assets/img/sign upFB.png"> </a>
+                      </div>
+                    </div>
+                </div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</main>
+
+<footer class="footer"> 
+
+  <app-landing-footer  ></app-landing-footer>
+</footer>
+
+
