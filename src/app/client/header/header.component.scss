@@ -1,0 +1,50 @@
+@import '../../../sass/variable.scss';
+
+.header{
+    height:8vh;
+    background-color:#42525a;
+    width: 100%;
+    
+    
+    &__logo{
+        margin-left:3%;
+        
+    }
+
+    &__logo h1{
+        font-size: 3rem;
+        color: $color-white;
+    }
+    &__profile{
+        
+        margin-right: 10%;
+
+        &-img-{
+            display: inline-block;
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            border:1px solid $color-white;
+        }
+        &-link{
+            margin-left:5%;
+            font-size: 2rem ; 
+            color: $color-white;
+        }
+        &__notification{
+            margin-left: 10%;
+            &-bell{
+                height: 2rem;
+                
+                width: 2rem;
+                fill: $color-white;
+            }
+            }
+   
+    }
+
+
+}
+a{ text-decoration: none ;}
+
+

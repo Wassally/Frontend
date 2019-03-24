@@ -1,0 +1,22 @@
+<app-client-header></app-client-header>
+
+<div class=" container-fluid">
+        <div class="row app">
+            <div class="col-6 col-md-2 navCol" *ngIf="showNav" >
+            <client-side-nav-bar></client-side-nav-bar>
+            </div>
+            <div class="col-6 col-md-8 ">.col-6 .col-md-4</div>
+            <div class="col-12 col-md-2  side ">side</div>
+          </div>
+    </div>
+
+
+    <div class="toggelBtn" (click)="show()">
+      <input type="checkbox" class="toggelBtn__checkbox"id="navi-toggle" (click)="show()"  checked>
+      <label for="navi-toggle" class="toggelBtn__button">
+          <span class="toggelBtn__icon">&nbsp;</span>    
+      </label>
+    </div>
+
+
+    

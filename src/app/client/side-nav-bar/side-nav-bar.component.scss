@@ -1,0 +1,126 @@
+@import '../../../sass/variable.scss' ;
+@import '../../../sass/mixins.scss' ;
+
+
+.sideContent{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: #171c1f;
+height: 100%;
+width: 100%;
+}
+.sidebar{
+
+flex: 0 0 18%;
+position: relative;
+}
+.side-nav{
+   
+
+    font-size: 1.6rem;
+    list-style: none;
+    margin-top: 3.5rem;
+    color: #ffffff;
+    padding-left: 0;
+
+
+    
+
+    &__item {
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+
+            
+        }
+
+       
+    }
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color:$client-primary-color;
+        transform: scaleY(0);
+        transition: transform .2s,
+                    width .4s cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s;
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: $client-primary-color;
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: $color-grey-light-1;
+        text-decoration: none;
+        
+        display: block;
+        padding: 1.5rem 3rem;
+        position: relative;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+
+        
+
+       
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 1rem;
+        fill: #ffffff;
+
+        
+    }
+}
+
+.sub-nav{
+    &__ul{
+        list-style: none;
+    }
+
+    &__item{
+        font-size: 1.4rem;
+    }
+    &__link:link,
+    &__link:visited {
+
+        color: $color-grey-light-1;
+        text-decoration: none;
+        
+        display: block;
+        padding: 1rem 3rem;
+        position: relative;
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+
+        
+        &:hover{
+            color: $client-primary-color;
+        }
+       
+    }
+
+    
+}
+
+/////////////////////////////////////////////

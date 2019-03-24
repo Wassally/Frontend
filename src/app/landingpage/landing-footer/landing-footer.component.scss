@@ -1,0 +1,47 @@
+
+@import '../../../sass/mixins' ;
+
+footer {
+
+    padding: 1.5rem 0;
+    background-color:#121313;
+    color: #FFF ; 
+   // font-size: 1.5rem;
+  //  height: 8rem;
+    
+}
+ h3{
+     
+     float: left;
+ }
+
+.social {
+    
+}
+.social-img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-left:2rem;
+
+    @include respond(phone){
+        
+        width: 2rem;
+        height: 2rem;
+        //margin-left:1rem ;
+    }  
+
+
+    
+     
+}
+.getOnPlaystore{
+   // margin-left: 8rem;
+    &__linl{
+
+    }
+    &__img{
+    height: 4rem;
+    width: auto; }
+
+}

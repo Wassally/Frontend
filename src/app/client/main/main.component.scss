@@ -1,0 +1,79 @@
+@import '../../../sass/variable.scss' ;
+@import '../../../sass/mixins.scss' ;
+
+.app{
+    height: 92vh;
+}
+.navCol{
+    padding-left:0px;
+}
+
+
+.toggelBtn{
+    top: 11%;
+    left: 2%;
+    position: absolute;
+    display: none;
+   @include respond(phone){
+     display: block;   
+   }
+    &__button{
+        //background-color: $client-primary-color ;
+        height:5rem;
+        width: 5rem;
+        border-radius: 2px;
+        z-index: 200;
+        position: fixed;
+        cursor: pointer;
+      
+
+        
+    }
+     &__checkbox{
+        display: none;
+     }
+     &__icon{
+            //margin-top:3.5rem;
+        & , 
+        &::after , 
+        &::before{
+            height: 2px;
+            width:3rem ;
+           background-color:  $client-primary-color ; 
+            display: inline-block;
+        }
+        &::after , 
+        &::before{
+            content: "";
+            position: absolute;
+            left:0;
+            transition: all .2s ;
+        }
+        &::before{top:-.8rem }
+        &::after{top: .8rem }    
+
+    }
+    &__checkbox:checked + &__button &__icon{
+        background-color: transparent ;
+    }
+    &__checkbox:checked + &__button &__icon::after{
+        top: 0 ; 
+        transform: rotate(135deg);
+        background-color:$color-white;
+    }
+    &__checkbox:checked + &__button &__icon::before{
+        top: 0 ; 
+        transform: rotate(-135deg);
+        background-color:$color-white;
+    }
+         
+     
+}
+
+.side{
+    @include respond(phone) {
+        display: none;
+        visibility: hidden;
+
+    }
+}

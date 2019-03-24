@@ -1,0 +1,56 @@
+@import './../../../sass/variable.scss';
+@import './../../../sass/mixins.scss';
+
+.btns {
+    width: 100%;
+}
+
+   .c_button{
+        width: 30%;
+        margin-left: 10% ; 
+        &__join{
+            color:$color-white; 
+            background-color:  $primary-color ;
+        }
+        &__signin{
+            color:$color-white; 
+            background-color:  $primary-color ; 
+        }
+        &__signup{
+            color:$color-white; 
+            background-color:  #194955 ;
+        }
+        @include respond(phone){
+          margin-left: 5%;
+            width: 42%
+
+        }  
+
+
+    }
+
+.main{
+    margin: 10rem 0 ;
+
+    @include respond(phone){
+        margin-top: 2rem;
+
+      }  
+&__text{
+
+    margin: 6.4rem 0;
+    font-size: 3.5rem;
+    color: var(--info);
+
+}
+    &__img{
+            width: 100% ;
+            border-radius: 5px; 
+
+        }
+    
+
+}
+.user2{
+ margin-bottom: 12.5rem; 
+}

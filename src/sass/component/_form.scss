@@ -1,0 +1,47 @@
+@import '../variable.scss';
+
+
+// input 
+.form{
+    &__group{
+    margin-bottom: 1rem;
+    }   
+
+    &__input{
+        font-size:1.5rem ; 
+        font-family: inherit; 
+        padding:  1.5rem 2rem ; 
+        background-color: #ffffff ; 
+        border: none ; 
+        border: 1px solid #74e0d4 ;
+        border-radius: 2px ;
+        //width: 40rem;
+        color:#000000;
+        display: block; 
+        &:focus{
+            outline: none ; 
+            box-shadow: 0 1rem 2rem rgba(#000000, .1) ; 
+            
+        }
+        &::-webkit-input-placeholder{
+            color: #555555;
+
+        }
+
+
+    }
+    &__lable{
+        font-size: 1.2rem ; 
+        font-weight: 700 ; 
+        margin-left: 2rem ; 
+        margin-top :.7rem ; 
+        display: block ; 
+        transition: all .3s;
+    } 
+    &__input:placeholder-shown + &__lable{
+        opacity: 0;
+        visibility: hidden;
+        transform:translateY(-4rem);
+
+    }
+}

@@ -1,0 +1,19 @@
+img {
+    margin-bottom: 2rem;
+}
+
+div {
+    text-align: center
+}
+.steps{
+    margin: 8rem auto ; 
+    &__img{
+        width:20rem; 
+        height:20rem;
+    
+    }
+    p{
+        font-size: 2rem;
+        
+    }
+}

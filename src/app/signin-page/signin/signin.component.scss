@@ -1,0 +1,60 @@
+@import '../../../sass/variable.scss';
+@import '../../../sass/mixins.scss' ;
+
+
+
+.header{
+    width: 100%; 
+    height: 5rem;
+    background-color : $primary-color ; 
+
+&-text{
+    
+   text-align: center ; 
+    padding: .5rem  0 ;
+    font-size: 3rem;
+    color: #ffffff;
+    left:50% ; 
+    top:50% ;
+}
+
+}
+
+.form {
+    margin-top: 10rem;
+    &__input{
+        width:100% ;
+        &:focus:valid{
+            border-bottom: 3px solid #22B24C;
+
+        }
+        &:focus:invalid{
+            border-bottom: 3px solid #FF1D23;
+        }
+
+    }
+
+}
+
+.Cbtn{
+    transform: translate(-50% , -50%); 
+    left: 50%; 
+    margin-top :4rem ;
+}
+.option{
+    
+    
+    &__img{
+        //display: inline-block;
+        height: 5rem;
+        width: auto ;    
+    }
+}
+
+footer{
+  
+position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
