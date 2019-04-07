@@ -23,16 +23,15 @@ export class SignupPageComponent implements OnInit {
     const city = form.value.city;
     const governate =form.value.governate;
     const userData = {
-      "email" : email ,
+     
       "username": firstName + '@' + lastName , 
+      "email" : email ,
       "password" : password ,
-      "confirm_password" : password ,
-      "is_captin": "false",
-      "is_client":"true" ,
       "governate":governate ,
       "city" : city ,
+      "is_client":"true" ,
+      "is_captain": "false",
       "phone_number":phone
-
     } ;
     
     this.signupServices.signup(userData)
