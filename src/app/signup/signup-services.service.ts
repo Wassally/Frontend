@@ -9,11 +9,11 @@ export class SignupService {
 
   constructor( private http : HttpClient) { }
   
-  serverUrl='http://mahmoudzeyada.pythonanywhere.com/api/accounts.json';
+  serverUrl='http://mahmoudzeyada.pythonanywhere.com/api/accounts/';
   
   signup( userData:{}){
     
-    return this.http.post(this.serverUrl,userData);
+    return this.http.post(this.serverUrl ,userData);
   }
 
 }

@@ -1,0 +1,28 @@
+<div class="container">
+  <ul   class="packages  d-flex flex-column" *ngFor =  "let package of packages">
+    <li class="package" >
+      <ul class="package__details  "> 
+        <li class="package__detail  "  >
+          <h3 class="package__detail--h">Package Number</h3>
+          <span class="package__detail--v"> {{package.number}}</span >
+        </li>
+        <li class="package__detail  "  >
+            <h3 class="package__detail--h">Location</h3>
+            <span class="package__detail--v"> {{package.location}}</span >
+          </li>
+          <li class="package__detail  "  >
+              <h3 class="package__detail--h">Caption</h3>
+              <span class="package__detail--v"> 
+                <img src="{{package.captin.imageUrl}}" alt="captin photo" class="captin-photo-sm">
+                {{package.captin.name}}
+              </span >
+            </li>
+            <li class="package__detail  "  >
+                <h3 class="package__detail--h">State</h3>
+                <span class="package__detail--v"> {{package.state}}</span >
+              </li>
+              
+      </ul>
+    </li>
+  </ul>
+</div>
