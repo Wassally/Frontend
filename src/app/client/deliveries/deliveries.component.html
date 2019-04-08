@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mainBox">
   <ul   class="packages  d-flex flex-column" *ngFor =  "let package of packages">
-    <li class="package" >
+    <li class="package" (click)='openPackage()' >
       <ul class="package__details  "> 
         <li class="package__detail  "  >
           <h3 class="package__detail--h">Package Number</h3>

@@ -1,0 +1,95 @@
+@import '../../../sass/variable';
+li , span{
+    display: inline-block; 
+}
+.detailesSeceading{
+    display: flex ;
+    margin: 3rem 2rem;
+    &__icone{
+        margin-right: 1rem ;
+        &-img{
+            width:4rem ; 
+            height: auto;
+
+        }
+    }
+    &__text{
+        margin-top:.5rem;
+    }
+}
+
+//detailes body 
+
+
+.packageDetailes{
+    margin-top:3rem;
+    &__ul{
+
+    }
+    &__li{
+        width: 45%;
+        font-size: 2.5rem;
+        margin:2rem 0 0 2rem; 
+        font-weight: 400;
+        
+        &-value{
+            font-size: 2rem;
+            color: $client-primary-color;
+            font-weight: 400 ;
+        }
+    }
+}
+
+
+
+
+
+
+
+.packageDetailes-img-sm{
+
+    height: 3rem ;
+    width:3rem;
+    border-radius: 50%; 
+}
+
+a{
+    text-decoration: none ;
+
+}
+.Packagevisit-profile{
+    color: inherit ; 
+&:hover{
+    color: #563D7C ;
+}
+}
+
+/////////// Edit Cancel Butons style //////
+
+ .editCancelButtons{
+     display: flex ;
+     justify-content: center ;
+     align-content: center ;
+     margin-top: 7rem;
+
+ }
+
+ .PD-button{
+     margin-right: 6rem ;
+
+     text-decoration: none ;
+        width: 20rem ; 
+        font-size: 1.5rem;
+        padding: 1.2rem 2rem; 
+       
+         border-radius: 1rem;
+         
+     &-Primary{
+         color: #ffffff;
+         background-color: #007BFF ; 
+     }
+     &-danger{
+       background-color: #DC3545; 
+       color: #ffffff;
+     }
+ }
