@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { Route, Router } from '@angular/router';
 //import { Router, RouterModule, Routes } from '@angular/router';
  
 
@@ -15,7 +16,7 @@ import { Component, OnInit, NgModule } from '@angular/core';
 
 export class DeliveriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
@@ -45,8 +46,38 @@ packages = [
         name : 'reda' ,
         imageUrl:'assets/img/client/profile.png',
        }
+    } , 
+    {
+      number : 52544 , 
+      To : 'Mohamed' ,
+      location : 'Cairo' , 
+      from : 'Aswaan' ,
+      state : 'waitting ' ,  
+      captin : {
+        id : 2125 , 
+        name : 'reda' ,
+        imageUrl:'assets/img/client/profile.png',
+       } ,
+       
+    } , 
+    {
+      number : 52544 , 
+      To : 'Mohamed' ,
+      location : 'Cairo' , 
+      from : 'Aswaan' ,
+      state : 'waitting ' ,  
+      captin : {
+        id : 2125 , 
+        name : 'reda' ,
+        imageUrl:'assets/img/client/profile.png',
+       }
     }
     
+    
     ] ;  
+
+    openPackage(){
+      this.router.navigate(['/main/packages']);
+    }
 
 }

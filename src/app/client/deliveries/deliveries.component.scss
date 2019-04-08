@@ -16,6 +16,7 @@ padding-bottom: 2rem;
 
  .package{
      padding: 0 ;
+     cursor: pointer;
   
      
 
@@ -62,3 +63,8 @@ padding-bottom: 2rem;
      margin: 0 .8rem ;
 
  }
+
+ .mainBoxs{
+    height: 100vh;
+    overflow: auto;
+}
