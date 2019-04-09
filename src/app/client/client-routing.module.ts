@@ -10,14 +10,17 @@ const clientRouter : Routes =[
 
         path: '' , 
        component: MainComponent  , 
+      
        children :[
            {
                path : 'deliveries' , 
                component : DeliveriesComponent
            }, 
            {
-            path: 'packages' , 
-            component: PackagesComponent
+            path: ':id' , 
+            component: PackagesComponent , 
+           
+            
            }
        ]
 

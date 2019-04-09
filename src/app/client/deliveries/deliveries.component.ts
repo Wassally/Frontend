@@ -1,5 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { ClientPackagesService } from '../client-packages.service';
 //import { Router, RouterModule, Routes } from '@angular/router';
  
 
@@ -11,73 +12,43 @@ import { Route, Router } from '@angular/router';
 
 
 
-
-
-
 export class DeliveriesComponent implements OnInit {
+ 
+   id :number;
+   
+   
 
-  constructor(private router : Router) { }
+  constructor(
+    private router : Router , 
+    private packagesService:ClientPackagesService
+    ) {
+
+      
+     }
 
   ngOnInit() {
+   
+
+   
   }
+  packages =this.packagesService.getallpackages();
 
-packages = [
-    {
-      number : 54866 , 
-      To : 'Ahmed' ,
-      location : 'Mansoura' , 
-      from : 'cairo' ,
-      state : 'waitting ' ,  
+
+    openPackage( inpackage : {
+      number : number , To : string ,location : string , from : string ,state : string ,  
       captin : {
-        id : 2125 , 
-        name : 'Ali', 
-        imageUrl:'assets/img/client/profile1.png',
-      }, 
-      
-    } , 
-    {
-      number : 52544 , 
-      To : 'Mohamed' ,
-      location : 'Cairo' , 
-      from : 'Aswaan' ,
-      state : 'waitting ' ,  
-      captin : {
-        id : 2125 , 
-        name : 'reda' ,
-        imageUrl:'assets/img/client/profile.png',
+        id : number, 
+        name : string ,
+        imageUrl:string,
        }
-    } , 
-    {
-      number : 52544 , 
-      To : 'Mohamed' ,
-      location : 'Cairo' , 
-      from : 'Aswaan' ,
-      state : 'waitting ' ,  
-      captin : {
-        id : 2125 , 
-        name : 'reda' ,
-        imageUrl:'assets/img/client/profile.png',
-       } ,
-       
-    } , 
-    {
-      number : 52544 , 
-      To : 'Mohamed' ,
-      location : 'Cairo' , 
-      from : 'Aswaan' ,
-      state : 'waitting ' ,  
-      captin : {
-        id : 2125 , 
-        name : 'reda' ,
-        imageUrl:'assets/img/client/profile.png',
-       }
-    }
+
+    }){
     
     
-    ] ;  
-
-    openPackage(){
-      this.router.navigate(['/main/packages']);
+      this.id=inpackage.number ; 
+  
     }
+    
+  
 
 }

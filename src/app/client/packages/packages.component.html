@@ -10,13 +10,13 @@
   <ul class="packageDetailes__ul">
 
     <li class="packageDetailes__li">
-      Package Number :  <span class="packageDetailes__li-value">1518</span>
+      Package Number :  <span class="packageDetailes__li-value">{{package.number}}</span>
     </li>
     <li class="packageDetailes__li">
         Captin :   <span class="packageDetailes__li-value">
           <a href="#" class="Packagevisit-profile">
           <img src="assets/img/client/package/captin1.png" alt="captin small photo" class="packageDetailes-img-sm">
-          Mohamed 
+          {{package.captin.name}} 
         </a> 
         </span>
       </li>
@@ -24,23 +24,23 @@
           To :    <span class="packageDetailes__li-value">
               <a href="#" class="Packagevisit-profile">
               <img src="assets/img/client/package/girl2.png" alt="reciver  small photo" class="packageDetailes-img-sm">
-              Amal
+              {{package.To}}
             </a>
           </span>
         </li>
         <li class="packageDetailes__li">
             Location :   <span class="packageDetailes__li-value">
-              Mansoura 
+                {{package.location}} 
             </span>
           </li>
           <li class="packageDetailes__li">
-              From  :  <span class="packageDetailes__li-value"> Naser city , cairo </span>
+              From  :  <span class="packageDetailes__li-value">  {{package.from}} </span>
             </li>
             <li class="packageDetailes__li">
                size :  <span class="packageDetailes__li-value">2 Kg</span>
               </li>
               <li class="packageDetailes__li">
-               state :  <span class="packageDetailes__li-value">pending</span>
+                  {{package.state}} :  <span class="packageDetailes__li-value">pending</span>
               </li>
               <li class="packageDetailes__li">
                date :  <span class="packageDetailes__li-value">15  Mar</span>

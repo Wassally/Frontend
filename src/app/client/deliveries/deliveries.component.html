@@ -1,7 +1,9 @@
 <div class="container mainBox">
-  <ul   class="packages  d-flex flex-column" *ngFor =  "let package of packages">
-    <li class="package" (click)='openPackage()' >
-      <ul class="package__details  "> 
+  <ul   class="packages  d-flex flex-column" 
+  *ngFor =  "let package of packages">
+    <li class="package" [routerLink]="[ '/' , 'main', id]">
+     
+      <ul class="package__details "  (click) = "openPackage(package)"> 
         <li class="package__detail  "  >
           <h3 class="package__detail--h">Package Number</h3>
           <span class="package__detail--v"> {{package.number}}</span >
@@ -23,6 +25,7 @@
               </li>
               
       </ul>
+    
     </li>
   </ul>
 </div>
