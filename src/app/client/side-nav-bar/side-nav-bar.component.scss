@@ -53,15 +53,7 @@ position: relative;
                     background-color .1s;
     }
 
-    &__item:hover::before,
-    &__item--active::before {
-        transform: scaleY(1);
-        width: 100%;
-    }
-
-    &__item:active::before {
-        background-color: $client-primary-color;
-    }
+   
 
     &__link:link,
     &__link:visited {
@@ -88,6 +80,15 @@ position: relative;
         fill: #ffffff;
 
         
+    }
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: $client-primary-color;
     }
 }
 
@@ -123,4 +124,7 @@ position: relative;
     
 }
 
+.aaaa{
+    background-color: $client-primary-color;
+}
 /////////////////////////////////////////////

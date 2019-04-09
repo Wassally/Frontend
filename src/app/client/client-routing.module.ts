@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
+import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 
 const clientRouter : Routes =[
     {
@@ -16,12 +17,16 @@ const clientRouter : Routes =[
                path : 'deliveries' , 
                component : DeliveriesComponent
            }, 
-           {
-            path: ':id' , 
-            component: PackagesComponent , 
            
-            
-           }
+           {
+            path: 'deliveries/:id' , 
+            component: PackagesComponent , 
+            children:[]} ,
+            {
+                path:'deliveries/:id/captin' , 
+                component:CaptinProfileComponent
+            },
+         
        ]
 
     },
