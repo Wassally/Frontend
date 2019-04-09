@@ -6,10 +6,11 @@ import { MainComponent } from './main/main.component';
 import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
 import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
+import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent 
+  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent 
   ],
   imports: [
     CommonModule ,

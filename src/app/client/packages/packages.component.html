@@ -14,7 +14,7 @@
     </li>
     <li class="packageDetailes__li">
         Captin :   <span class="packageDetailes__li-value">
-          <a href="#" class="Packagevisit-profile">
+          <a [routerLink]="['captin']" class="Packagevisit-profile">
           <img src="assets/img/client/package/captin1.png" alt="captin small photo" class="packageDetailes-img-sm">
           {{package.captin.name}} 
         </a> 
@@ -61,3 +61,4 @@
       <button type="button" class="Cbtn c_button  c_button__join PD-button PD-button-danger">Cancel Package</button>
   </div>
 </div>
+
