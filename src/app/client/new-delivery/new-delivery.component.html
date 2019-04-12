@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="secHeading">
+    <span class="secHeading__icone">
+      <img src="assets/img/client/package/box.png" alt="Box icone" class="secHeading__icone-img">
+    </span>
+    <h2 class="secHeading__text"> New package</h2>
+    </div>
+    
+<form  (ngSubmit)="postOrder(m)" #m="ngForm"  >
+    <div class="newPackageForm">
+      <div class="filedInput">
+    <h3>
+      To
+    </h3>
+        <div class="form__group">
+          <input type="text" class=" form__input" 
+          name="Recipient Name" id="recipientName"  placeholder="Recipient Name" required ngModel>
+          <label   for="recipientName" class="form__lable " > Recipient Name </label> 
+        </div>
+      </div>
+      <div class="filedInput">
+          <h3>
+            Address
+          </h3>
+            <div class="form__group">
+              <input type="text" class=" form__input" 
+              name="Recipient Address" id="recipientAddress"  placeholder="Recipient Address" required ngModel>
+              <label   for="recipientAddress" class="form__lable " >  Write full address  </label> 
+            </div>
+          </div>
+          <div class="filedInput">
+              <h3>
+                From 
+              </h3>
+                <div class="form__group">
+                  <input type="text" class=" form__input" 
+                  name="Picking location" id="pickingLocation"  placeholder="Picking location" required ngModel>
+                  <label   for="pickingLocation" class="form__lable " >Write full address </label> 
+                </div>
+              </div>
+              <div class="filedInput">
+                  <h3>
+                    package weight 
+                  </h3>
+                    <div class="form__group">
+                      <input type="text" class=" form__input" 
+                      name=" package weight" id=" packageWeight"  placeholder=" package weight" required ngModel>
+                      <label   for="packageWeight" class="form__lable " >Weight of the package  </label> 
+                    </div>
+                  </div>
+                  <div class="filedInput">
+                      <h3>
+                        Duration
+                      </h3>
+                        <div class="form__group">
+                          <input type="text" class=" form__input" 
+                          name="Duration" id="recipientName"  placeholder="Duration" required ngModel>
+                          <label   for="recipientName" class="form__lable " > Duration </label> 
+                        </div>
+                      </div>
+                      <div class="filedInput">
+                          <h3>
+                            Cost
+                          </h3>
+                            <div class="form__group">
+                              <input type="text" class=" form__input" 
+                              name="Duration" id="recipientName"  placeholder="cost" required ngModel>
+                              <label   for="cost" class="form__lable " > Expected Cost  </label> 
+                            </div>
+                          </div>
+
+                          <div class="filedInput">
+                              <h3>
+                                Note 
+                              </h3>
+                                <div class="form__group">
+                                    <textarea rows="2" cols="40" class=" form__input">
+                                     
+                                        </textarea>
+                                </div>
+
+
+
+                              </div>
+
+                            
+     </div>
+     <div class="postButton">
+
+     
+     <button type="submit" class="Cbtn c_button  c_button__join postButton ">Post Order</button>
+    </div>
+  </form>
+
+    </div>
+
+

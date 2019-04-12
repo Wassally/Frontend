@@ -5,6 +5,7 @@ import { MainComponent } from './main/main.component';
 import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
+import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
 
 const clientRouter : Routes =[
     {
@@ -26,6 +27,10 @@ const clientRouter : Routes =[
                 path:'deliveries/:id/captin' , 
                 component:CaptinProfileComponent
             },
+            {
+                path : 'newDelivery' , 
+                component : NewDeliveryComponent
+            }, 
          
        ]
 
