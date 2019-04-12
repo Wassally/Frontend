@@ -1,0 +1,271 @@
+@import '../../../sass/variable';
+@import '../../../sass/mixins';
+a{
+    text-decoration: none ; 
+    font-size: inherit;
+    color: inherit;
+    
+}
+li , span{
+    display: inline-block; 
+}
+.captinProfilesec_heading{
+    display: flex ;
+    margin: 3rem 2rem;
+    &__icone{
+        margin-right: 1rem ;
+        &-img{
+            width:4rem ; 
+            height: auto;
+
+        }
+    }
+    &__text{
+        margin-top:.5rem;
+    }
+}
+.middleSec{ 
+    display: flex;
+    margin-top: 4rem;
+    padding-bottom: 3rem; 
+    border-bottom: 1px solid #271b3d ; 
+    justify-content: space-between ;
+    @include respond(phone){
+        flex-direction: column;
+    }
+}
+.captinProfileInfo{
+    display: flex;
+    align-items: center;
+    width: 58% ;
+    @include respond(phone){
+        width: 100% ;
+    }
+  &__imgDiv{
+        &--img{
+            width: 20rem; 
+            height: 20rem;
+            border-radius: 50%; 
+            @include respond(phone){
+        
+                width: 12rem; 
+            height: 12rem;
+            }
+        }
+  }
+  &__text{
+
+      display: flex;
+      flex-direction: column; 
+      justify-content: center;
+      align-content: center;
+      margin-left: 2rem;
+      &--name{
+          font-size: 3rem ;
+          margin-bottom: .8rem;
+          @include respond(phone){
+            font-size: 2.5rem ;
+            margin-bottom: .8rem;
+        }
+      }
+      &--location{
+          
+          font-size: 2.3rem ;
+          text-align: center;
+          margin-bottom: .8rem;
+          
+
+      }
+      &--rate{
+        display: flex ;
+        align-content: center ;
+        justify-content: center;
+        text-align: center;
+        font-size: 2rem ;
+
+      }
+  }
+
+} 
+
+.captinProfileInfo__text--rateSar{
+height: 2.5rem;
+width: 2.5rem;
+display: inline-block;
+fill: $client-primary-color	;
+margin-left: 1rem ;
+}
+
+
+
+/// option sec
+.captinProfileOptions{
+    width: 38% ; 
+    display: flex ; 
+    align-items: center ;
+    justify-content: center;
+    flex-direction: column;
+    @include respond(phone){
+        
+        width: 100% ; 
+    }
+    &__favorite{
+        height: 4rem;
+        width:  4rem;
+        display: inline-block;
+        color: black ;
+        fill: #FFDF00;
+        
+        &-empty{}
+        &-full{
+            position: relative;
+            left:  -4rem;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+    }
+    &__contact{
+        display: flex;
+        margin-top: 3rem; 
+        text-align: center;
+        align-items: center;
+        @include respond(phone){
+        
+            margin-top: 1.5rem;
+        }
+
+        &--SendMessege{
+            margin-right: 2rem;
+            a{
+            svg{
+                width: 3rem ; 
+                height: 3rem;
+                fill:red ;     
+                }
+            }
+        }
+        &--report{
+
+           &-link{
+               img{
+                   width: 3rem ; 
+                   height: 3rem;
+               }
+           }
+        }
+    }
+}
+label input[type="checkbox"] {
+    display: none;
+    opacity: 0;
+
+  }
+  
+  .custom-checkbox {
+    cursor: pointer;
+    height: 5rem;
+    width:  auto;
+  }
+  .custom-checkbox input[type="checkbox"]:checked ~ .captinProfileOptions__favorite-full {
+    opacity: 1;
+  }
+
+
+  /////Detailes sec 
+  .captinProfileDetailes{
+      
+      margin: 2rem 0 4rem 2rem ; 
+        &__deliveries{
+            
+            display: flex ; 
+            flex-direction: column;
+            margin-top : 1.5rem;
+            
+            width: 100% ;
+            //border-right: 1px solid #000000;
+            
+           
+            
+            &-count{ 
+                font-size: 3rem; 
+                text-align: center ; 
+            }
+            &-p{
+                font-size: 2rem ; 
+                text-align: center ; 
+            
+            }
+        }
+        &__rate{
+            width: 100%;
+            display: flex ; 
+            flex-direction: column ;
+            
+            p{
+                font-size: 2rem ; 
+                text-align: center ; 
+
+            }
+
+        }
+
+    &__vehicles{
+        display: flex ;
+        flex-direction: row ;
+            text-align: center ;
+            justify-content: flex-start;
+            margin-top:1.5rem;
+        width: 100%;
+        
+        
+        p{
+            font-size: 3rem;
+            display: flex;
+        }
+        ul{
+            display:flex;
+            
+            li{
+                margin-left: 0rem ;
+                img{
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+  }
+  //////////////RATE 
+
+  .rating {
+    //margin: 0 0 0 1em;
+    font-size: 4rem;
+    overflow:hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+ 
+}
+.rating a {
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    transition: color .4s;
+}
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a		{
+    color: orange;
+    cursor: pointer;
+}
+/*element1~element2	p ~ ul	Selects every <ul> element that are preceded by a <p> element*/
+.rating2 {
+    direction: rtl;
+}
+.rating2 a {
+    float:none;
+}
