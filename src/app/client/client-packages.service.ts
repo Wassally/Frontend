@@ -18,7 +18,7 @@ export class ClientPackagesService {
        
       captin : {
         id : 2125 , 
-        name : 'Ali', 
+        name : 'essam', 
         imageUrl:'assets/img/client/profile1.png',
       }, 
       
