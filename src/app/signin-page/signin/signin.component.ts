@@ -23,9 +23,6 @@ export class SigninComponent implements OnInit {
         email:string ,
         name:string , 
         user_id:number
-
-
-
       })=> {console.log(user);
         
         localStorage.setItem('token' , user.auth_token);

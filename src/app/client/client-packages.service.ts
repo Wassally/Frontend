@@ -8,6 +8,7 @@ export class ClientPackagesService {
   constructor() { 
 
   }
+  
   packages = [
     {
       number : 54866 , 
@@ -73,6 +74,9 @@ export class ClientPackagesService {
     getallpackages(){
       return this.packages;
       
+    }
+    postPackage(Newpackage:{}){
+
     }
 
 
