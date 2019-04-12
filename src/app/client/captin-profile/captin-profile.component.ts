@@ -10,6 +10,12 @@ export class CaptinProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
+  
+    //rate 
+    selectStar(){
+      
+    }
+    
 }
