@@ -18,7 +18,16 @@ export class SigninComponent implements OnInit {
     console.log(email);
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
-      (user)=> {console.log(user);
+      (user : {
+        auth_token :string  ,
+        email:string ,
+        name:string , 
+        user_id:number
+
+
+
+      })=> {console.log(user);
+        
         localStorage.setItem('token' , user.auth_token);
         this.router.navigate(['/main']) ;
       },
