@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
       (user)=> {console.log(user);
-        //localStorage.setItem('token' , user.token);
+        localStorage.setItem('token' , user.auth_token);
         this.router.navigate(['/main']) ;
       },
       (error)=>{

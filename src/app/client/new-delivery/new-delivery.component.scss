@@ -1,0 +1,70 @@
+@import '../../../sass/variable';
+@import '../../../sass/mixins';
+@import '../../../sass/component/secHeading' ;
+@import '../../../sass/component/form';
+
+
+.newPackageForm{
+    margin : 5rem 0rem 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    @include respond(phone){
+        flex-direction: column;
+    }
+
+}
+.filedInput{
+    display: flex ;
+    
+
+    width: 42% ;
+    margin-right: 4rem;
+    @include respond(phone){
+       width: 100% ; 
+        
+    }
+    //justify-content: space-between;
+   
+    h3{
+        font-size: 2rem;
+        margin: 1rem 1rem 0 1rem ;
+        width:50%;
+        @include respond(phone){
+            font-size: 1.7rem;
+            margin: 1rem 2rem 0 0rem ;
+        }
+    }
+}
+
+.form{
+
+    &__input{
+        margin-right: 0 ;
+      padding:  1rem 2rem;
+        border: 1px solid $client-primary-color ;
+        border-radius: 3px ;
+        width: 24rem;
+        &::-webkit-input-placeholder{
+            color: #363636;
+
+        }
+
+
+    }
+  
+}
+
+.postButton{
+    display: flex ; 
+    justify-content: center ;
+    margin-top: 3rem;
+    button{
+        color: #ffffff ; 
+        background-color: $client-primary-color ;
+        width: 20rem ;  
+    }
+   
+    
+
+
+}

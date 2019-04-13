@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
     this.showNav = ! this.showNav ; 
   }
   ngOnInit() {
-    this.router.navigate(['/main/deliveries']);
+    this.router.navigate(['/main/newDelivery']);
   }
 
 }
