@@ -9,6 +9,7 @@ import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule ,
     clientRoutingModule , 
-    FormsModule
+    FormsModule ,
+    HttpClientModule
   ]
 })
 export class ClientModule { }

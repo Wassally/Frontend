@@ -1,6 +1,7 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { ClientPackagesService } from '../client-packages.service';
+import { UserService } from '../user.service';
 //import { Router, RouterModule, Routes } from '@angular/router';
  
 
@@ -20,7 +21,8 @@ export class DeliveriesComponent implements OnInit {
 
   constructor(
     private router : Router , 
-    private packagesService:ClientPackagesService
+    private packagesService:ClientPackagesService , 
+    private userServives :UserService
     ) {
 
       
@@ -28,8 +30,7 @@ export class DeliveriesComponent implements OnInit {
 
   ngOnInit() {
    
-
-   
+    
   }
   packages =this.packagesService.getallpackages();
 

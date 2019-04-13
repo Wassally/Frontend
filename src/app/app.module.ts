@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponent } from './shared/components/alert.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AlertComponent } from './shared/components/alert.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule , 
+    AppRoutingModule ,
+    HttpClientModule 
     
   ],
   providers: [],
