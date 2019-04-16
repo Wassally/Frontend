@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { SigninAuthService } from '../auth/signin-auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '@app/client/user.service';
+import { ClientPackagesService } from '@app/client/client-packages.service';
+import { User } from '@app/client/modeles/user.model';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class SigninComponent implements OnInit {
 
   constructor( private signinAuth : SigninAuthService 
      ,private router :Router
-     , private userService:UserService) { }
+     , private userService:UserService , 
+     private packagesService :ClientPackagesService ) { }
   onSignin(form:NgForm){
     const email =form.value.email;
     const password =form.value.password;
@@ -29,9 +32,19 @@ export class SigninComponent implements OnInit {
       })=> {console.log(user);
         
         localStorage.setItem('token' , user.auth_token);
-        this.userService.getUserData(user.user_id);
-        this.router.navigate(['/main']) ;
-
+        this.userService.id= user.user_id;
+        this.userService.getUserData() 
+        .subscribe(
+          (respond)=> {
+            this.userService.user = new User(respond) ;
+            console.log(this.userService.user)
+               this.router.navigate(['/main']) ;
+          } , 
+          (err)=>{
+            console.log(err)
+          }
+        )
+     
       },
       (error)=>{
         console.log(error)

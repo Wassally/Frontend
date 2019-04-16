@@ -16,23 +16,23 @@ import { UserService } from '../user.service';
 export class DeliveriesComponent implements OnInit {
  
    id :number;
-   
-   
+    
+   userPackages : [{}] ; 
 
   constructor(
     private router : Router , 
     private packagesService:ClientPackagesService , 
     private userServives :UserService
     ) {
-
-      
+        
+     
      }
 
   ngOnInit() {
-   
-    
   }
   packages =this.packagesService.getallpackages();
+  
+  
 
 
     openPackage( inpackage : {

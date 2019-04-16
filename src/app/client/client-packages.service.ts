@@ -36,7 +36,8 @@ export class ClientPackagesService {
         imageUrl:'assets/img/client/profile1.png',
       }, 
       
-    } , 
+    }
+     , 
     {
       number : 52544 , 
       To : 'Mohamed' ,
@@ -48,7 +49,8 @@ export class ClientPackagesService {
         name : 'reda' ,
         imageUrl:'assets/img/client/profile.png',
        }
-    } , 
+    }
+     , 
     {
       number : 52544 , 
       To : 'Mohamed' ,
@@ -66,8 +68,10 @@ export class ClientPackagesService {
     
     ] ; 
     getUserpackage(){
-    // const userPackag = this.userServices.user ; 
-     // this.packages.push(userPackage)  
+     const userdeliveries = this.userServices.user.packages ;
+     return userdeliveries ;
+
+
     }
 
 
@@ -84,8 +88,6 @@ export class ClientPackagesService {
     postPackage(Newpackage:{}){
       return this.http.post(this.serverUrl , Newpackage  , this.httpOptions )
     }
-
-
 
 
 }

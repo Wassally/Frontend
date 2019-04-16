@@ -12,18 +12,9 @@ export class NewDeliveryComponent implements OnInit {
   constructor( private  packageServer : ClientPackagesService) { }
 
   ngOnInit() {
+    
   }
-  postOrder(form:NgForm){
-    console.log(form) ; 
-    /**
-     * recipientName
-     * recipientAddress
-     * pickingLocation
-     * packageWeight
-     * duration
-     *cost 
-     * note
-    */
+  postOrder(form:NgForm){ 
    const newPackage  = {
     to_person:form.value.recipientName,
     to_place:form.value.recipientAddress ,
