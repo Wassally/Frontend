@@ -29,6 +29,7 @@ export class DeliveriesComponent implements OnInit {
      }
 
   ngOnInit() {
+    console.log(this.userServives.user) ;
   }
   packages =this.packagesService.getallpackages();
   

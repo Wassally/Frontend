@@ -28,7 +28,7 @@ export class ClientPackagesService {
       To : 'Ahmed' ,
       location : 'Mansoura' , 
       from : 'cairo' ,
-      state : 'waitting ' , 
+      state : 'pending ' , 
        
       captin : {
         id : 2125 , 
@@ -56,7 +56,7 @@ export class ClientPackagesService {
       To : 'Mohamed' ,
       location : 'Cairo' , 
       from : 'Aswaan' ,
-      state : 'waitting ' ,  
+      state : 'pending ' ,  
       captin : {
         id : 2125 , 
         name : 'reda' ,
