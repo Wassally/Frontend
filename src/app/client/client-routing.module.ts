@@ -6,13 +6,15 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
+import { AuthGuard } from '@app/signin-page/auth/auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 const clientRouter : Routes =[
     {
 
         path: '' , 
        component: MainComponent  , 
-      
+      canActivateChild :[AuthGuard] ,
        children :[
            {
                path : 'deliveries' , 
@@ -30,7 +32,12 @@ const clientRouter : Routes =[
             {
                 path : 'newDelivery' , 
                 component : NewDeliveryComponent
-            }, 
+            } , 
+            {
+                path : 'profile'  , 
+                component : ProfileComponent
+            }
+
          
        ]
 

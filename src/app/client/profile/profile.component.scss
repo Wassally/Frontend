@@ -1,0 +1,130 @@
+@import '../../../sass/component/secHeading' ;
+@import '../../../sass/variable' ;
+
+
+.fullProfile{
+    display: flex ;
+    flex-direction: row ; 
+   
+    align-items: center ; 
+    margin: 5rem;
+    border-bottom: 1px solid #000000;
+    
+    
+    
+    
+    &__img{
+        margin-bottom: 2rem ;
+        
+        img{
+            width: 20rem ; 
+            height: 20rem;
+            border-radius: 50%;
+        }
+        &-edit{
+            position: relative ; 
+            bottom: -8rem ; 
+                right: 2rem;
+            svg{
+                width: 2rem ; 
+                height: 2rem;
+                fill: aqua ;
+                
+            }
+        }
+    }
+
+
+    &__info{
+        display: flex ;
+    flex-direction: column ; 
+    justify-content: center ;
+    align-items: center ;
+    margin-left: 3rem ; 
+       &-name{
+        margin-bottom: 1rem ;
+        h2{
+            font-size: 2.5rem ;
+            font-weight: 600 ;
+        }
+       } 
+       &-address{
+        margin-bottom: 1rem ;
+           display: flex ;
+
+        svg{
+            width: 2rem ; 
+            height: 2rem;
+            margin-right: .5rem;
+            fill: $client-primary-color
+        }
+        h3{
+            font-size: 2rem ;
+        }
+    } 
+    &-phoneNumber{
+        
+        display: flex ;
+        svg{
+            width: 2rem ; 
+            height: 2rem;
+            margin-right: .5rem ;
+            fill: $client-primary-color-1
+
+        }
+        h3{
+            font-size: 2rem ;
+        }
+    }
+    &-email{
+        
+        display: flex ;
+        svg{
+            width: 2rem ; 
+            height: 2rem;
+            margin-right: .5rem ;
+            fill: $client-primary-color-1
+        }
+        h3{
+            font-size: 1.7rem ;
+        }
+    }  
+    }
+
+
+
+    &__{}
+
+
+}
+
+.ProfileSecSection{
+    display: flex;
+}
+
+.extraInfo{
+    width: 50% ;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start ; 
+    align-items: center ;
+    
+    &__address{
+        font-size: 2.5rem;
+        margin-left: 1rem ;
+        font-weight: 600 ;
+        svg{
+            width: 2.5rem ; 
+            height: 2.5rem;
+            fill: $client-primary-color-1;
+            top:-.2rem;
+        }
+        
+    }
+   
+     p {
+         font-size: 2rem ;
+         margin-left: 2rem ;
+         color: $color-grey-dark-3 ; 
+     }
+}
