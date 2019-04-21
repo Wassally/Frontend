@@ -1,4 +1,5 @@
-@import '../../../sass/mixins';
+@import '../../../sass/mixins' ; 
+@import '../../../sass/component/secHeading';
 
 ul {
     list-style-type: none;
@@ -71,4 +72,13 @@ padding-bottom: 2rem;
 
 a{
     text-decoration: none ;
+}
+
+.secHeading__icone{
+    width: 4rem;
+}
+.locationSvgPK{
+    fill : #1B7F79 ; 
+    width: 2rem ; 
+    height: 2rem ; ;
 }

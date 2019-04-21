@@ -36,7 +36,9 @@ export class SigninComponent implements OnInit {
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
-            this.userService.user = new User(respond) ;
+            const currentUser  = new User(respond) ;
+            this.userService.user = currentUser ; 
+            localStorage.setItem('user' , JSON.stringify(currentUser)) 
             console.log(this.userService.user)
                this.router.navigate(['/main']) ;
           } , 

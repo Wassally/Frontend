@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientPackagesService } from '../client-packages.service';
+import { Package } from '../modeles/package.model';
 
 @Component({
   selector: 'app-packages',
@@ -9,20 +10,7 @@ import { ClientPackagesService } from '../client-packages.service';
 })
 export class PackagesComponent implements OnInit {
   id :number ;
-  @Input() package :{
-    number : number , 
-    To : string ,
-    location : string , 
-    from : string ,
-    state : string ,  
-    captin : {
-      id : number, 
-      name : string ,
-      imageUrl:string,
-     }
-
-
-  };
+  @Input() package : Package ; 
    
 
   constructor( private roue : ActivatedRoute , 

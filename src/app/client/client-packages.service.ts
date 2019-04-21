@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserService } from './user.service';
+import { Package } from './modeles/package.model';
+import { User } from './modeles/user.model';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +12,7 @@ import { UserService } from './user.service';
 export class ClientPackagesService {
   
   constructor(private http:HttpClient , 
-  private userServices : UserService
-    ) { 
-
-  }
+  private userServices : UserService) {}
   serverUrl  = 'http://mahmoudzeyada.pythonanywhere.com/api/packages/' ;
   token = localStorage.getItem('token') ;
    httpOptions = {
@@ -67,17 +68,21 @@ export class ClientPackagesService {
    
     
     ] ; 
+
+    userPackage : Array<Package> = []; 
     getUserpackage(){
-     const userdeliveries = this.userServices.user.packages ;
-     return userdeliveries ;
-
-
-    }
+       const currentUser : User =  JSON.parse(localStorage.getItem('user'));
+      currentUser.packages.forEach((element  , index :number) =>{
+          const packageModel = new Package(element) ;
+          this.userPackage[index] =  packageModel ;
+      })
+      return this.userPackage;  
+    } 
 
 
     getpackages(packageNumber:number)  {
-      return this.packages.find((element)=>{
-        return element.number == packageNumber ;
+      return this.userPackage.find((element)=>{
+        return element.packageNumber == packageNumber ;
       })
     }
 
