@@ -128,3 +128,15 @@
          color: $color-grey-dark-3 ; 
      }
 }
+
+
+.editProfile{
+    margin-left: 7rem;
+    align-self: flex-start;
+    margin-top: 2rem;
+    &-btn{
+       background-color: #1B7F79 ;
+       padding: 1rem .5rem;
+       color: #ffffff ; 
+    }
+}

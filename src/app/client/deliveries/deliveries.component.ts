@@ -2,6 +2,7 @@ import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { ClientPackagesService } from '../client-packages.service';
 import { UserService } from '../user.service';
+import { Package } from '../modeles/package.model';
 //import { Router, RouterModule, Routes } from '@angular/router';
  
 
@@ -29,25 +30,18 @@ export class DeliveriesComponent implements OnInit {
      }
 
   ngOnInit() {
-    console.log(this.userServives.user) ;
+    this.packagesService.getUserpackage();
+     console.log(this.packagesService.userPackage);
   }
-  packages =this.packagesService.getallpackages();
+  packages : Array<Package> = this.packagesService.getUserpackage() ; 
   
   
 
 
-    openPackage( inpackage : {
-      number : number , To : string ,location : string , from : string ,state : string ,  
-      captin : {
-        id : number, 
-        name : string ,
-        imageUrl:string,
-       }
-
-    }){
+    openPackage( inpackage :Package){
     
     
-      this.id=inpackage.number ; 
+      this.id=inpackage.packageNumber ; 
   
     }
     
