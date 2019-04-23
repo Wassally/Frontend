@@ -1,0 +1,79 @@
+<div class="container">
+<div class="secHeading">
+    <span class="secHeading__icone">
+      <img src="assets/img/client/package/editProfile.png" alt="Box icone" class="secHeading__icone-img">
+    </span>
+    <h2 class="secHeading__text"> Edit Profile</h2>
+    </div>
+
+    <div class="editProfileForm">
+      <form action="submit" class="editProfilelable">
+          <div class="form__group   ">
+              <input type="text" class=" form__input " 
+              name="firstName" id="firstName" value="{{user.firstname}}" required ngModel>
+              <label   for="firstName" class="form__lable " > First Name  </label> 
+            </div>
+
+            
+                <div class="form__group   ">
+                    <input type="text" class=" form__input " 
+                    name="lastName" id="lastName" value="{{user.lastName}}" required ngModel>
+                    <label   for="lastName" class="form__lable " > last Name </label> 
+                  </div>
+                  
+                  
+                      <div class="form__group    "  >
+                          <input type="enail" class=" form__input " 
+                          name="email" id="email" value="{{user.email}}" required ngModel>
+                          <label   for="email" class="form__lable " > Email Address  </label> 
+                        </div>
+                        <div class="form__group   ">
+                            <input type="text" class=" form__input " 
+                            name="phoneNumber" id="phoneNumber" value="{{user.phoneNumber}}" required ngModel>
+                            <label   for="phoneNumber" class="form__lable " > Phone Number </label> 
+                          </div>
+                        
+                            <div class="form__group   ">
+                                <input type="password" class=" form__input " 
+                                name="oldPassword" id="oldPassword"  required ngModel>
+                                <label   for="oldPassword" class="form__lable " > Old  Password  </label> 
+                              </div>
+                              
+                                  <div class="form__group   ">
+                                      <input type="password" class=" form__input " 
+                                      name="newPasword" id="newPasword" required ngModel>
+                                      <label   for="newPasword" class="form__lable " > New Password  </label> 
+                                    </div>
+                                    
+                                    <div class="form__group select-div ">
+                                      <h3  >
+                                        Home Address
+                                      </h3>
+                                      <div class="form__group   ">
+                                          <input type="text" class=" form__input " 
+                                          name="homeAddress" id="homeAddress" value="{{user.homeAddress}}" required ngModel>
+                                          <label   for="homeAddress" class="form__lable " > st  , floor </label> 
+                                        </div>
+                                        <label    class=" select-lable ">   Governate</label>
+                                        <select class="   select select__governate" name="governate" ngModel >
+                                           <option>  Governate</option>
+                                           <option>Cairo</option>
+                                           <option>-----</option>
+                                          </select>
+                                          </div>
+                                          <div class="form__group  select-div">
+                                            <label  class=" select-lable ">      city</label>
+                                          <select class="  select select__city" name="city" ngModel >
+                                             <option> City </option>
+                                             <option>6 october</option>
+                                             <option>Small select</option>
+                                           </select>
+                                          </div>
+                                           
+                                        <div class="updateBtn">
+                                          <button type="submit" class="Cbtn c_button  c_button__join updateButton "> Update Profile</button>
+                                        </div>
+      </form>
+    </div>
+
+  </div>

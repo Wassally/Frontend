@@ -7,10 +7,12 @@ ul {
 
 .packages{
  list-style-type: none;
- margin-top: 8rem;
+ margin-top: 5rem;
  //width: 70%;
- border-bottom: 1px solid #171C1F;
-
+ //border-bottom: 1px solid #171C1F;
+ -webkit-box-shadow: -4px 7px 5px -1px rgba(204,196,204,1);
+ -moz-box-shadow: -4px 7px 5px -1px rgba(204,196,204,1);
+ box-shadow: -4px 7px 5px -1px rgba(204,196,204,1);
  padding: 0 ;
 padding-bottom: 2rem;
 }

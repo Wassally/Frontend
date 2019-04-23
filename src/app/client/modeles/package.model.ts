@@ -11,6 +11,7 @@ export class Package{
     weight: number ;
     createdDate:string ;
     relatedoffers:[] ;
+    relatedoffersCoumt :number ;
     captin:{
         id : number, 
       name : string ,
@@ -27,7 +28,9 @@ export class Package{
         this.max_duration=userPackage.time_day;
         this.weight=userPackage.weight;
         this.createdDate=userPackage.created_at;
+        this.relatedoffersCoumt=userPackage.related_offers.length;
         this.relatedoffers=userPackage.related_offers;
+        
         
      }
 

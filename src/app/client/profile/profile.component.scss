@@ -1,11 +1,13 @@
 @import '../../../sass/component/secHeading' ;
 @import '../../../sass/variable' ;
-
+a{
+    text-decoration: none ;
+    
+}
 
 .fullProfile{
     display: flex ;
     flex-direction: row ; 
-   
     align-items: center ; 
     margin: 5rem;
     border-bottom: 1px solid #000000;
@@ -15,26 +17,67 @@
     
     &__img{
         margin-bottom: 2rem ;
-        
+        position: relative;
         img{
             width: 20rem ; 
             height: 20rem;
             border-radius: 50%;
         }
-        &-edit{
-            position: relative ; 
-            bottom: -8rem ; 
-                right: 2rem;
-            svg{
-                width: 2rem ; 
-                height: 2rem;
-                fill: aqua ;
-                
-            }
-        }
+      
     }
 
+   //// upload photo 
+   #uploadPhoto{
+    display: none ;
+}
 
+.imageHover {
+    &-text{
+        display: none;
+        color: #ffffff ;
+        font-size: 1.4rem ; 
+
+        position: absolute ;
+        top: 50% ; 
+        left: 50%;
+        transform: translate(-50% , -50%) ; 
+        z-index: 2; 
+        
+
+    }
+    &-background{
+        position: absolute;
+        display: none;
+        top: 0;
+        left:  0;
+        bottom: 0;
+        right: 0;
+        background-color:rgba(2, 2, 2, 0.5);
+        pointer-events: none;
+        border-radius: 50%;
+        z-index: 1;
+        
+    }
+    
+    
+
+}
+.imageHover-img img:hover{
+    filter: blur(2px);
+  -webkit-filter: blur(2px) ; 
+  transition: all .1s
+}
+.imageHover-img:hover .imageHover-background{
+    display: block ; 
+    transition:  all .3s;
+
+}
+.imageHover-img:hover .imageHover-text{
+    display: block ; 
+    transition: all .1s;
+    
+}
+////////////
     &__info{
         display: flex ;
     flex-direction: column ; 
@@ -93,7 +136,7 @@
 
 
 
-    &__{}
+    
 
 
 }
@@ -138,5 +181,20 @@
        background-color: #1B7F79 ;
        padding: 1rem .5rem;
        color: #ffffff ; 
+    }
+}
+
+
+#uploadPhoto{
+    display: none ;
+}
+
+.imageHover {
+    &-text{
+        display: none;
+
+    }
+    &-background{
+        display: none ; 
     }
 }

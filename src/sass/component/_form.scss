@@ -1,6 +1,14 @@
 @import '../variable.scss';
 
-
+/*
+How to use 
+<div class="form__group   form__firstName">
+                  <input type="text" class=" form__input " 
+                  name="" id="xxxx"  placeholder="  zzzz" required ngModel>
+                  <label   for="xxxx" class="form__lable " > zzzzzz </label> 
+                </div>
+              
+*/
 // input 
 .form{
     &__group{
@@ -12,8 +20,8 @@
         font-family: inherit; 
         padding:  1.5rem 2rem ; 
         background-color: #ffffff ; 
-        border: none ; 
-        border: 1px solid #74e0d4 ;
+
+        border: 1px solid #32ffe7 ;
         border-radius: 2px ;
         //width: 40rem;
         color:#000000;
