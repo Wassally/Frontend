@@ -7,15 +7,17 @@
   </div>
 
   <div class="fullProfile">
-    <div class="fullProfile__img">
-      <img src="assets/img/client/Profile/kenawy.jpg" alt="Profile Picture">
-    <!-- <span class="fullProfile__img-edit">
-        <svg class="">
-          <use xlink:href="assets/img/svg/allSvg.svg#icon-edit-pencil
-          "></use>
-      </svg>
-      </span>-->
+    <label for="uploadPhoto">
+    <div class="fullProfile__img imageHover-img">
+      <img [src]=" url ? url :  'https://www.w3schools.com/howto/img_avatar.png' " alt="Profile Picture">
+      <div class="imageHover-text"> Upload Photo </div>
+      <div class="imageHover-background"></div>
+      
+      
+
     </div>
+  </label>
+  <input type="file" id="uploadPhoto" (change)="onSelectFile($event)" accept="image/*" >
     <div class="fullProfile__info">
       <div class="fullProfile__info-name">
         <h2> Ahmed Elkenawy </h2>
@@ -43,7 +45,9 @@
       </div>
     </div>
   <div class="editProfile">
-    <button type="button" class="Cbtn c_button  c_button__join editProfile-btn ">Edit Profile </button>
+    <a [routerLink]= "['editProfile']">
+    <button type="button" class="Cbtn c_button  c_button__join editProfile-btn "> Edit Profile </button>
+  </a>
   </div>
   </div>
 <div class="ProfileSecSection">

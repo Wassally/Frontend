@@ -41,7 +41,8 @@
     &__input{
         margin-right: 0 ;
       padding:  1rem 2rem;
-        border: 1px solid $client-primary-color ;
+        border: none ;
+        border-bottom: 1px solid $client-primary-color ;
         border-radius: 3px ;
         width: 24rem;
         &::-webkit-input-placeholder{
@@ -68,3 +69,4 @@
 
 
 }
+

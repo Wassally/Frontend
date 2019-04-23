@@ -8,6 +8,7 @@ import { CaptinProfileComponent } from './captin-profile/captin-profile.componen
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
 import { AuthGuard } from '@app/signin-page/auth/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 
 const clientRouter : Routes =[
     {
@@ -36,6 +37,10 @@ const clientRouter : Routes =[
             {
                 path : 'profile'  , 
                 component : ProfileComponent
+            } ,
+            {
+                path : 'profile/editProfile'  , 
+                component : EditProfileComponent
             }
 
          

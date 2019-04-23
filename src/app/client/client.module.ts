@@ -11,16 +11,17 @@ import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent 
+  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent 
   ],
   imports: [
     CommonModule ,
     clientRoutingModule , 
     FormsModule ,
-    HttpClientModule
+    HttpClientModule , 
   ]
 })
 export class ClientModule { }
