@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ClientPackagesService } from '../client-packages.service';
-import { Package } from '../modeles/package.model';
+import { ClientPackagesService } from '../core/services/client-packages.service';
+import { Package } from '../core/models/package.model';
 
 @Component({
   selector: 'app-packages',

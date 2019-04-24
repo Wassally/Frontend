@@ -1,8 +1,8 @@
 import { Component, OnInit, NgModule, Input } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { ClientPackagesService } from '../client-packages.service';
-import { UserService } from '../user.service';
-import { Package } from '../modeles/package.model';
+import { ClientPackagesService } from '../core/services/client-packages.service';
+import { UserService } from '../core/services/user.service';
+import { Package } from '../core/models/package.model';
 //import { Router, RouterModule, Routes } from '@angular/router';
  
 
