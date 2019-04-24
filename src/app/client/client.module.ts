@@ -9,9 +9,10 @@ import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
+import { HeaderInterceptor } from './core/interceptors/http.header.interceptor';
 
 
 @NgModule({
@@ -22,6 +23,11 @@ import { EditProfileComponent } from './profile/edit-profile/edit-profile.compon
     clientRoutingModule , 
     FormsModule ,
     HttpClientModule , 
+  ] , 
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS , useClass:HeaderInterceptor , multi: true 
+    }
   ]
 })
 export class ClientModule { }

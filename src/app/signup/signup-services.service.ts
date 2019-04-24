@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from  '@angular/common/http';
-import {  Observable } from 'rxjs';
+
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +11,11 @@ export class SignupService {
 
   constructor( private http : HttpClient) { }
   
-  serverUrl='http://mahmoudzeyada.pythonanywhere.com/api/accounts/';
+  path='/accounts/';
   
   signup( userData:{}){
     
-    return this.http.post(this.serverUrl ,userData);
+    return this.http.post(`${environment.api_url}${this.path}` ,userData);
   }
 
 }

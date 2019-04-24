@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SigninAuthService } from '../auth/signin-auth.service';
 import { Router } from '@angular/router';
-import { UserService } from '@app/client/user.service';
-import { ClientPackagesService } from '@app/client/client-packages.service';
-import { User } from '@app/client/modeles/user.model';
+import { UserService } from '@app/client/core/services/user.service';
+import { ClientPackagesService } from '@app/client/core/services/client-packages.service';
+import { User } from '@app/client/core/models/user.model';
 
 
 @Component({

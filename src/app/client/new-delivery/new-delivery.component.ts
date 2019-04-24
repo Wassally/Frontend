@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ClientPackagesService } from '../client-packages.service';
+import { ClientPackagesService } from '../core/services/client-packages.service';
 
 @Component({
   selector: 'app-new-delivery',

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,9 @@ export class SigninAuthService {
     }, 4000); */
   }
   
-  serverUrl= 'http://mahmoudzeyada.pythonanywhere.com/api/login/';
+  path= '/login/';
   
   signIn(userInfo:{}){
-   return this.http.post(this.serverUrl ,userInfo)
+   return this.http.post(`${environment.api_url}${this.path}` ,userInfo)
   }
 }
