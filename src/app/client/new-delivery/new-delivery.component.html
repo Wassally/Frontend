@@ -8,80 +8,172 @@
     
 <form  (ngSubmit)="postOrder(m)" #m="ngForm"  >
     <div class="newPackageForm">
-      <div class="filedInput">
-    <h3>
-      To
-    </h3>
-        <div class="form__group">
-          <input type="text" class=" form__input" 
-          name="recipientName" id="recipientName"  placeholder="Recipient Name" required ngModel>
-          <label   for="recipientName" class="form__lable " > Recipient Name </label> 
+      <div class="depSection">
+        <h2> Shipped From </h2>
+        <div class="selectInput">
+        <label    class=" select-lable ">   Governate</label>
+        <select class="   select select__governate" name="governate" ngModel >
+          <option>  Governate</option>
+            <option>Cairo</option>
+             <option>-----</option>
+         </select>
+        </div>
+        <div class="selectInput">
+         <label    class=" select-lable ">   City </label>
+        <select class="   select select__city" name="city" ngModel >
+          <option>  city</option>
+            <option>City 1 </option>
+             <option>-----</option>
+         </select>
+        </div>
+        <div class="filedInput ">
+          <span> Address </span>
+         <div class="form__group ">
+          <input type="text" class=" form__input fullAddress " 
+          name="sourceAddress" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
+          <label   for="sourceAddress" class="form__lable " > dst, st</label> 
         </div>
       </div>
-      <div class="filedInput">
-          <h3>
-            Address
-          </h3>
-            <div class="form__group">
-              <input type="text" class=" form__input" 
-              name="recipientAddress" id="recipientAddress"  placeholder="Recipient Address" required ngModel>
-              <label   for="recipientAddress" class="form__lable " >  Write full address  </label> 
+      </div>
+
+      <div class="depSection">
+          <h2> Shipped TO </h2>
+          <div class="filedInput ">
+              <span> Reciever Name </span>
+             <div class="form__group ">
+              <input type="text" class=" form__input  " 
+              name="reciver Name" id="reciver Name"  placeholder="Reciver full Name" required ngModel>
+              <label   for="reciver Name" class="form__lable " > Reciver full Name</label> 
             </div>
           </div>
-          <div class="filedInput">
-              <h3>
-                From 
-              </h3>
-                <div class="form__group">
-                  <input type="text" class=" form__input" 
-                  name="pickingLocation" id="pickingLocation"  placeholder="Picking location" required ngModel>
-                  <label   for="pickingLocation" class="form__lable " >Write full address </label> 
-                </div>
+          <div class="filedInput ">
+              <span> Phone Number </span>
+             <div class="form__group ">
+              <input type="text" class=" form__input  " 
+              name="reciverPhoneNumber" id="reciverPhoneNumber"  placeholder="Mobile or Home " required ngModel>
+              <label   for="reciverPhoneNumber" class="form__lable " > Mobile or Home</label> 
+            </div>
+          </div>
+          <div class="selectInput">
+          <label    class=" select-lable ">   Governate</label>
+          <select class="   select select__governate" name="governate" ngModel >
+            <option>  Governate</option>
+              <option>Cairo</option>
+               <option>-----</option>
+           </select>
+          </div>
+          <div class="selectInput">
+           <label    class=" select-lable ">   City </label>
+          <select class="   select select__city" name="city" ngModel >
+            <option>  city</option>
+              <option>City 1 </option>
+               <option>-----</option>
+           </select>
+          </div>
+          <div class="filedInput ">
+            <span> Address </span>
+           <div class="form__group ">
+            <input type="text" class=" form__input fullAddress " 
+            name="sourceAddress" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
+            <label   for="sourceAddress" class="form__lable " > dst, st</label> 
+          </div>
+        </div>
+        </div>
+        <div class="depSection">
+            <h2> Extra Information </h2>
+            <div class="filedInput filedInput-nolable  ">
+                <span> Duration </span>
+               <div class="form__group ">
+                <input type="text" class=" form__input form__input-sm  " 
+                name="duration" id="duration"  placeholder="recive package on " required ngModel>
+               
               </div>
-              <div class="filedInput">
+              <span class="form__unit"> Days </span>
+            </div>
+
+            <div class="filedInput filedInput-nolable ">
+                <span> weight </span>
+               <div class="form__group ">
+                <input type="text" class=" form__input  form__input-sm  " 
+                name="packageWeight" id="packageWeight"  placeholder="Approximate  weight " required ngModel>
+              
+              </div>
+              <span class="form__unit" > Kg </span>
+            </div>
+
+            <div class="filedInput filedInput-nolable ">
+                <span > Cost Estimation </span>
+               <div class="form__group ">
+                <input type="text" class=" form__input  form__input-sm " 
+                name="costEstimation" id="costEstimation"  placeholder="Put your offer" required ngModel>
+              
+              </div>
+              <span class="form__unit"> LE </span>
+            </div>
+
+            <div class="selectInput transportation">
+                <label for="transportation"   class=" select-lable "> Transportation   </label>
+               <select  id="transportation"  class="select  " name="city" ngModel >
+                 <option>  Any </option>
+                   <option>Bike </option>
+                    <option>car  </option>
+                    <option>Motorcycle  </option>
+
+                </select>
+               </div>
+
+               <div class="shippedby">
+
+               </div>
+
+               
+               <div class="filedInput">
                   <h3>
-                    package weight 
+                    Note 
                   </h3>
                     <div class="form__group">
-                      <input type="text" class=" form__input" 
-                      name=" packageWeight" id=" packageWeight"  placeholder=" package weight" required ngModel>
-                      <label   for="packageWeight" class="form__lable " >Weight of the package  </label> 
+                        <textarea rows="2" cols="40" class=" form__input" ngModel name="note">
+                         
+                            </textarea>
                     </div>
                   </div>
-                  <div class="filedInput">
-                      <h3>
-                        Duration
-                      </h3>
-                        <div class="form__group">
-                          <input type="text" class=" form__input" 
-                          name="duration" id="duration"  placeholder="Duration" required ngModel>
-                          <label   for="duration" class="form__lable " > Duration </label> 
+                    <div class="filedInput d-flex flex-column shipprdOptions ">
+                        <span > Shipped by  </span>
+                    <div class="form__group  radioFormGroup ">
+                        <div class="form__radio-group">
+                         <input type="radio" class="form__radio-input" id="small" name="size">
+                         
+                         <label for="small" class="form__radio-label  radioFormGroup-lable"> 
+                                <span class="form__radio-button"></span> 
+                                 <img src="assets/img/client/newPackage/shipBywasally.png" 
+                                 alt=" shipped by wasally "  class="shippedByWasally">  
+                                
+                          
+                          </label> 
                         </div>
-                      </div>
-                      <div class="filedInput">
-                          <h3>
-                            Cost
-                          </h3>
-                            <div class="form__group">
-                              <input type="text" class=" form__input" 
-                              name="cost" id="cost"  placeholder="cost" required ngModel>
-                              <label   for="cost" class="form__lable " > Expected Cost  </label> 
-                            </div>
-                          </div>
+                        <div class="form__radio-group  form__radio-group-2  ">
+                                <input type="radio" class="form__radio-input" id="large" name="size" disabled>
+                                
+                                <label for="large" class="form__radio-label">
+                                    <span class="form__radio-button"></span>
+                                Other captin
+                                 <span class="commingSoon"> (  Soon) </span>   
+                               </label> 
+                               </div>
 
-                          <div class="filedInput">
-                              <h3>
-                                Note 
-                              </h3>
-                                <div class="form__group">
-                                    <textarea rows="2" cols="40" class=" form__input" ngModel name="note">
-                                     
-                                        </textarea>
-                                </div>
+                    </div>
+
+                  </div>
+                  
+
+        </div>
 
 
-
-                              </div>
+     
+         
+             
+               
+                 
 
                             
      </div>

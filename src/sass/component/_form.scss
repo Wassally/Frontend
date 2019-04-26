@@ -20,10 +20,8 @@ How to use
         font-family: inherit; 
         padding:  1.5rem 2rem ; 
         background-color: #ffffff ; 
-
         border: 1px solid #32ffe7 ;
         border-radius: 2px ;
-        //width: 40rem;
         color:#000000;
         display: block; 
         &:focus{
@@ -52,4 +50,81 @@ How to use
         transform:translateY(-4rem);
 
     }
+
+&__radio-group{
+    width:49%;
+    display: inline-block ; 
+
 }
+
+&__radio-input{
+    display: none ; 
+}
+&__radio-label{
+    font-size: 1.6rem ;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+}
+&__radio-button{
+    display: inline-block ; 
+    width: 3rem ; 
+    height: 3rem;
+    border: 5px solid $client-primary-color ; 
+    border-radius: 50% ; 
+    position: absolute ; 
+    top:-.7rem ; 
+    left: 0 ; 
+    &::after{
+        content: "";
+        width:1.3rem ; 
+        height: 1.3rem;
+        border-radius: 50% ;
+        position: absolute ;
+        top: 50% ; 
+        left: 50% ; 
+        transform: translate(-50% , -50%) ; 
+        background-color: $client-primary-color;
+        opacity: 0;
+        transition: opacity .2s ;
+
+        
+    }
+
+}
+&__radio-input:checked ~ &__radio-label &__radio-button::after{
+    opacity: 1;
+
+}
+
+
+
+
+}
+
+
+
+//////radio buttons 
+/*
+<div class="form__group  ">
+                                <div class="form__radio-group">
+                                 <input type="radio" class="form__radio-input" id="small" name="size">
+                                 
+                                 <label for="small" class="form__radio-label"> 
+                                        <span class="form__radio-button"></span> 
+                                    Small tour group </label> 
+                                </div>
+                                <div class="form__radio-group">
+                                        <input type="radio" class="form__radio-input" id="large" name="size">
+                                        
+                                        <label for="large" class="form__radio-label">
+                                            <span class="form__radio-button"></span>
+                                            large tour group </label> 
+                                       </div>
+
+                            </div>
+
+*/
+
+
+

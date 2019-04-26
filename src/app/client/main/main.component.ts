@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
 
     
-    this.router.navigate(['/main/deliveries']);
+    this.router.navigate(['/main/newDelivery']);
   }
 
 

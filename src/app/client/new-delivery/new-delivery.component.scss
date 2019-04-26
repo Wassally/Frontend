@@ -3,35 +3,58 @@
 @import '../../../sass/component/secHeading' ;
 @import '../../../sass/component/form';
 
-
+.secHeading{
+    margin: 3rem 2rem 0rem ;
+}
 .newPackageForm{
-    margin : 5rem 0rem 1rem 1rem;
+    margin : 3rem 0rem 1rem 1rem;
     display: flex;
+    flex-direction: column ;
     flex-wrap: wrap;
     @include respond(phone){
         flex-direction: column;
     }
 
+
+    .depSection{
+        display: flex; 
+        flex-wrap: wrap ;
+        margin-bottom: 1rem ;
+        @include respond(phone){
+            flex-direction: column;
+        }
+    
+        >h2 {
+            color: #1B7F79;
+            width: 100% ; 
+            margin: 0 2rem 2rem 0  ; 
+            font-weight: 600;
+            text-align: center;
+    
+        }
+    }
+
 }
 .filedInput{
     display: flex ;
-    
+    margin-right: 1rem;
+    align-items: center ; 
+    width: 48%;
 
-    width: 42% ;
-    margin-right: 4rem;
     @include respond(phone){
-       width: 100% ; 
-        
+       width: 100% ;     
     }
-    //justify-content: space-between;
-   
-    h3{
+
+    &-nolable{
+        margin-bottom: 1rem;
+    }
+  
+    >span{
         font-size: 2rem;
-        margin: 1rem 1rem 0 1rem ;
-        width:50%;
+        margin: 0rem 1rem 2rem 1rem ;
         @include respond(phone){
             font-size: 1.7rem;
-            margin: 1rem 2rem 0 0rem ;
+            margin: 1rem 1rem 0 0rem ;
         }
     }
 }
@@ -40,33 +63,171 @@
 
     &__input{
         margin-right: 0 ;
-      padding:  1rem 2rem;
+         padding:  1rem 2rem;
         border: none ;
         border-bottom: 1px solid $client-primary-color ;
         border-radius: 3px ;
-        width: 24rem;
+        width: 22rem;
         &::-webkit-input-placeholder{
             color: #363636;
 
         }
 
+        &-sm{
+            width: 18rem; 
+        }
+        @include respond(phone){
+            width: 20rem;
+        }
 
     }
+    &__group{
+        display: flex;
+       /// align-items: center;
+        flex-direction: column ;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+    &__unit{
+        font-size: 1.5rem !important ; 
+        color: #363636;
+    }
   
+}
+
+//select Menue styling
+.selectInput{
+    display: flex ;
+    align-content: center;
+    align-items: center ;
+    margin-bottom: 2rem ;
+    width: 50% ;
+    @include respond(phone){
+        width: 90% ;;
+    }
+ 
+    label{
+        font-size: 2em ;
+        margin : 0rem 1rem  0rem 1rem ;
+    }
+}
+
+.select{
+
+    font-size:1.5rem ; 
+    font-family: inherit; 
+    padding:  1rem 1rem ; 
+    background-color: #ffffff ; 
+    border: none ; 
+    border-bottom: 1px solid $client-primary-color ;
+    border-radius: 2px ;
+    color:#000000;
+    width:50% ;
+    
+    
+    }
+
+.select-lable{
+    //display: block ; 
+    font-size: 1.5rem ;
+}
+//Custome styling 
+.fullAddress{
+    width: 30rem;
+      
+     
+   
+    @include respond(phone){
+        width: 25rem;
+    }
+}
+
+
+.transportation{
+    width: 35% ;
+}
+
+//Radio custome 
+.shipprdOptions{
+    background-color:#251f2b ;
+    margin: 2rem 2rem 0 5rem;
+    border-radius: 5px;
+    @include respond(phone){
+        margin: 2rem 1rem 0 -2.2rem;
+    }
+  >span{
+    color: #ffffff ;
+    @include respond(phone){
+        margin-bottom: 1rem;
+    }
+}
+}
+.radioFormGroup{
+    width: 100% ;
+   
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    align-items: ce;
+    
+
+    ;
+    flex-direction: row ;
+    margin-left: 6rem;
+
+    &-lable{
+       display: flex ; 
+       align-items: center ; 
+       
+    }
+}
+.shippedByWasally{
+    width: 10rem ; 
+    height: auto;
+}
+.form__radio-label{
+    color: #ffffff ;
+    
+}
+
+.form__radio-group-2{
+    margin: 0 3rem 0 0rem;
+    
+    
+    
+}
+.commingSoon{
+    color: red ; 
+    font-size: 1rem ;
+  //  display: block ;
 }
 
 .postButton{
     display: flex ; 
     justify-content: center ;
-    margin-top: 3rem;
+    margin: 3rem  0rem 2rem 0rem; 
+    @include respond(phone){
+        margin: 0rem  0rem 2rem 0rem; 
+       
+    }  
+  
     button{
         color: #ffffff ; 
         background-color: $client-primary-color ;
-        width: 20rem ;  
+        width: 20rem ;
+        @include respond(phone){
+            width: 40rem ;
+           
+        }  
     }
    
     
 
 
 }
+
+
+//////////////////////////////////////////
+
+
 
