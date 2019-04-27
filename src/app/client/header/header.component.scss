@@ -45,6 +45,60 @@
 
 
 }
-a{ text-decoration: none ;}
+a  { text-decoration: none ;}
+
+
+///// drop down 
+
+.dropDowm-option{
+    display: flex ; 
+    flex-direction: column ; 
+    &--sel{
+        cursor: pointer;
+        color: $color-white; 
+        font-size: 1.6rem; 
+        margin: 0 1rem ;
+    }
+    &--down{
+
+        position: absolute ; 
+        top: 7.5vh;
+    right: 8%; 
+        z-index: 100000;
+       border-radius: 2px ;
+        
+        background-color: $color-white;
+        -webkit-box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
+        -moz-box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
+        box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
+
+        >ul{
+            list-style: none;
+            
+            align-items: center;
+            padding: 0 ;
+        }
+        li{ 
+            
+           
+            >a{
+                cursor: pointer;
+                font-size: 1.5rem ;
+                padding: .5rem 2rem; 
+                color: inherit;
+            }
+            >a:hover{
+                background-color:#365899 ;
+                color:$color-white ; 
+    
+            }
+            
+           
+        }
+        
+    }
+}
+
+
 
 

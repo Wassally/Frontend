@@ -4,11 +4,34 @@
     </div>
 
     <div class="header__profile d-flex align-items-center">
-
+            
+            
         <div class="header_profile-img ">
                 <img src="assets/img/client/kenawy.jpg" alt="user profile photo" class="header__profile-img-">
             </div>
+
             <a routerLink = "profile" class="header__profile-link"> Ahmed </a>
+
+            <div class="dropDowm-option">
+                <div class="dropDowm-option--sel" (click)="showop()" >
+                    <svg class="header__profile__notification-bell">
+                        <use xlink:href="assets/img/svg/allSvg.svg#icon-triangle-down"></use>
+                    </svg>
+                </div>
+            </div>
+                <div class="dropDowm-option--down" *ngIf="show" >
+                    <ul>
+                        <li>
+                            <a href="#"> view Profile  </a>
+                        </li>
+                         <li>
+                            <a href="#"> setting  </a>
+                        </li>
+                        <li>
+                                <a (click)="onSignOut()"> sign Out  </a>
+                            </li>
+                    </ul>
+                </div>
             <div class="header__profile__notification">
                 <svg class="header__profile__notification-bell">
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-notification"></use>
