@@ -12,7 +12,7 @@ export class SignOutServices{
 
     }
     signOut(){
-        debugger;
+       
         localStorage.removeItem('token') ;
         localStorage.removeItem('user') ;  
         this.router.navigate(['/signin']);
