@@ -12,7 +12,7 @@
         <h2> Shipped From </h2>
         <div class="selectInput">
         <label    class=" select-lable ">   Governate</label>
-        <select class="   select select__governate" name="governate" ngModel >
+        <select class="   select select__governate" name="from_governate" ngModel >
           <option>  Governate</option>
             <option>Cairo</option>
              <option>-----</option>
@@ -20,7 +20,7 @@
         </div>
         <div class="selectInput">
          <label    class=" select-lable ">   City </label>
-        <select class="   select select__city" name="city" ngModel >
+        <select class="   select select__city" name="from_city" ngModel >
           <option>  city</option>
             <option>City 1 </option>
              <option>-----</option>
@@ -30,7 +30,7 @@
           <span> Address </span>
          <div class="form__group ">
           <input type="text" class=" form__input fullAddress " 
-          name="sourceAddress" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
+          name="from_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
           <label   for="sourceAddress" class="form__lable " > dst, st</label> 
         </div>
       </div>
@@ -42,7 +42,7 @@
               <span> Reciever Name </span>
              <div class="form__group ">
               <input type="text" class=" form__input  " 
-              name="reciver Name" id="reciver Name"  placeholder="Reciver full Name" required ngModel>
+              name="receiver_name" id="reciver Name"  placeholder="Reciver full Name" required ngModel>
               <label   for="reciver Name" class="form__lable " > Reciver full Name</label> 
             </div>
           </div>
@@ -50,13 +50,13 @@
               <span> Phone Number </span>
              <div class="form__group ">
               <input type="text" class=" form__input  " 
-              name="reciverPhoneNumber" id="reciverPhoneNumber"  placeholder="Mobile or Home " required ngModel>
+              name="receiver_phone_number" id="reciverPhoneNumber"  placeholder="Mobile or Home " required ngModel>
               <label   for="reciverPhoneNumber" class="form__lable " > Mobile or Home</label> 
             </div>
           </div>
           <div class="selectInput">
           <label    class=" select-lable ">   Governate</label>
-          <select class="   select select__governate" name="governate" ngModel >
+          <select class="   select select__governate" name="to_governate" ngModel >
             <option>  Governate</option>
               <option>Cairo</option>
                <option>-----</option>
@@ -64,7 +64,7 @@
           </div>
           <div class="selectInput">
            <label    class=" select-lable ">   City </label>
-          <select class="   select select__city" name="city" ngModel >
+          <select class="   select select__city" name="to_city" ngModel >
             <option>  city</option>
               <option>City 1 </option>
                <option>-----</option>
@@ -74,7 +74,7 @@
             <span> Address </span>
            <div class="form__group ">
             <input type="text" class=" form__input fullAddress " 
-            name="sourceAddress" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
+            name="to_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
             <label   for="sourceAddress" class="form__lable " > dst, st</label> 
           </div>
         </div>
@@ -95,7 +95,7 @@
                 <span> weight </span>
                <div class="form__group ">
                 <input type="text" class=" form__input  form__input-sm  " 
-                name="packageWeight" id="packageWeight"  placeholder="Approximate  weight " required ngModel>
+                name="weight" id="packageWeight"  placeholder="Approximate  weight " required ngModel>
               
               </div>
               <span class="form__unit" > Kg </span>
@@ -105,7 +105,7 @@
                 <span > Cost Estimation </span>
                <div class="form__group ">
                 <input type="text" class=" form__input  form__input-sm " 
-                name="costEstimation" id="costEstimation"  placeholder="Put your offer" required ngModel>
+                name="cost_estimation" id="costEstimation"  placeholder="Put your offer" required ngModel>
               
               </div>
               <span class="form__unit"> LE </span>
@@ -113,7 +113,7 @@
 
             <div class="selectInput transportation">
                 <label for="transportation"   class=" select-lable "> Transportation   </label>
-               <select  id="transportation"  class="select  " name="city" ngModel >
+               <select  id="transportation"  class="select  " name="transportation" ngModel >
                  <option>  Any </option>
                    <option>Bike </option>
                     <option>car  </option>

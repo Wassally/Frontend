@@ -22,7 +22,7 @@ export class PackagesComponent implements OnInit {
     .subscribe(
       (params:Params)=>{
         this.id= +params['id'];
-        this.package = this.packageService.getpackages(this.id) ;
+        this.package = this.packageService.getpackage(this.id) ;
 
       }
     )

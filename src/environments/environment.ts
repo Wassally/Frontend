@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false ,
-  api_url :  'http://mahmoudzeyada.pythonanywhere.com/api' ,
+  api_url :  'https://wassally.herokuapp.com/api' ,
 };
 
 /*

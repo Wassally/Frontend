@@ -11,39 +11,37 @@ import { APIService } from './api.service';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+ * package services* of client  
+ */
 export class ClientPackagesService {
   
-  constructor(private http:HttpClient , 
-  private userServices : UserService , 
-  private api : APIService
+  constructor(
+    private http:HttpClient , 
+    private userServices : UserService , 
+    private api : APIService
   
-  ) {}
+  ) {
+    this.currentUser.packages.forEach((element  , index :number) =>{
+     this.userPackages[index] =  new Package(element) ;
+  })
+  }
    path  = '/packages/' ;
- /* token = localStorage.getItem('token') ;
-   httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': `Token ${this.token}`
-    })
-  };*/
 
-  
- 
-
-    userPackage : Array<Package> = []; 
-    getUserpackage(){
+  /**
+   * userPackages  =>  Array of object  package Model 
+   */
+  currentUser : User =  JSON.parse(localStorage.getItem('user'));
+    userPackages : Array<Package> = []; 
+    getUserpackages(){
      
-       const currentUser : User =  JSON.parse(localStorage.getItem('user'));
-      currentUser.packages.forEach((element  , index :number) =>{
-          const packageModel = new Package(element) ;
-          this.userPackage[index] =  packageModel ;
-      })
-      return this.userPackage;  
+      return this.userPackages;  
     } 
 
 
-    getpackages(packageNumber:number)  {
-      return this.userPackage.find((element)=>{
+    getpackage(packageNumber:number)  {
+      return this.userPackages.find((element)=>{
         return element.packageNumber == packageNumber ;
       })
     }

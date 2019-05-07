@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientPackagesService } from '../core/services/client-packages.service';
+import { NewDelivery } from '../core/models/newDelivery.model';
 
 @Component({
   selector: 'app-new-delivery',
@@ -14,18 +15,28 @@ export class NewDeliveryComponent implements OnInit {
   ngOnInit() {
     
   }
-  postOrder(form:NgForm){ 
-   const newPackage  = {
-    to_person:form.value.recipientName,
-    to_place:form.value.recipientAddress ,
-    from_place:form.value.pickingLocation ,
-    note:form.value.note ,
-    time_day:form.value.duration,
-    offer_money:form.value.cost,
-    weight:form.value.packageWeight,
-    time_hours: '0' ,
-    time_minutes:'0'
+  postOrder(form:NgForm){
+  
+   const fromForm  = {
+    from_governate:form.value.from_governate,
+    from_city:form.value.from_city ,
+    from_address:form.value.from_address ,
+    to_governate:form.value.to_governate ,
+    to_city:form.value.to_city,
+    to_address:form.value.to_address,
+    receiver_name:form.value.receiver_name,
+    receiver_phone_number:form.value.receiver_phone_number,
+    duration:form.value.duration,
+    weight:form.value.weight,
+    note:form.value.note,
+    transportation:form.value.transportation,
+    cost_estimation:form.value.cost_estimation,
+    transport_way:"wassally",
    }
+   const newPackage= new NewDelivery(fromForm)
+
+   console.log (newPackage) ;
+
    this.packageServer.postPackage(newPackage) 
    .subscribe((Response) => {
      console.log(Response) 
