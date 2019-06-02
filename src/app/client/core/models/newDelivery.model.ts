@@ -1,3 +1,10 @@
+/**
+ * new Delevery model   from UI to server 
+ * this model is for the api request 
+   *get data from View Form and assign it to the model  
+ * 
+ */
+
 export class NewDelivery{
 public to_governate :string ;
 public to_city :string ;
@@ -15,6 +22,7 @@ public transportation :string;
 public cost_estimation :number ;
 public to_location:any;
 public from_location :any ;
+public sender_phone_number:number ;
 
 
 constructor(
@@ -35,6 +43,11 @@ newPackage :any
  this.transport_way = newPackage.transport_way  ; 
  this.transportation = newPackage.transportation  ;
  this.cost_estimation = newPackage.cost_estimation  ;
+ this.sender_phone_number = 252518 ;
+ /**
+  * location from map 
+  * now its a default  and will comming soon  after implement the Google Map 
+  */
  this.to_location ={
     "latitude":  "40.733362" ,
     "longitude": "-74.188435"

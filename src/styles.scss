@@ -10,6 +10,19 @@
 
 
 
-html{font-size: 62.5%;}
+html{
+    // that define 1rem
+    font-size: 62.5%;
+@include respond(tab-land){  // 1rem = 9px = 56.25% width<1200
+    font-size: 56.25% ; 
+}
+// phone will be 1rem = 8px like tab-port
+@include respond(tab-port){ // 1rem = 8px = 50.25% width<900
+    font-size: 50% ; 
+}
+
+@include respond(big-desktop){  // 1rem = 12px 
+    font-size: 75% ; 
+}}
 body{box-sizing: border-box ;}
 

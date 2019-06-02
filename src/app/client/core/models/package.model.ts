@@ -1,4 +1,7 @@
-
+/**
+ * User Package Model (user packages that return from api )
+  * will change  
+ */
 
 export class Package{
     packageNumber  : number ;
@@ -28,7 +31,7 @@ export class Package{
         this.max_duration=userPackage.time_day;
         this.weight=userPackage.weight;
         this.createdDate=userPackage.created_at;
-        this.relatedoffersCoumt=userPackage.related_offers.length;
+        this.relatedoffersCoumt=2;
         this.relatedoffers=userPackage.related_offers;
         
         
