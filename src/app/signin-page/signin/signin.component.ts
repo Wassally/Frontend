@@ -37,13 +37,16 @@ export class SigninComponent implements OnInit {
         
         localStorage.setItem('token' , user.auth_token);
         this.userService.id= user.user_id;
+        
+        localStorage.setItem('id' , JSON.stringify(user.user_id) ) ;
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
             const currentUser  = new User(respond) ;
             this.userService.user = currentUser ; 
-            localStorage.setItem('user' , JSON.stringify(currentUser)) 
-            console.log(this.userService.user)
+          //  localStorage.setItem('user' , JSON.stringify(currentUser)) 
+           // console.log(this.userService.user)
+              this.packagesService.setUser();
                this.router.navigate(['/main']) ;
           } , 
           (err)=>{
