@@ -16,6 +16,9 @@ import { HeaderInterceptor } from './core/interceptors/http.header.interceptor';
 import { TrackComponent } from './track/track.component';
 import { SearchTrackComponent } from './track/search-track/search-track.component';
 import { PackageTrackComponent } from './track/package-track/package-track.component';
+import { MatrialDesignModule } from '@app/shared/modules/matrial-design.module';
+
+
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { PackageTrackComponent } from './track/package-track/package-track.compo
     CommonModule ,
     clientRoutingModule , 
     FormsModule ,
-    HttpClientModule , 
+    HttpClientModule ,
+    MatrialDesignModule , 
   ] , 
   providers:[
     {

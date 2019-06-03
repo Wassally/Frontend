@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertComponent } from './shared/components/alert.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptor } from './client/core/interceptors/http.header.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HeaderInterceptor } from './client/core/interceptors/http.header.interc
     BrowserModule,
     NgbModule,
     AppRoutingModule ,
-    HttpClientModule 
+    HttpClientModule,
+    BrowserAnimationsModule  , 
+     
     
   ],
   providers: [
