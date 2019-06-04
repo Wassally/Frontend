@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientPackagesService } from '../core/services/client-packages.service';
 import { NewDelivery } from '../core/models/newDelivery.model';
-import {FormControl, Validators} from '@angular/forms';
-
 
 @Component({
   selector: 'app-new-delivery',
@@ -13,7 +11,9 @@ import {FormControl, Validators} from '@angular/forms';
 export class NewDeliveryComponent implements OnInit {
 
   constructor( private  packageServer : ClientPackagesService) { }
-  email = new FormControl('', [Validators.required, Validators.email]);
+ 
+
+               
   ngOnInit() {
     
   }
@@ -51,10 +51,8 @@ export class NewDeliveryComponent implements OnInit {
 
   }
 
-  getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
-  }
+  
+  
+
   
 }

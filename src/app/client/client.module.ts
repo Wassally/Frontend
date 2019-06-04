@@ -8,7 +8,7 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
@@ -30,6 +30,7 @@ import { MatrialDesignModule } from '@app/shared/modules/matrial-design.module';
     FormsModule ,
     HttpClientModule ,
     MatrialDesignModule , 
+    ReactiveFormsModule
   ] , 
   providers:[
     {

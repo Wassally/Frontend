@@ -17,23 +17,27 @@ export class MainComponent implements OnInit {
   
 
     ) { }
-  showNav:boolean =true;
+    showSpinner:boolean = false;
+  showNav:boolean =true ;
   show(){
     this.showNav = ! this.showNav ; 
+   
   }
   ngOnInit() {
 
     
    //To prevent app crash while refreash th page 
-    if(!this.userService.user){
+    
+      this.showSpinner=true ;
       this.userService.getUserData().subscribe(respnse=>{
+        this.showSpinner=false;
       const currentUser  = new User(respnse) ;
       this.userService.user = currentUser ; 
       this.packagesService.setUser();
        
     }
       )
-    }
+    
     this.router.navigate(['/main/deliveries']);
   }
 

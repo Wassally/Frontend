@@ -8,6 +8,8 @@ import { AlertComponent } from './shared/components/alert.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderInterceptor } from './client/core/interceptors/http.header.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule , FormsModule  } from '@angular/forms';
+
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AlertComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     NgbModule,
     AppRoutingModule ,
     HttpClientModule,
-    BrowserAnimationsModule  , 
-     
+    BrowserAnimationsModule , 
+    ReactiveFormsModule  ,
+    FormsModule
+    
     
   ],
   providers: [
