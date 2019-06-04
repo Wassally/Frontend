@@ -20,6 +20,12 @@ export class UserService {
    }
 
   getUserData(){  
+    // this if user refreash the page  
+
+    // get the id from localStorage and update the data 
+    if(!this.id){
+      this.id = Number(localStorage.getItem('id'));
+    }
     const path = `/accounts/${this.id}` ; 
       return this.apiServer.get(path)  
       ; 

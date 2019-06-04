@@ -6,7 +6,9 @@
             <client-side-nav-bar></client-side-nav-bar>
             </div>
             <div class="col-xs-8 col-md-8 scrollbar scrollbar-danger">
-                <router-outlet></router-outlet>
+              
+              <router-outlet></router-outlet>
+              <mat-spinner *ngIf="showSpinner" class="spinner" ></mat-spinner>
         
                 
 

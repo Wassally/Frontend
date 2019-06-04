@@ -1,6 +1,8 @@
 @import '../../../sass/mixins' ; 
 @import '../../../sass/component/secHeading';
 
+
+
 ul {
     list-style-type: none;
 }
@@ -84,3 +86,16 @@ a{
     width: 2rem ; 
     height: 2rem ; ;
 }
+
+
+////
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  

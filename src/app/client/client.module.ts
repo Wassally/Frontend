@@ -8,7 +8,7 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
@@ -16,6 +16,9 @@ import { HeaderInterceptor } from './core/interceptors/http.header.interceptor';
 import { TrackComponent } from './track/track.component';
 import { SearchTrackComponent } from './track/search-track/search-track.component';
 import { PackageTrackComponent } from './track/package-track/package-track.component';
+import { MatrialDesignModule } from '@app/shared/modules/matrial-design.module';
+
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { PackageTrackComponent } from './track/package-track/package-track.compo
     CommonModule ,
     clientRoutingModule , 
     FormsModule ,
-    HttpClientModule , 
+    HttpClientModule ,
+    MatrialDesignModule , 
+    ReactiveFormsModule
   ] , 
   providers:[
     {

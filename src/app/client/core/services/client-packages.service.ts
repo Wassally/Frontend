@@ -23,17 +23,26 @@ export class ClientPackagesService {
     private api : APIService
   
   ) {
-    this.currentUser.packages.forEach((element  , index :number) =>{
-     this.userPackages[index] =  new Package(element) ;
-  })
+   
   }
    path  = '/packages/' ;
 
   /**
    * userPackages  =>  Array of object  package Model 
    */
-  currentUser : User =  JSON.parse(localStorage.getItem('user'));
+ 
+    currentUser  :User ; 
     userPackages : Array<Package> = []; 
+    
+    setUser (){
+      this.currentUser = this.userServices.user;
+      if(this.currentUser.packages){
+      this.currentUser.packages.forEach((element  , index :number) =>{
+      this.userPackages[index] =  new Package(element) ;
+       })  
+      }
+    }
+    
     getUserpackages(){
      
       return this.userPackages;  
