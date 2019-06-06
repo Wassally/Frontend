@@ -12,18 +12,16 @@
         <h2> Shipped From </h2>
         <div class="selectInput">
         <label    class=" select-lable ">   Governate</label>
-        <select class="   select select__governate" name="from_governate" ngModel >
-          <option>  Governate</option>
-            <option>Cairo</option>
-             <option>-----</option>
+        <select class="select select__governate" name="from_governate"  (change)="onChange($event)" ngModel >
+          <option  *ngFor = "let gov of governate "> {{gov}}  </option>
+            
          </select>
         </div>
         <div class="selectInput">
          <label    class=" select-lable ">   City </label>
         <select class="   select select__city" name="from_city" ngModel >
-          <option>  city</option>
-            <option>City 1 </option>
-             <option>-----</option>
+          <option *ngFor = "let city of cities "> {{city}} </option>
+          
          </select>
         </div>
         <div class="filedInput ">
@@ -56,18 +54,14 @@
           </div>
           <div class="selectInput">
           <label    class=" select-lable ">   Governate</label>
-          <select class="   select select__governate" name="to_governate" ngModel >
-            <option>  Governate</option>
-              <option>Cairo</option>
-               <option>-----</option>
+          <select class="   select select__governate" name="to_governate" (change)="onChangeTo($event)" ngModel >
+            <option  *ngFor = "let gov of governate "> {{gov}}  </option>
            </select>
           </div>
           <div class="selectInput">
            <label    class=" select-lable ">   City </label>
           <select class="   select select__city" name="to_city" ngModel >
-            <option>  city</option>
-              <option>City 1 </option>
-               <option>-----</option>
+            <option *ngFor = "let city of citiesTo "> {{city}} </option>
            </select>
           </div>
           <div class="filedInput ">

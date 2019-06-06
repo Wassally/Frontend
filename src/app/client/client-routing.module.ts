@@ -6,10 +6,11 @@ import { DeliveriesComponent } from './deliveries/deliveries.component';
 import { PackagesComponent } from './packages/packages.component';
 import { CaptinProfileComponent } from './captin-profile/captin-profile.component';
 import { NewDeliveryComponent } from './new-delivery/new-delivery.component';
-import { AuthGuard } from '@app/signin-page/auth/auth.guard';
+
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 import { TrackComponent } from './track/track.component';
+import { AuthGuard } from '@app/Authentucation/signin-page/auth/auth.guard';
 
 const clientRouter : Routes =[
     {

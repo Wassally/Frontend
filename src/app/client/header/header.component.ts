@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SigninAuthService } from '@app/signin-page/auth/signin-auth.service';
+
 import { Subscription } from 'rxjs';
-import { SignOutServices } from '@app/signin-page/auth/signOut.service';
+import { SignOutServices } from '@app/Authentucation/signin-page/auth/signOut.service';
+import { SigninAuthService } from '@app/Authentucation/signin-page/auth/signin-auth.service';
+
 
 @Component({
   selector: 'app-client-header',
