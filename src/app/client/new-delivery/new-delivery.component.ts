@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientPackagesService } from '../core/services/client-packages.service';
 import { NewDelivery } from '../core/models/newDelivery.model';
+import { govCity } from '../core/services/GovCity.service';
 
 @Component({
   selector: 'app-new-delivery',
@@ -10,13 +11,19 @@ import { NewDelivery } from '../core/models/newDelivery.model';
 })
 export class NewDeliveryComponent implements OnInit {
 
-  constructor( private  packageServer : ClientPackagesService) { }
+  constructor(
+     private  packageServer : ClientPackagesService , 
+     private GovCity : govCity
+     
+     ) { }
  
 
                
   ngOnInit() {
     
   }
+
+
   postOrder(form:NgForm){
   
    const fromForm  = {
@@ -49,6 +56,18 @@ export class NewDeliveryComponent implements OnInit {
    }
     );
 
+  }
+
+governate =this.GovCity.governate;
+cities = this.GovCity.cities[0];
+citiesTo = this.GovCity.cities[0];
+  onChange(e : Event){
+    const index : number = event.target["selectedIndex"] ;
+    this.cities = this.GovCity.cities[index];
+  }
+  onChangeTo(e : Event){
+    const i : number = event.target["selectedIndex"] ;
+    this.citiesTo = this.GovCity.cities[i];
   }
 
   

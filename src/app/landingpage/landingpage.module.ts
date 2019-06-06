@@ -6,11 +6,12 @@ import { LandingMainComponent } from './landing-main/landing-main.component';
 import { LandingheaderComponent } from './landingheader/landingheader.component';
 import { LandingServicesComponent } from './landing-services/landing-services.component';
 // import { LandingFooterComponent } from './landing-footer/landing-footer.component';
-import { SigninComponent } from '../signin-page/signin/signin.component';
-import { SigninPageModule } from '../signin-page/signin-page.module';
 import { FooterModule } from '../shared/modules/footer.module';
-import { SignupPageComponent } from '../signup/signup-page/signup-page.component';
-import { SignupModule } from '../signup/signup.module';
+import { SigninComponent } from '@app/Authentucation/signin-page/signin/signin.component';
+import { SignupPageComponent } from '@app/Authentucation/signup/signup-page/signup-page.component';
+import { SigninPageModule } from '@app/Authentucation/signin-page/signin-page.module';
+import { SignupModule } from '@app/Authentucation/signup/signup.module';
+
 
 const landingRoutes: Routes = [
   {
