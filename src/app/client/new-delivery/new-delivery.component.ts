@@ -58,7 +58,7 @@ export class NewDeliveryComponent implements OnInit {
 
   }
 
-governate =this.GovCity.governate;
+governate =this.GovCity.governorates ;
 cities = this.GovCity.cities[0];
 citiesTo = this.GovCity.cities[0];
   onChange(e : Event){
