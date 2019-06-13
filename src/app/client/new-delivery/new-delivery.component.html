@@ -11,7 +11,7 @@
       <div class="depSection">
         <h2> Shipped From </h2>
         <div class="selectInput">
-        <label    class=" select-lable ">   Governate</label>
+        <label    class=" select-lable ">   Governorate </label>
         <select class="select select__governate" name="from_governate"  (change)="onChange($event)" ngModel >
           <option  *ngFor = "let gov of governate "> {{gov}}  </option>
             
@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="selectInput">
-          <label    class=" select-lable ">   Governate</label>
+          <label    class=" select-lable ">   Governorate </label>
           <select class="   select select__governate" name="to_governate" (change)="onChangeTo($event)" ngModel >
             <option  *ngFor = "let gov of governate "> {{gov}}  </option>
            </select>

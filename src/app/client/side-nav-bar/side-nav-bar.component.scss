@@ -131,4 +131,49 @@ position: relative;
 .Sub_activeNav{
     color:  $client-primary-color !important ;
 }
-/////////////////////////////////////////////
+/////////////////////   Footer  /////////
+
+.footer{
+    display: flex ; 
+    flex-direction: column ; 
+    align-items: center ; 
+    justify-content: center ;
+    border-top: 1px solid #ffffff ; 
+    &__logo{
+        h1{
+            color:#ffffff ;
+            font-size: 1.8rem; 
+        }
+    }
+    &__downloadApp{
+        &-link{
+
+        }
+        &-img{
+            height: 3rem ; 
+            width: auto ;
+        }
+    }
+    &__social{
+        p{
+            color: #ffffff ; 
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        ul{
+        display: flex ; 
+
+            li{
+                a{
+                    img{
+                        width: 3rem ; 
+                        height: 3rem;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+        } 
+
+    }
+}

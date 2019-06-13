@@ -2,49 +2,71 @@
 @import './../../../sass/mixins.scss';
 
 .btns {
-    width: 100%;
+    margin-top: 1rem ; 
+    width: 50%;
+    display: flex ; 
+    align-items: center ;
+    justify-content: center ;
 }
 
    .c_button{
-        width: 30%;
-        margin-left: 10% ; 
+        width: 35%;
+      // margin-left: 10% ;
+      
         &__join{
             color:$color-white; 
-            background-color:  $primary-color ;
+            background-color:  #F2B035 ;
+            font-size: 2rem;
+                font-weight: 600 ;
+
         }
         &__signin{
             color:$color-white; 
             background-color:  $primary-color ; 
+              animation: moveBot .7s ease-out .7s ; 
+            animation-fill-mode: backwards ;
         }
         &__signup{
             color:$color-white; 
-            background-color:  #194955 ;
+            background-color:#007bff ;
+            font-size: 2rem;
+            animation: moveBot .7s ease-out .7s ; 
+            animation-fill-mode: backwards ;
+            padding: 1rem 0 ; 
         }
         @include respond(phone){
-          margin-left: 5%;
-            width: 42%
+        
+            width: 80%;
 
-        }  
+        } 
+        
+        
 
 
     }
 
 .main{
-    margin: 10rem 0 ;
-
+    
     @include respond(phone){
         margin-top: 2rem;
 
       }  
-&__text{
 
-    margin: 6.4rem 0;
-    font-size: 3.5rem;
-    color: var(--info);
+      &__col{
+          display: flex;
+      }
+&__text{
+    align-content: center ; 
+    justify-items: center ;
+    font-size: 3rem;
+    color:#fff ;
+    font-weight: 600;
+    width: 100% ;
 
 }
     &__img{
             width: 100% ;
+            height: auto;
             border-radius: 5px; 
 
         }
@@ -52,5 +74,113 @@
 
 }
 .user2{
- margin-bottom: 12.5rem; 
+ margin: 12.5rem 0 ; 
+ height: 70vh;
+}
+
+
+.topElement-sec{
+    margin: 6rem 0 ;
+    background-image:  linear-gradient(  to right ,  rgba(255, 0, 12, 0)  ,rgba(25, 73, 85, 0)  )  ,url( ../../../assets/img/main1.jpg);
+    
+    background-size: cover;
+   background-position: top ;
+   height: 70vh;
+  
+ 
+}
+
+.clientHead {
+    color:#fff ;
+    text-transform: uppercase ;
+    &-top{
+        background-color:  #0D0D0D; 
+        margin-right: -8rem;
+        padding: .8rem ; 
+        border-radius: 2px ; 
+        animation: moveLeft 1s ease-out ;
+        backface-visibility: hidden; 
+
+    }
+    
+        &-bottom{
+        background-color: #F21313; 
+        padding: .8rem ; 
+        border-radius: 2px ; 
+        animation: moveRight .8s ease-out ;
+        backface-visibility: hidden; 
+      
+    }
+}
+
+.captinHead{
+    
+
+    display: flex ;
+    flex-direction: column ; 
+    justify-content: center ;
+    margin-top: 3rem ;
+    text-align: center ;
+    
+    &-p{
+        color : #0D0D0D ; 
+        margin-bottom: 2rem;
+        font-size: 4rem;
+
+       
+    }
+}
+
+
+            // text Animation 
+
+
+@keyframes moveLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px) ; 
+    }
+
+    80%{
+        
+        transform: translateX(20px) ; 
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0) ; 
+    }
+
+}
+
+@keyframes moveRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px) ; 
+    }
+
+    80%{
+        
+        transform: translateX(-20px) ; 
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0) ; 
+    }
+
+}
+@keyframes  moveBot{
+    0%{
+        opacity: 0;
+        transform: translateY(50px) ; 
+    }
+
+    
+
+    100%{
+        opacity: 1;
+        transform: translateY(0) ; 
+    }
+
 }

@@ -31,9 +31,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   showop(){
     this.show = !this.show ; 
+    
   }
   onSignOut(){
     this.signOut.signOut();
   }
+
+   
+
+
 
 }

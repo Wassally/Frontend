@@ -1,8 +1,24 @@
 nav.navbar {
-    background-color:#FF0044 !important; 
-    font-size: 1.6rem;
+    background-color:#0D0D0D !important; 
+    font-size: 2rem;
 }
 
 .navbar-brand{
-    font-size: 4rem;
+    font-size: 2rem;
 }
+
+.nav-signin{
+    background-color: #013D96 ; 
+    &:hover{
+        color: rgb(236, 231, 232) !important; 
+    }
+
+}
+
+.nav-link-c{
+  &:hover{
+    color: #FF0044 !important; 
+}
+}
+
+

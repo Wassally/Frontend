@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
   export class govCity {
     
-    governate=[
+    governorates =[
         "Cairo",
         "Giza",
         "Alexandria",
