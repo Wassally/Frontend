@@ -1,0 +1,69 @@
+@import '../../../../sass/variable';
+
+.UpdateHeader{
+   margin :3rem 0 2rem.5rem ;
+    display: flex ; 
+    align-items: center ; 
+    justify-content: flex-start;
+
+    &__svg{
+        width: 3rem ;
+        height: 3rem;
+        fill : #00a3e0; 
+        
+    }   
+    &__text{
+        font-size: 2rem ;
+        margin-left: .5rem;
+    }
+}
+
+.updateCards{
+    background-color: #dee2e6;
+    width: 100%;
+    &__lists{
+       list-style: none;
+        display: flex ; 
+        justify-content: center ; 
+        align-items: flex-start ; 
+        flex-direction: column ;
+        margin: 1rem 0rem;
+        padding: 0 ; 
+     
+      
+        
+    }
+
+    &__list{
+        margin: 0 0 .3rem 0 ; 
+      background-color: #fff ; 
+        width: 100% ; 
+        font-size: 1.3rem ;
+        height: 6rem;;
+       a{
+           display: flex ; 
+           color: #000 ; 
+
+           svg{
+               width: 2.5rem  ; 
+               height: 2.5rem ; 
+               fill: #1b7f79 ; 
+               margin: 0  4px;  
+           }
+       }
+       a:hover{
+           text-decoration: none;
+            background-color:rgba(222, 226, 230, 0.47)
+       }
+
+       
+       
+       
+        &--text{
+
+        }
+    }
+    
+
+
+}

@@ -29,12 +29,13 @@ export class SigninComponent implements OnInit {
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
       (user : {
+        
         auth_token :string  ,
         email:string ,
         name:string , 
         user_id:number
       })=> {console.log(user);
-        
+      
         localStorage.setItem('token' , user.auth_token);
         this.userService.id= user.user_id;
         
@@ -42,12 +43,13 @@ export class SigninComponent implements OnInit {
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
+            this.router.navigate(['/main']) ;
             const currentUser  = new User(respond) ;
             this.userService.user = currentUser ; 
           //  localStorage.setItem('user' , JSON.stringify(currentUser)) 
            // console.log(this.userService.user)
               this.packagesService.setUser();
-               this.router.navigate(['/main']) ;
+              //  this.router.navigate(['/main']) ;
           } , 
           (err)=>{
             console.log(err)

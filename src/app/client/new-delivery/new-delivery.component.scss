@@ -19,10 +19,15 @@
     .depSection{
         display: flex; 
         flex-wrap: wrap ;
-        margin-bottom: 1rem ;
+        margin-bottom: 3rem ;
+       
+        -webkit-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+        -moz-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+        box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
         @include respond(phone){
             flex-direction: column;
         }
+
     
         >h2 {
             color: #1B7F79;
@@ -34,6 +39,10 @@
         }
     }
 
+}
+
+.bottomBorder{
+    border-bottom: 1px solid #1B7F79;
 }
 .filedInput{
     display: flex ;
