@@ -11,7 +11,7 @@ import { Package } from '../core/models/package.model';
 export class PackagesComponent implements OnInit {
   id :number ;
   @Input() package : Package ; 
-   
+  stateIsPending = false ;    
 
   constructor( private roue : ActivatedRoute , 
                 private packageService : ClientPackagesService
@@ -23,9 +23,13 @@ export class PackagesComponent implements OnInit {
       (params:Params)=>{
         this.id= +params['id'];
         this.package = this.packageService.getpackage(this.id) ;
-
+        if(this.package.state=="pending"){
+          this.stateIsPending=true;
+        }
       }
     )
   }
+
+ 
 
 }

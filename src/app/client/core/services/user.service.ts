@@ -31,6 +31,11 @@ export class UserService {
       ; 
     
   }
+
+  // updateUserData(updatedData:any){
+  //   const path = `/accounts/${this.id}`;
+  //   return this.apiServer.post(path , updatedData)
+  // }
   
 
 }

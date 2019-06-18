@@ -43,7 +43,7 @@ export class DeliveriesComponent implements OnInit {
     openPackage( inpackage :Package){
     
     
-      this.id=inpackage.packageNumber ; 
+      this.id=inpackage.id ; 
   
     }
     
