@@ -19,12 +19,16 @@ import { PackageTrackComponent } from './track/package-track/package-track.compo
 import { MatrialDesignModule } from '@app/shared/modules/matrial-design.module';
 import { RightSideComponent } from './right-side/right-side.component';
 import { UpdatesComponent } from './right-side/updates/updates.component';
+import { MapComponent } from './map/map.component';
+import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
+
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent, TrackComponent, SearchTrackComponent, PackageTrackComponent, RightSideComponent, UpdatesComponent 
+  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent, TrackComponent, SearchTrackComponent, PackageTrackComponent, RightSideComponent, UpdatesComponent, MapComponent 
   ],
   imports: [
     CommonModule ,
@@ -32,7 +36,11 @@ import { UpdatesComponent } from './right-side/updates/updates.component';
     FormsModule ,
     HttpClientModule ,
     MatrialDesignModule , 
-    ReactiveFormsModule
+    ReactiveFormsModule , 
+    AgmCoreModule.forRoot({
+      apiKey: `${environment.googleMapKey}` 
+    }) , 
+    
   ] , 
   providers:[
     {
@@ -41,3 +49,4 @@ import { UpdatesComponent } from './right-side/updates/updates.component';
   ]
 })
 export class ClientModule { }
+//AIzaSyBnLSpuk-r3uXnlaoyKP6E6UPcBdLq7sbU

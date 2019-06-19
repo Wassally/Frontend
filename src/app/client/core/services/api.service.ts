@@ -45,4 +45,12 @@ export class APIService {
     return this.http.delete(
       `${environment.api_url}${path}`)
    }
+/**
+ * patch to modify record 
+ */
+   patch(path: string, body: Object = {}): Observable<any>{
+    return this.http.patch (
+      `${environment.api_url}${path}`,
+      body)
+   }
 }

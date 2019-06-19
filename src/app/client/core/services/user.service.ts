@@ -31,11 +31,15 @@ export class UserService {
       ; 
     
   }
-
-  // updateUserData(updatedData:any){
-  //   const path = `/accounts/${this.id}`;
-  //   return this.apiServer.post(path , updatedData)
+  // updateUser(){
+  //   this.getUserData().subscribe()
   // }
+
+  updateUserData(updatedData:any){
+    const path = `/accounts/${this.id}/`;
+    console.log(updatedData)
+    return this.apiServer.patch(path , updatedData)
+  }
   
 
 }
