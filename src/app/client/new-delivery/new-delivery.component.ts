@@ -4,6 +4,7 @@ import { ClientPackagesService } from '../core/services/client-packages.service'
 import { NewDelivery } from '../core/models/newDelivery.model';
 import { govCity } from '../core/services/GovCity.service';
 
+
 @Component({
   selector: 'app-new-delivery',
   templateUrl: './new-delivery.component.html',
@@ -13,7 +14,8 @@ export class NewDeliveryComponent implements OnInit {
 
   constructor(
      private  packageServer : ClientPackagesService , 
-     private GovCity : govCity
+     private GovCity : govCity , 
+     
      
      ) { }
  
@@ -49,7 +51,8 @@ export class NewDeliveryComponent implements OnInit {
    this.packageServer.postPackage(newPackage) 
    .subscribe((Response) => {
      console.log(Response) 
-     console.log('package Created successfuly')
+     console.log('package Created successfuly') ; 
+    
    } ,
    (error)=>{
      console.log(error)

@@ -36,6 +36,7 @@ export class ClientPackagesService {
     
     setUser (){
       this.currentUser = this.userServices.user;
+      console.log(this.currentUser) ;
       if(this.currentUser.packages){
       this.currentUser.packages.forEach((element  , index :number) =>{
       this.userPackages[index] =  new Package(element) ;
@@ -51,7 +52,7 @@ export class ClientPackagesService {
 
     getpackage(packageNumber:number)  {
       return this.userPackages.find((element)=>{
-        return element.packageNumber == packageNumber ;
+        return element.id == packageNumber ;
       })
     }
 

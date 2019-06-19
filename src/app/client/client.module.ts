@@ -17,12 +17,14 @@ import { TrackComponent } from './track/track.component';
 import { SearchTrackComponent } from './track/search-track/search-track.component';
 import { PackageTrackComponent } from './track/package-track/package-track.component';
 import { MatrialDesignModule } from '@app/shared/modules/matrial-design.module';
+import { RightSideComponent } from './right-side/right-side.component';
+import { UpdatesComponent } from './right-side/updates/updates.component';
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent, TrackComponent, SearchTrackComponent, PackageTrackComponent 
+  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent, TrackComponent, SearchTrackComponent, PackageTrackComponent, RightSideComponent, UpdatesComponent 
   ],
   imports: [
     CommonModule ,

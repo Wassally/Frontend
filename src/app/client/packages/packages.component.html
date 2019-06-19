@@ -10,7 +10,7 @@
   <ul class="packageDetailes__ul">
 
     <li class="packageDetailes__li">
-      Package Number :  <span class="packageDetailes__li-value">{{package.packageNumber}}</span>
+      Package Number :  <span class="packageDetailes__li-value">{{package.id}}</span>
     </li>
   <!--  <li class="packageDetailes__li">
         Captin :   <span class="packageDetailes__li-value">
@@ -24,27 +24,28 @@
       <li class="packageDetailes__li">
           To :    <span class="packageDetailes__li-value">
               <a href="#" class="Packagevisit-profile">
-              <img src="assets/img/client/package/girl2.png" alt="reciver  small photo" class="packageDetailes-img-sm">
-              {{package.Reciver}}
+              <!--<img src="assets/img/client/package/girl2.png" alt="reciver  small photo" class="packageDetailes-img-sm">  -->
+              {{package.receiver_name}}
             </a>
           </span>
         </li>
         <li class="packageDetailes__li">
             Location :   <span class="packageDetailes__li-value">
-                {{package.destinationAddress}} 
+              {{package.receive_governate}}, {{package.receive_city}},{{package.receive_address}}
             </span>
           </li>
           <li class="packageDetailes__li">
-              From  :  <span class="packageDetailes__li-value">  {{package.sourceAddress}} </span>
+              From  :  <span class="packageDetailes__li-value"> 
+                  {{package.sender_governate}}, {{package.sender_city}},{{package.sender_address}} </span>
             </li>
             <li class="packageDetailes__li">
                weight :  <span class="packageDetailes__li-value">{{package.weight}}</span>
               </li>
               <li class="packageDetailes__li">
-                  State :  <span class="packageDetailes__li-value"> {{package.packageState}} </span>
+                  State :  <span class="packageDetailes__li-value"> {{package.state}} </span>
               </li>
               <li class="packageDetailes__li">
-               created at  :  <span class="packageDetailes__li-value">{{package.createdDate}}</span>
+               created at  :  <span class="packageDetailes__li-value">{{package.created_at}}</span>
               </li>
               <li class="packageDetailes__li">
                   My Note :  <span class="packageDetailes__li-value">
@@ -56,7 +57,7 @@
   
 </div>
   <!--Edit cancelOrder(when state is pending)  Buttons -->
-  <div class=" editCancelButtons">
+  <div class=" editCancelButtons" *ngIf="stateIsPending">
 
       <button type="button" class="Cbtn c_button  c_button__join PD-button PD-button-Primary ">Edit Package</button>
       <button type="button" class="Cbtn c_button  c_button__join PD-button PD-button-danger">Cancel Package</button>

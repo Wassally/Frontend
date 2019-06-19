@@ -13,7 +13,7 @@
       <ul class="package__details "  (click) = "openPackage(package)"> 
         <li class="package__detail  "  >
           <h3 class="package__detail--h">Package Number</h3>
-          <span class="package__detail--v"> {{package.packageNumber}}</span >
+          <span class="package__detail--v"> {{package.id}}</span >
         </li>
         <li class="package__detail  "  >
             <h3 class="package__detail--h">Location</h3>
@@ -22,7 +22,7 @@
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
                 </svg>
               
-              {{package.destinationAddress}}</span >
+              {{package.receive_governate}}, {{package.receive_city}} </span >
           </li>
           <li class="package__detail  "  >
               <h3 class="package__detail--h">Offers</h3>
@@ -34,7 +34,7 @@
           
             <li class="package__detail  "  >
                 <h3 class="package__detail--h">State</h3>
-                <span class="package__detail--v"> {{package.packageState}}</span >
+                <span class="package__detail--v"> {{package.state}}</span >
               </li>
               
       </ul>

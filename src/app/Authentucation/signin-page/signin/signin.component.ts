@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { UserService } from '@app/client/core/services/user.service';
 import { ClientPackagesService } from '@app/client/core/services/client-packages.service';
 import { User } from '@app/client/core/models/user.model';
+import { HttpErrorResponse } from '@angular/common/http';
+import { throwError } from 'rxjs';
 
 
 @Component({
@@ -13,11 +15,15 @@ import { User } from '@app/client/core/models/user.model';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  [x: string]: any;
 
   constructor( private signinAuth : SigninAuthService 
      ,private router :Router
      , private userService:UserService , 
-     private packagesService :ClientPackagesService ) { }
+     private packagesService :ClientPackagesService , 
+    
+     
+     ) { }
  
  /***
   * need to be arranged ! ! 
@@ -29,12 +35,13 @@ export class SigninComponent implements OnInit {
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
       (user : {
+        
         auth_token :string  ,
         email:string ,
         name:string , 
         user_id:number
       })=> {console.log(user);
-        
+      
         localStorage.setItem('token' , user.auth_token);
         this.userService.id= user.user_id;
         
@@ -42,12 +49,13 @@ export class SigninComponent implements OnInit {
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
+            this.router.navigate(['/main']) ;
             const currentUser  = new User(respond) ;
             this.userService.user = currentUser ; 
           //  localStorage.setItem('user' , JSON.stringify(currentUser)) 
            // console.log(this.userService.user)
               this.packagesService.setUser();
-               this.router.navigate(['/main']) ;
+              //  this.router.navigate(['/main']) ;
           } , 
           (err)=>{
             console.log(err)
@@ -55,9 +63,13 @@ export class SigninComponent implements OnInit {
         )
      
       },
-      (error)=>{
-        console.log(error)
-        alert("invalid Email or password ");
+      (error:HttpErrorResponse)=>{
+        
+                if(error.status==400){
+                  alert("invalid Email or password ");
+                }
+        // console.log(error)
+        // alert("invalid Email or password ");
       }
     );
   }
