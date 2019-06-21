@@ -1,42 +1,50 @@
 <div class="container">
   <div class="secHeading">
+
     <span class="secHeading__icone">
       <img src="assets/img/client/package/box.png" alt="Box icone" class="secHeading__icone-img">
     </span>
     <h2 class="secHeading__text"> New package</h2>
     </div>
+ 
     
 <form  (ngSubmit)="postOrder(m)" #m="ngForm"  >
     <div class="newPackageForm">
-      <div class="depSection bottomBorder">
+              <!-- Package Source    -->
+
+      <div class="depSection bottomBorder" *ngIf="sourceSection">
         <h2> Shipped From </h2>
-        <div class="selectInput">
-        <label    class=" select-lable ">   Governorate </label>
-        <select class="select select__governate" name="from_governate"  (change)="onChange($event)" ngModel >
-          <option  *ngFor = "let gov of governate "> {{gov}}  </option>
-            
-         </select>
-        </div>
-        <div class="selectInput">
-         <label    class=" select-lable ">   City </label>
-        <select class="   select select__city" name="from_city" ngModel >
-          <option *ngFor = "let city of cities "> {{city}} </option>
-          
-         </select>
-        </div>
+        <app-map></app-map>
+       
         <div class="filedInput ">
-          <span> Address </span>
+          <span> Compelete  Address </span>
          <div class="form__group ">
           <input type="text" class=" form__input fullAddress " 
           name="from_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
           <label   for="sourceAddress" class="form__lable " > dst, st</label> 
         </div>
       </div>
+
+      <div class="postButton">
+        <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openReciver()" >Next</button>
+       </div>
       </div>
 
-      <div class="depSection bottomBorder">
+                          <!-- Package Destination    -->
+      <div class="depSection bottomBorder " *ngIf="destinationSection">
           <h2> Shipped TO </h2>
+          <app-map></app-map>
+
           <div class="filedInput ">
+              <span> Complete  Address </span>
+             <div class="form__group ">
+              <input type="text" class=" form__input fullAddress " 
+              name="to_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
+              <label   for="sourceAddress" class="form__lable " > dst, st</label> 
+            </div>
+          </div>
+          <div class="d-flex justify-content-start flex-wrap">
+          <div class="filedInput " >
               <span> Reciever Name </span>
              <div class="form__group ">
               <input type="text" class=" form__input  " 
@@ -52,29 +60,25 @@
               <label   for="reciverPhoneNumber" class="form__lable " > Mobile or Home</label> 
             </div>
           </div>
-          <div class="selectInput">
-          <label    class=" select-lable ">   Governorate </label>
-          <select class="   select select__governate" name="to_governate" (change)="onChangeTo($event)" ngModel >
-            <option  *ngFor = "let gov of governate "> {{gov}}  </option>
-           </select>
+         
           </div>
-          <div class="selectInput">
-           <label    class=" select-lable ">   City </label>
-          <select class="   select select__city" name="to_city" ngModel >
-            <option *ngFor = "let city of citiesTo "> {{city}} </option>
-           </select>
-          </div>
-          <div class="filedInput ">
-            <span> Address </span>
-           <div class="form__group ">
-            <input type="text" class=" form__input fullAddress " 
-            name="to_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
-            <label   for="sourceAddress" class="form__lable " > dst, st</label> 
-          </div>
+        <div class="buttonGroup">
+        
+         <div class="postButton ">
+          <button type="button" class="Cbtn c_button backButton c_button__join postButton__btn backButton" (click)=" openSource()" >Back</button>
+         </div>
+         <div class="postButton">
+            <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openotherDetailes()" >Next</button>
+           </div>
+        </div>  
         </div>
-        </div>
-        <div class="depSection">
+
+                   <!--  package Detailes      -->
+        <div class="depSection  " *ngIf="otherDetailesSection">
             <h2> Extra Information </h2>
+            <div class="d-flex justify-content-start flex-wrap">
+
+            
             <div class="filedInput filedInput-nolable  ">
                 <span> Duration </span>
                <div class="form__group ">
@@ -94,7 +98,7 @@
               </div>
               <span class="form__unit" > Kg </span>
             </div>
-
+<!--
             <div class="filedInput filedInput-nolable ">
                 <span > Cost Estimation </span>
                <div class="form__group ">
@@ -104,7 +108,7 @@
               </div>
               <span class="form__unit"> LE </span>
             </div>
-
+-->
             <div class="selectInput transportation">
                 <label for="transportation"   class=" select-lable "> Transportation   </label>
                <select  id="transportation"  class="select  " name="transportation" ngModel >
@@ -115,7 +119,7 @@
 
                 </select>
                </div>
-
+              </div>
                <div class="shippedby">
 
                </div>
@@ -159,23 +163,19 @@
 
                   </div>
                   
-
-        </div>
-
-
-     
-         
-             
-               
-                 
-
-                            
+                  <div class="buttonGroup">
+        
+                      <div class="postButton ">
+                       <button type="button" class="Cbtn c_button backButton c_button__join postButton__btn backButton" (click)="  openReciver()" >Back</button>
+                      </div>
+                      <div class="postButton">
+                         <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openotherDetailes()" >Post Package </button>
+                        </div>
+                     </div>     
+        </div>  
+                        
      </div>
-     <div class="postButton">
-
-     
-     <button type="submit" class="Cbtn c_button  c_button__join postButton ">Post Order</button>
-    </div>
+    
   </form>
   
 

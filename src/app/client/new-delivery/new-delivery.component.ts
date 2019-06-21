@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClientPackagesService } from '../core/services/client-packages.service';
 import { NewDelivery } from '../core/models/newDelivery.model';
-import { govCity } from '../core/services/GovCity.service';
+import { MapService } from '../core/services/map.service';
 
 
 @Component({
@@ -11,10 +11,39 @@ import { govCity } from '../core/services/GovCity.service';
   styleUrls: ['./new-delivery.component.scss']
 })
 export class NewDeliveryComponent implements OnInit {
+/**
+ * object of  Address  with default location 
+ * formated Address the address from google map
+ * restaddress bulding number and floor number , street number   
+ */
+  sourceAddress={
+    location: 
+        {
+         
+          lat:26.77580395481242 , 
+          lng:32.35276413720135  
+        } , 
+    forrmatted_address:'default' ,
+    restaddress: 'default str 1 '
+  }
+  destinationAddress={
+    location: 
+        {
+         lat:26.77580395481242 , 
+          lng:32.35276413720135  
+        } , 
+    forrmatted_address:'default' ,
+    restaddress: 'default str 2'
+  }
+  // create package  steps 
+  sourceSection : boolean = true ; 
+  destinationSection:boolean=false ; 
+  otherDetailesSection:boolean=false ; 
 
   constructor(
      private  packageServer : ClientPackagesService , 
-     private GovCity : govCity , 
+    
+     private mapService :MapService
      
      
      ) { }
@@ -22,10 +51,38 @@ export class NewDeliveryComponent implements OnInit {
 
                
   ngOnInit() {
-    
+
+    /**
+     * Get the location From map Service 
+     * Map Return  object of location as an observable 
+     */
+  
+    this.mapService.sharedLocation.subscribe(
+      (address :any)=>{
+        let that = this ;
+        //assign the source location to the sourcelocation object when the user in the From Page  
+        if(this.sourceSection){
+        
+          that.sourceAddress.location.lat = address.location.lat ; 
+          that.sourceAddress.location.lng = address.location.lng;
+          that.sourceAddress.forrmatted_address = address.forrmatted_address ;
+
+        }
+       //assign the destination location to the destinationlocation object when the user in the To Page  
+
+      if(this.destinationSection){
+        that.destinationAddress.location.lat = address.location.lat ; 
+          that.destinationAddress.location.lng =address.location.lng;
+          that.destinationAddress.forrmatted_address =address.forrmatted_address ;
+        }
+
+        console.log(this.sourceAddress)
+
+      }
+    )
   }
-
-
+ 
+// Post the package Send it to server 
   postOrder(form:NgForm){
   
    const fromForm  = {
@@ -61,20 +118,25 @@ export class NewDeliveryComponent implements OnInit {
 
   }
 
-governate =this.GovCity.governorates ;
-cities = this.GovCity.cities[0];
-citiesTo = this.GovCity.cities[0];
-  onChange(e : Event){
-    const index : number = event.target["selectedIndex"] ;
-    this.cities = this.GovCity.cities[index];
-  }
-  onChangeTo(e : Event){
-    const i : number = event.target["selectedIndex"] ;
-    this.citiesTo = this.GovCity.cities[i];
-  }
 
-  
-  
+  /**
+   * new package steps 
+   */
+  openSource(){
+    this.sourceSection=true ;
+    this.destinationSection=false;
+    this.otherDetailesSection=false
+  }
+  openReciver(){
+    this.sourceSection=false ;
+    this.destinationSection=true;
+    this.otherDetailesSection=false
 
-  
+  }
+  openotherDetailes(){
+    this.sourceSection=false ;
+    this.destinationSection=false;
+    this.otherDetailesSection=true;
+  }
+ 
 }

@@ -128,3 +128,61 @@ How to use
 
 
 
+/// search bar 
+.trackSearch{
+    display: flex ; 
+    width: 90%; 
+    justify-content: center ; 
+    margin: 5rem auto;
+    @include respond(phone){
+      width: 100%;  
+    }
+    &__form{
+        display: flex ; 
+        flex: 0 0 70% ; 
+         justify-content: center;
+         align-items: center;
+
+         @include respond(phone){
+          flex: 0 0 90% ; 
+        }
+      &--input{
+         font-size: 2rem;
+        font-family: inherit;
+        color: inherit;
+        background-color:#f4f2f2 ; 
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -4rem;
+
+        @include respond(phone){
+          font-size: 1.5rem;
+        }
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: #f0eeee;
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 400;
+            color: #999;
+        }
+
+      }
+      &--button{
+        background-color:#f4f2f2 ; 
+        border: none;
+        border-radius: 100px;
+
+      }
+      &--icon{
+        width:2rem;
+        height: 2rem;
+      }
+  }  
+}

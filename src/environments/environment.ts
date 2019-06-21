@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false ,
-  api_url :  'https://wassally.herokuapp.com/api' ,
+  api_url :  'https://wassally.herokuapp.com/api' , 
+  googleMapKey : '' ,
 };
 
 /*

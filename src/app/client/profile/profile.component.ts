@@ -13,15 +13,26 @@ export class ProfileComponent implements OnInit {
   constructor(
     private userServices :UserService
   ) { }
-
+// UPDATE user profile photo 
   onSelectFile(event){
-    console.log(event) ;
+    
     if(event.target.files && event.target.files[0]){
     var reader = new FileReader() ; 
     reader.readAsDataURL(event.target.files[0]) ; 
     reader.onload = (event : any) =>{
-      this.url = event.target.result; 
-      console.log(this.url) ;
+      this.url = event.target.result;
+       const updatedData = {
+        "image": this.url
+      }
+      this.userServices.updateUserData(updatedData).subscribe(
+        ()=>{
+          
+        }
+        ,(error)=>{
+          console.log(error)
+        }
+      ) 
+     
     } 
   }
   }

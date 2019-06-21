@@ -19,11 +19,12 @@
     .depSection{
         display: flex; 
         flex-wrap: wrap ;
-        margin-bottom: 3rem ;
+      
+        flex-direction: column ;
        
-        -webkit-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
-        -moz-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
-        box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+        // -webkit-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+        // -moz-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+        // box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
         @include respond(phone){
             flex-direction: column;
         }
@@ -41,14 +42,12 @@
 
 }
 
-.bottomBorder{
-    border-bottom: 1px solid #1B7F79;
-}
+
 .filedInput{
     display: flex ;
     margin-right: 1rem;
     align-items: center ; 
-    width: 48%;
+    width: 60%;
 
     @include respond(phone){
        width: 100% ;     
@@ -56,6 +55,7 @@
 
     &-nolable{
         margin-bottom: 1rem;
+        width: 48%;
     }
   
     >span{
@@ -131,7 +131,7 @@
     border-bottom: 1px solid $client-primary-color ;
     border-radius: 2px ;
     color:#000000;
-    width:50% ;
+    width:70% ;
     
     
     }
@@ -154,15 +154,22 @@
 
 .transportation{
     width: 35% ;
+
+    @include respond(phone){
+        width: 70rem;
+    }
 }
 
 //Radio custome 
 .shipprdOptions{
     background-color:#251f2b ;
-    margin: 2rem 2rem 0 5rem;
+    margin: 4rem 2rem 2rem 5rem;
+    width: 65%;
+    
     border-radius: 5px;
     @include respond(phone){
-        margin: 2rem 1rem 0 -2.2rem;
+        margin: 2rem 1rem 3rem .8rem;
+        width: 100%;
     }
   >span{
     color: #ffffff ;
@@ -211,18 +218,22 @@
   //  display: block ;
 }
 
+
+ 
+
+
 .postButton{
     display: flex ; 
     justify-content: center ;
-    margin: 3rem  0rem 2rem 0rem; 
+    margin: 3rem  0rem .5rem 0rem; 
     @include respond(phone){
         margin: 0rem  0rem 2rem 0rem; 
        
     }  
   
-    button{
+    &__btn{
         color: #ffffff ; 
-        background-color: $client-primary-color ;
+        background-color: #007bff;
         width: 20rem ;
         @include respond(phone){
             width: 40rem ;
@@ -233,6 +244,21 @@
     
 
 
+}
+.buttonGroup{
+     display: flex ;
+     justify-content: space-around ; 
+     align-items: center ;  
+     @include respond(phone){
+        flex-direction: column-reverse ; 
+        justify-content: center ;
+    }
+
+
+}
+.backButton{
+   
+    background-color: #F21313 ;
 }
 
 
