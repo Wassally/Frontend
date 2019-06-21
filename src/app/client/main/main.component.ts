@@ -9,7 +9,8 @@ import { ClientPackagesService } from '../core/services/client-packages.service'
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit  {
+  
 
   constructor(private router :Router , 
     private userService :UserService ,
@@ -41,5 +42,7 @@ export class MainComponent implements OnInit {
     this.router.navigate(['/main/deliveries']);
   }
 
+  
+  
 
 }

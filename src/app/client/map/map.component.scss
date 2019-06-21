@@ -1,3 +1,13 @@
 agm-map{
     height: 300px ;
+    border-radius: 10px ;
+
+}
+
+.mapSearch{
+    margin : 1rem auto ;
+    text-align: center; 
+    &__input{
+    width: 80%; 
+    }
 }

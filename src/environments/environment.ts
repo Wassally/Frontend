@@ -5,7 +5,7 @@
 export const environment = {
   production: false ,
   api_url :  'https://wassally.herokuapp.com/api' , 
-  googleMapKey : 'AIzaSyBnLSpuk-r3uXnlaoyKP6E6UPcBdLq7sbU' ,
+  googleMapKey : '' ,
 };
 
 /*

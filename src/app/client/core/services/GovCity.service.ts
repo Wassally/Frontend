@@ -393,3 +393,39 @@ import { Injectable } from '@angular/core';
     
     
   }
+
+  /*
+  <div class="selectInput">
+  <label    class=" select-lable ">   Governorate </label>
+  <select class="select select__governate" name="from_governate"  (change)="onChange($event)" ngModel >
+    <option  *ngFor = "let gov of governate "> {{gov}}  </option>
+      
+   </select>
+  </div>
+  <div class="selectInput">
+   <label    class=" select-lable ">   City </label>
+  <select class="   select select__city" name="from_city" ngModel >
+    <option *ngFor = "let city of cities "> {{city}} </option>
+    
+   </select>
+  </div>
+-->*/
+
+
+/*
+
+component code 
+
+governate =this.GovCity.governorates ;
+cities = this.GovCity.cities[0];
+citiesTo = this.GovCity.cities[0];
+  onChange(e : Event){
+    const index : number = event.target["selectedIndex"] ;
+    this.cities = this.GovCity.cities[index];
+  }
+  onChangeTo(e : Event){
+    const i : number = event.target["selectedIndex"] ;
+    this.citiesTo = this.GovCity.cities[i];
+  }
+
+*/

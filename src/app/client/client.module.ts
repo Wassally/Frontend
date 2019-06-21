@@ -22,6 +22,7 @@ import { UpdatesComponent } from './right-side/updates/updates.component';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 
 
@@ -37,6 +38,7 @@ import { environment } from 'src/environments/environment';
     HttpClientModule ,
     MatrialDesignModule , 
     ReactiveFormsModule , 
+    GooglePlaceModule,
     AgmCoreModule.forRoot({
       apiKey: `${environment.googleMapKey}` 
     }) , 
@@ -49,4 +51,3 @@ import { environment } from 'src/environments/environment';
   ]
 })
 export class ClientModule { }
-//AIzaSyBnLSpuk-r3uXnlaoyKP6E6UPcBdLq7sbU
