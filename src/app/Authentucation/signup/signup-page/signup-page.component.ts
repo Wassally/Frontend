@@ -20,19 +20,19 @@ export class SignupPageComponent implements OnInit {
     const email  = form.value.email;
     const password = form.value.password;
     const phone = form.value.phone;
-    const city = form.value.city;
-    const governate =form.value.governate;
+    
     const userData = {
      
-      "username": firstName + '@' + lastName , 
-      "email" : email ,
+      "first_name": firstName , 
+      "last_name":lastName , 
+      "username":  (firstName+ lastName +((Math.random()*1000).toFixed(0)).toString()).toLowerCase(),
+      "email" : email ,    
       "password" : password ,
-      "governate":governate ,
-      "city" : city ,
       "is_client":"true" ,
       "is_captain": "false",
       "phone_number":phone
     } ;
+    console.log(userData);
     
     this.signupServices.signup(userData)
     .subscribe(

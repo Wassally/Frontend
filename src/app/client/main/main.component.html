@@ -1,4 +1,6 @@
-<app-client-header></app-client-header>
+<app-client-header
+[user]="user"
+></app-client-header>
 
 <div class=" container-fluid">
         <div class="row app">
@@ -7,7 +9,9 @@
             </div>
             <div class="col-xs-8 col-md-8 scrollbar scrollbar-danger">
               
-              <router-outlet></router-outlet>
+              <router-outlet
+              
+              ></router-outlet>
               <mat-spinner *ngIf="showSpinner" class="spinner" ></mat-spinner>
         
                 
@@ -27,6 +31,4 @@
           <span class="toggelBtn__icon">&nbsp;</span>    
       </label>
     </div>
-
-
     

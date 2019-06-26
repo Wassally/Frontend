@@ -7,49 +7,76 @@
     </div>
 
     <div class="editProfileForm">
-      <form action="submit" class="editProfilelable">
+      <form action="submit" class="editProfilelable" (ngSubmit)= "submitEdit(f)" #f="ngForm">
           <div class="form__group   ">
               <input type="text"
                class=" form__input " 
               name="firstName"
                id="firstName" 
-               value ="{{user.firstname}}" 
+               [(ngModel)]="user.firstName"
                required ngModel>
               <label   for="firstName" class="form__lable " > First Name  </label> 
             </div>
 
             
                 <div class="form__group   ">
-                    <input type="text" class=" form__input " 
-                    name="lastName" id="lastName" value="{{user.lastName}}" required ngModel>
+                    <input type="text" 
+                      class=" form__input " 
+                      name="lastName" 
+                      id="lastName"
+                      [(ngModel)]="user.lastName"
+                      required ngModel>
                     <label   for="lastName" class="form__lable " > last Name </label> 
                   </div>
                   
                   
-                      <div class="form__group    "  >
-                          <input type="enail" class=" form__input " 
-                          name="email" id="email" value="{{user.email}}" required ngModel>
+                      <div class="form__group "  >
+                          <input
+                           type="email" 
+                           class=" form__input " 
+                            name="email" 
+                            autocomplete="off"
+                            id="email" 
+                            [(ngModel)]="user.email"
+                            required ngModel>
                           <label   for="email" class="form__lable " > Email Address  </label> 
                         </div>
                         <div class="form__group   ">
-                            <input type="text" class=" form__input " 
-                            name="phoneNumber" id="phoneNumber" value="{{user.phoneNumber}}" required ngModel>
+                            <input
+                              type="text"
+                              class=" form__input " 
+                              name="phoneNumber" 
+                              id="phoneNumber"
+                              [(ngModel)]="user.phone_number"
+                              required ngModel>
                             <label   for="phoneNumber" class="form__lable " > Phone Number </label> 
                           </div>
                         
                             <div class="form__group   ">
-                                <input type="password" class=" form__input " 
-                                name="oldPassword" id="oldPassword"  required ngModel>
+                                <input
+                                 type="password" 
+                                 class=" form__input " 
+                                 name="oldPassword"
+                                
+                                 id="oldPassword"  
+                                 required ngModel
+                                 >
                                 <label   for="oldPassword" class="form__lable " > Old  Password  </label> 
                               </div>
                               
                                   <div class="form__group   ">
-                                      <input type="password" class=" form__input " 
-                                      name="newPasword" id="newPasword" required ngModel>
+                                      <input 
+                                      type="password" 
+                                      class=" form__input " 
+                                      name="newPasword" 
+                                      id="newPasword" 
+                                      autocomplete="off"    
+                                      required ngModel
+                                      >
                                       <label   for="newPasword" class="form__lable " > New Password  </label> 
                                     </div>
                                     
-                                    <div class="form__group select-div ">
+                                   <!-- <div class="form__group select-div ">
                                       <h3  >
                                         Home Address
                                       </h3>
@@ -72,10 +99,10 @@
                                              <option>6 october</option>
                                              <option>Small select</option>
                                            </select>
-                                          </div>
+                                          </div>-->
                                            
                                         <div class="updateBtn">
-                                          <button type="submit" class="Cbtn c_button  c_button__join updateButton "> Update Profile</button>
+                                          <button type="submit" class="Cbtn c_button  c_button__join updateButton" (click)="submitEdit()" > Update Profile</button>
                                         </div>
       </form>
     </div>

@@ -37,9 +37,16 @@ export class UserService {
 
   updateUserData(updatedData:any){
     const path = `/accounts/${this.id}/`;
-    console.log(updatedData)
+    console.log(updatedData);
     return this.apiServer.patch(path , updatedData)
   }
   
+
+
+  updateUserLocation(updatedLocation:any){
+    const path = `/clientaddress/`;
+    console.log((updatedLocation));
+    return this.apiServer.post(path , updatedLocation)
+  }
 
 }

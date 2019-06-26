@@ -140,9 +140,8 @@ position: relative;
     justify-content: center ;
     border-top: 1px solid #ffffff ; 
     &__logo{
-        h1{
-            color:#ffffff ;
-            font-size: 1.8rem; 
+        .footer__logo-white{
+            height: 2rem;
         }
     }
     &__downloadApp{

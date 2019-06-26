@@ -23,13 +23,29 @@ import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { Keys } from 'src/Keys';
+
 
 
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent, SideNavBarComponent, DeliveriesComponent, PackagesComponent, CaptinProfileComponent, NewDeliveryComponent, ProfileComponent, EditProfileComponent, TrackComponent, SearchTrackComponent, PackageTrackComponent, RightSideComponent, UpdatesComponent, MapComponent 
+  declarations: [HeaderComponent,
+     MainComponent, 
+     SideNavBarComponent,
+      DeliveriesComponent, 
+      PackagesComponent, 
+      CaptinProfileComponent, 
+      NewDeliveryComponent, 
+      ProfileComponent, 
+      EditProfileComponent, 
+      TrackComponent, 
+      SearchTrackComponent, 
+      PackageTrackComponent, 
+      RightSideComponent, 
+      UpdatesComponent, 
+      MapComponent 
   ],
   imports: [
     CommonModule ,
@@ -40,7 +56,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     ReactiveFormsModule , 
     GooglePlaceModule,
     AgmCoreModule.forRoot({
-      apiKey: `${environment.googleMapKey}` 
+      apiKey: `${Keys.googleMapApi}` 
     }) , 
     
   ] , 

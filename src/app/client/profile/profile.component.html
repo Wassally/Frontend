@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container backdrop">
 <div class="secHeading">
   <span class="secHeading__icone">
     <img src="assets/img/client/Profile/profileHeading.png" alt="Box icone" class="secHeading__icone-img">
@@ -9,7 +9,7 @@
   <div class="fullProfile">
     <label for="uploadPhoto">
     <div class="fullProfile__img imageHover-img">
-      <img [src]=" url ? url :  'https://www.w3schools.com/howto/img_avatar.png' " alt="Profile Picture">
+      <img src="{{user.image}}" alt="Profile Picture">
       <div class="imageHover-text"> Upload Photo </div>
       <div class="imageHover-background"></div>
       
@@ -20,7 +20,7 @@
   <input type="file" id="uploadPhoto" (change)="onSelectFile($event)" accept="image/*" >
     <div class="fullProfile__info">
       <div class="fullProfile__info-name">
-        <h2> Ahmed Elkenawy </h2>
+        <h2> {{user.firstName}} {{user.lastName}} </h2>
       </div>
       <!--<div class="fullProfile__info-address">
         <svg class="">
@@ -34,21 +34,17 @@
           <use xlink:href="assets/img/svg/allSvg.svg#icon-mobile
           "></use>
       </svg>
-        <h3> 01097886284 </h3>
+        <h3>  {{user.phone_number}} </h3>
       </div>
       <div class="fullProfile__info-email">
         <svg class="">
           <use xlink:href="assets/img/svg/allSvg.svg#icon-message1
           "></use>
       </svg>
-        <h3> ahmed.elkenawy95@gmail.com </h3>
+        <h3> {{user.email}}</h3>
       </div>
     </div>
-  <div class="editProfile">
-    <a [routerLink]= "['editProfile']">
-    <button type="button" class="Cbtn c_button  c_button__join editProfile-btn "> Edit Profile </button>
-  </a>
-  </div>
+  
   </div>
 <div class="ProfileSecSection">
   <div class="extraInfo">   
@@ -57,11 +53,19 @@
             <use xlink:href="assets/img/svg/allSvg.svg#icon-home
             "></use> 
         </svg>  
-      Home  
+      Home   Adddress  :
      </h3>
-     <p>
+     <p >
        Mnsoura , Aga , 18st ,  floor 3 
      </p>
+
+     <button class="editAddressButton" (click)="editHomeAddress()">
+        <svg class="">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-edit-pencil
+            "></use> 
+        </svg>  
+      Edit  
+     </button>
 
 
     <!--<div class="extraInfo__deliveries">
@@ -83,6 +87,7 @@
       </h3>
     </div>-->
   </div>
+  
  <!-- <div class="extraInfo">   
       <h3 class="extraInfo__address" >
          <svg class="">
@@ -99,6 +104,29 @@
 
 </div>
 <div class="editProfile">
-  
+  <a [routerLink]= "['editProfile']">
+  <button type="button" class="Cbtn c_button  c_button__join editProfile-btn "> Edit Profile </button>
+</a>
+</div>
+
+<div class="GetAddressFromMap" *ngIf="editAddress">
+  <app-map>
+  </app-map>
+
+  <div class="filedInput  d-flex " >
+      <span class = " restaddress"> Rest Of the   Address </span>
+      <form  (ngSubmit)="updateAddress(m)" #m="ngForm"  >
+      <div class="form__group ">
+      <input type="text" class=" form__input fullAddress " 
+      name="restaddress" id="restaddress"  placeholder="District , street , floor Number" required ngModel>
+      <label   for="restaddress" class="form__lable " > dst, st</label> 
+    </div>
+    <button type="submit"  class="Cbtn c_button updateBtn  " > Update  </button>
+</form>
+  </div>
 </div>
 </div>
+
+
+
+

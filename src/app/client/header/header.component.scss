@@ -8,13 +8,14 @@
     
     &__logo{
         margin-left:3%;
+        &-white{
+            height: 3rem;
+            width: auto ; 
+        }
         
     }
 
-    &__logo h1{
-        font-size: 3rem;
-        color: $color-white;
-    }
+   
     &__profile{
         
         margin-right: 10%;

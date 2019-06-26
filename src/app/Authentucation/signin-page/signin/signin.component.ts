@@ -49,13 +49,11 @@ export class SigninComponent implements OnInit {
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
-            this.router.navigate(['/main']) ;
+          
             const currentUser  = new User(respond) ;
             this.userService.user = currentUser ; 
-          //  localStorage.setItem('user' , JSON.stringify(currentUser)) 
-           // console.log(this.userService.user)
-              this.packagesService.setUser();
-              //  this.router.navigate(['/main']) ;
+            this.packagesService.setUser();
+            this.router.navigate(['/main']) ;
           } , 
           (err)=>{
             console.log(err)
@@ -68,8 +66,7 @@ export class SigninComponent implements OnInit {
                 if(error.status==400){
                   alert("invalid Email or password ");
                 }
-        // console.log(error)
-        // alert("invalid Email or password ");
+       
       }
     );
   }
