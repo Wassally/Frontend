@@ -47,60 +47,55 @@
   
   </div>
 <div class="ProfileSecSection">
-  <div class="extraInfo">   
+  <div class="addAddress">
+      <button class="editAddressButton  addAddress-btn " (click)="addAddress()">
+          <svg class="">
+              <use xlink:href="assets/img/svg/allSvg.svg#icon-new-message
+              "></use> 
+          </svg>  
+        Add Address  
+       </button>
+  </div>
+  <div class="extraInfo" *ngFor = "let addr of address let i = index"  >   
      <h3 class="extraInfo__address" >
         <svg class="">
-            <use xlink:href="assets/img/svg/allSvg.svg#icon-home
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-location
             "></use> 
         </svg>  
-      Home   Adddress  :
+        Adddress {{ i + 1 }}  
      </h3>
-     <p >
-       Mnsoura , Aga , 18st ,  floor 3 
+     <p class="d-flex flex-column" >
+       <span>
+      {{addr.address.formated_address}}  
+       </span>
+      <span >
+          {{addr.address.address_description}} 
+      </span>
      </p>
+     
+<div class="option-btn">
 
-     <button class="editAddressButton" (click)="editHomeAddress()">
+
+     <button class="editAddressButton" (click)="editHomeAddress(addr.address.id)">
         <svg class="">
             <use xlink:href="assets/img/svg/allSvg.svg#icon-edit-pencil
             "></use> 
         </svg>  
       Edit  
      </button>
-
-
-    <!--<div class="extraInfo__deliveries">
-      <p class="extraInfo__deliveries--count">
-        5
-      </p>
-      <h3 class="deliveries">
-
-        deliveries
-      </h3>
+     <button class="editAddressButton delete-btn" (click)="deleteAddress(addr.address.id)" color="red" >
+          <svg class="">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-edit-pencil
+            "></use> 
+        </svg>  
+        delete  
+     </button>
     </div>
-    <div class="extraInfo__friends">
-      <p class="extraInfo__deliveries--count">
-        5
-      </p>
-      <h3 class="deliveries">
 
-        deliveries
-      </h3>
-    </div>-->
+
   </div>
   
- <!-- <div class="extraInfo">   
-      <h3 class="extraInfo__address" >
-         <svg class="">
-             <use xlink:href="assets/img/svg/allSvg.svg#icon-location
-             "></use> 
-         </svg>  
-       Work  
-      </h3>
-      <p>
-        cairo , NacerCity , 18st ,  floor 3 
-      </p>
-
-   </div>-->
+ 
 
 </div>
 <div class="editProfile">
@@ -109,7 +104,7 @@
 </a>
 </div>
 
-<div class="GetAddressFromMap" *ngIf="editAddress">
+<div class="GetAddressFromMap" *ngIf="openMap">
   <app-map>
   </app-map>
 

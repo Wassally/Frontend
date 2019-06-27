@@ -43,10 +43,6 @@ export class UserService {
   
 
 
-  updateUserLocation(updatedLocation:any){
-    const path = `/clientaddress/`;
-    console.log((updatedLocation));
-    return this.apiServer.post(path , updatedLocation)
-  }
+  
 
 }

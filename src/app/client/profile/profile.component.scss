@@ -145,14 +145,16 @@ a{
 
 .ProfileSecSection{
     display: flex;
+    flex-direction: column ; 
+    align-items: flex-start ;
 }
 
 .extraInfo{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:center ; 
-    align-items: center ;
-    margin-top: 2rem;
+    align-items: flex-start ;
+    margin: 2rem;
     
     &__address{
         font-size: 2.5rem;
@@ -209,7 +211,7 @@ a{
     border: none ; 
     text-decoration: none ; 
     color: #1B7F79 ;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     background-color: inherit ;
     margin-left: 2rem ;
 
@@ -219,6 +221,26 @@ a{
         fill: $client-primary-color-1;
         top:-.2rem; 
     }
+}
+.addAddress{
+    left: 70%;
+    margin-top: 2rem;
+    position: relative;
+    
+    &-btn{
+     color: #007bff ;
+     font-size: 2rem;
+     svg{
+        width: 2.5rem ; 
+        height: 2.5rem;
+        fill: $client-primary-color-1;
+        
+    } 
+}
+}
+
+.delete-btn{
+  color:   #dc3545 ; 
 }
 .GetAddressFromMap{
     margin-bottom: 2rem; 
