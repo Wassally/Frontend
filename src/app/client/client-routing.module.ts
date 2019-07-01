@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 import { TrackComponent } from './track/track.component';
 import { AuthGuard } from '@app/Authentucation/signin-page/auth/auth.guard';
+import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.component';
 
 const clientRouter : Routes =[
     {
@@ -35,6 +36,10 @@ const clientRouter : Routes =[
                 path : 'newDelivery' , 
                 component : NewDeliveryComponent
             } , 
+            {
+                path : 'newDelivery/confirmShippment' , 
+                component : ConfirmPostComponent
+            } ,
             {
                 path : 'profile'  , 
                 component : ProfileComponent

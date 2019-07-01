@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { Keys } from 'src/Keys';
+import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.component';
 
 
 
@@ -45,7 +46,7 @@ import { Keys } from 'src/Keys';
       PackageTrackComponent, 
       RightSideComponent, 
       UpdatesComponent, 
-      MapComponent 
+      MapComponent, ConfirmPostComponent 
   ],
   imports: [
     CommonModule ,

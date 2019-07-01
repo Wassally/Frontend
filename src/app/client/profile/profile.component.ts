@@ -4,6 +4,7 @@ import { User } from '../core/models/user.model';
 import { MapService } from '../core/services/map.service';
 import { NgForm } from '@angular/forms';
 import { ClientAddressService } from '../core/services/client-address.service';
+import { Subscription } from 'rxjs';
 
 
 
@@ -20,12 +21,14 @@ export class ProfileComponent implements OnInit {
   constructor(
     private userServices :UserService , 
     private mapService : MapService , 
-    private clientLocations : ClientAddressService
+    private clientLocations : ClientAddressService , 
+     
     
   ) { }
+  subscription :Subscription
   user : User =this.userServices.user ;
   url ='' ;
-  address :[] = this.clientLocations.getUserAddress() ; //array of user address
+  address= this.clientLocations.getUserAddress()//array of user address
  
  /**
   * Every address Stored with uniqe id  so we want the id of selected addddress
@@ -68,7 +71,8 @@ export class ProfileComponent implements OnInit {
       this.Address.formated_address=loc.forrmatted_address;
       
 
-    })
+    }) ; 
+   this.userServices.getUserData().subscribe((r:User) => this.userServices.user=r )
 }
 //update Address 
 

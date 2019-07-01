@@ -49,7 +49,7 @@ export class SigninComponent implements OnInit {
         this.userService.getUserData() 
         .subscribe(
           (respond)=> {
-          
+            console.log(respond) ; 
             const currentUser  = new User(respond) ;
             this.userService.user = currentUser ; 
             this.packagesService.setUser();

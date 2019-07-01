@@ -22,13 +22,13 @@
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
                 </svg>
               
-              {{package.receive_governate}}, {{package.receive_city}} </span >
+              {{package.package_address.to_address.address_description}} </span >
           </li>
           <li class="package__detail  "  >
-              <h3 class="package__detail--h">Offers</h3>
+              <h3 class="package__detail--h">To</h3>
               <span class="package__detail--v"> 
                  <!--<img src="{{package.captin.imageUrl ? package.captin.imageUrl: 'assets\img\client\captinProfile/headingPhoto.png' }}" alt="captin photo" class="captin-photo-sm">-->
-                {{package.relatedoffersCoumt }}
+                {{package.receiver_name }}
               </span >
             </li>
           

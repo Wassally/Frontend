@@ -19,14 +19,14 @@
         <div class="filedInput ">
           <span> Compelete  Address </span>
          <div class="form__group ">
-          <input type="text" class=" form__input fullAddress " 
-          name="from_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
-          <label   for="sourceAddress" class="form__lable " > dst, st</label> 
+          <input type="text" class=" form__input fullAddress " #SInputvalue
+          name="completeSourceAddress" id="completeSourceAddress"  placeholder="District , street , floor Number" required ngModel>
+          <label   for="completeSourceAddress" class="form__lable "  > dst, st</label> 
         </div>
       </div>
 
       <div class="postButton">
-        <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openReciver()" >Next</button>
+        <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openReciver(SInputvalue)" >Next</button>
        </div>
       </div>
 
@@ -39,8 +39,11 @@
               <span> Complete  Address </span>
              <div class="form__group ">
               <input type="text" class=" form__input fullAddress " 
-              name="to_address" id="sourceAddress"  placeholder="District , street , floor Number" required ngModel>
-              <label   for="sourceAddress" class="form__lable " > dst, st</label> 
+              name="completeDestinationAddress" id="completeDestinationAddress"  
+              placeholder="District , street , floor Number"
+              #DInputvalue
+              required ngModel>
+              <label   for="completeDestinationAddress" class="form__lable " > dst, st</label> 
             </div>
           </div>
           <div class="d-flex justify-content-start flex-wrap">
@@ -48,15 +51,22 @@
               <span> Reciever Name </span>
              <div class="form__group ">
               <input type="text" class=" form__input  " 
-              name="receiver_name" id="reciver Name"  placeholder="Reciver full Name" required ngModel>
+              name="receiver_name" id="reciver Name" 
+               placeholder="Reciver full Name" 
+               #Dname
+               required ngModel>
               <label   for="reciver Name" class="form__lable " > Reciver full Name</label> 
             </div>
+            
           </div>
           <div class="filedInput ">
               <span> Phone Number </span>
              <div class="form__group ">
               <input type="text" class=" form__input  " 
-              name="receiver_phone_number" id="reciverPhoneNumber"  placeholder="Mobile or Home " required ngModel>
+              name="receiver_phone_number" id="reciverPhoneNumber" 
+               placeholder="Mobile or Home "
+               #Dphone
+               required ngModel>
               <label   for="reciverPhoneNumber" class="form__lable " > Mobile or Home</label> 
             </div>
           </div>
@@ -68,7 +78,7 @@
           <button type="button" class="Cbtn c_button backButton c_button__join postButton__btn backButton" (click)=" openSource()" >Back</button>
          </div>
          <div class="postButton">
-            <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openotherDetailes()" >Next</button>
+            <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openotherDetailes(DInputvalue ,Dname , Dphone )" >Next</button>
            </div>
         </div>  
         </div>
@@ -130,7 +140,9 @@
                         <span > Shipped by  </span>
                     <div class="form__group  radioFormGroup ">
                         <div class="form__radio-group">
-                         <input type="radio" class="form__radio-input" id="small" name="size">
+                         <input type="radio" class="form__radio-input" id="small" name="size"
+                         
+                         >
                          
                          <label for="small" class="form__radio-label  radioFormGroup-lable"> 
                                 <span class="form__radio-button"></span> 
@@ -160,7 +172,7 @@
                        <button type="button" class="Cbtn c_button backButton c_button__join postButton__btn backButton" (click)="  openReciver()" >Back</button>
                       </div>
                       <div class="postButton">
-                         <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)=" openotherDetailes()" >Post Package </button>
+                         <button type="submit" class="Cbtn c_button  c_button__join postButton__btn"   >Post Package </button>
                         </div>
                      </div>     
         </div>  

@@ -1,16 +1,16 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../core/services/user.service';
 import { User } from '../core/models/user.model';
 import { ClientPackagesService } from '../core/services/client-packages.service';
-import { Keys } from 'src/Keys';
+
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit  {
+export class MainComponent implements OnInit , OnChanges {
   
   constructor(private router :Router , 
     private userService :UserService ,
@@ -32,18 +32,21 @@ export class MainComponent implements OnInit  {
     
       this.showSpinner=true ;
       this.userService.getUserData().subscribe(respnse=>{
-        this.showSpinner=false;
-        console.log(respnse);
+      this.showSpinner=false;
       const currentUser  = new User(respnse) ;
       this.userService.user = currentUser ; 
       this.packagesService.setUser();
-      console.log(currentUser);
       this.user=currentUser ;
+      this.router.navigate(['/main/deliveries']);
+
        
     }
       )
     
-    this.router.navigate(['/main/deliveries']);
+    
+  }
+  ngOnChanges(){
+    this.showSpinner = false ; 
   }
 
   

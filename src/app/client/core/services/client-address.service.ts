@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { APIService } from './api.service';
 import { UserService } from './user.service';
+import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,7 @@ export class ClientAddressService {
  */
   
   getUserAddress(){
-    return this.userServices.user.userAddress
+      return this.userServices.user.userAddress ; 
   }
 
   AddUserLocation(updatedLocation:any){
