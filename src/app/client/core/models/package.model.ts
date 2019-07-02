@@ -92,6 +92,13 @@ export class Package{
           description : "captin is ready to go , he is on way" , 
           img : "assets/img/client/package/packageState/onway.png"
         }
+      } else {
+        this.state =  {
+          type : "waiting"  , 
+          description : "Your Package is scucefully created, we will be in touch with you soon" , 
+          img : "assets/img/client/package/packageState/waiting.png"
+        }
+        
       }
 
      }
