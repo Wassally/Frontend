@@ -9,12 +9,12 @@
     <div [ngClass]="classes">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item  active">
-          <a class="nav-link nav-link-c" href="#">
+          <a class="nav-link nav-link-c" routerLink="/"  >
             Home
           </a>
         </li>
         <li class="nav-item  active">
-          <a class="nav-link nav-link-c" href="#">
+          <a class="nav-link nav-link-c" routerLink="/about"  routerLinkActive = "activeNav" >
             About
           </a>
         </li>
@@ -24,7 +24,7 @@
           </a>
         </li>
         <li class="nav-item  active nav-signin">
-          <a class="nav-link nav-link-c sign in " routerLink="/signin">
+          <a class="nav-link nav-link-c sign in " routerLink="/signin" routerLinkActive = "activeNav">
              Sign In 
           </a>
         </li>

@@ -11,6 +11,7 @@ import { SigninComponent } from '@app/Authentucation/signin-page/signin/signin.c
 import { SignupPageComponent } from '@app/Authentucation/signup/signup-page/signup-page.component';
 import { SigninPageModule } from '@app/Authentucation/signin-page/signin-page.module';
 import { SignupModule } from '@app/Authentucation/signup/signup.module';
+import { AboutComponent } from './about/about.component';
 
 
 const landingRoutes: Routes = [
@@ -25,7 +26,11 @@ const landingRoutes: Routes = [
   {
     path :'signup' , 
     component: SignupPageComponent
-  }
+  } , 
+  {
+    path: 'about',
+    component: AboutComponent
+  } , 
 
 ]
 
@@ -35,6 +40,7 @@ const landingRoutes: Routes = [
     LandingMainComponent,
     LandingheaderComponent,
     LandingServicesComponent,
+    AboutComponent,
   ],
   imports: [
     CommonModule,

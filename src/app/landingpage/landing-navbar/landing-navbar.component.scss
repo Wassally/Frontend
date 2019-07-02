@@ -1,3 +1,4 @@
+@import '../../../sass/variable' ;
 nav.navbar {
     background-color:#0D0D0D !important; 
     font-size: 2rem;
@@ -25,3 +26,6 @@ nav.navbar {
 }
 
 
+.activeNav{
+   color: $client-primary-color !important; 
+}
