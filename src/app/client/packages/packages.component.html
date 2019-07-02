@@ -12,32 +12,40 @@
     <li class="packageDetailes__li">
       Package Number :  <span class="packageDetailes__li-value">{{package.id}}</span>
     </li>
-  <!--  <li class="packageDetailes__li">
+    <li class="packageDetailes__li">
         Captin :   <span class="packageDetailes__li-value">
           <a [routerLink]="['captin']" class="Packagevisit-profile">
           <img src="assets/img/client/package/captin1.png" alt="captin small photo" class="packageDetailes-img-sm">
-          {{package.captin.name}} 
+          {{package.captain_name}} 
         </a> 
         </span>
       </li>
-      -->
+      
       <li class="packageDetailes__li">
           To :    <span class="packageDetailes__li-value">
               <a href="#" class="Packagevisit-profile">
-              <!--<img src="assets/img/client/package/girl2.png" alt="reciver  small photo" class="packageDetailes-img-sm">  -->
               {{package.receiver_name}}
             </a>
           </span>
         </li>
         <li class="packageDetailes__li">
-            Location :   <span class="packageDetailes__li-value">
-              {{package.receive_governate}}, {{package.receive_city}},{{package.receive_address}}
+          Phone :    <span class="packageDetailes__li-value">
+              <a href="#" class="Packagevisit-profile">
+              {{package.receiver_phone_number}}
+            </a>
+          </span>
+        </li>
+        <li class="packageDetailes__li packageDetailes__li-location">
+          destination :   <span class="packageDetailes__li-value">
+            {{package.package_address.to_address.address_description}},  {{package.package_address.to_address.formated_address}}
             </span>
           </li>
-          <li class="packageDetailes__li">
+          
+          <li class="packageDetailes__li packageDetailes__li-location">
               From  :  <span class="packageDetailes__li-value"> 
-                  {{package.sender_governate}}, {{package.sender_city}},{{package.sender_address}} </span>
+                {{package.package_address.from_address.address_description}},  {{package.package_address.from_address.formated_address}} </span>
             </li>
+
             <li class="packageDetailes__li">
                weight :  <span class="packageDetailes__li-value">{{package.weight}}</span>
               </li>
@@ -50,6 +58,11 @@
               <li class="packageDetailes__li">
                   My Note :  <span class="packageDetailes__li-value">
                     {{package.note}}
+                  </span>
+                </li>
+                <li class="packageDetailes__li">
+                  Cost :  <span class="packageDetailes__li-value">
+                    {{package.wassally_salary}} LE
                   </span>
                 </li>
   </ul>

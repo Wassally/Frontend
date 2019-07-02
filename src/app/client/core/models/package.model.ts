@@ -1,83 +1,106 @@
+import { IfStmt } from '@angular/compiler';
+
 /**
  * User Package Model (user packages that return from api )
   *   
  */
 
 export class Package{
-  // public packageNumber:number ;
-  // public  destinationAddress :string  ; 
-  // public toAddress: string ; 
-  // public Reciver :string ;
-  // public receiver_phone_number:number ;
-  // public max_duration :number ;
-  // public weight:number ;
-  // public note:string ;
-  // public createdDate : Date ; 
-  // public packageState :string ; 
-  // public relatedoffers :number ; 
-  // public relatedoffersCoumt:  number ; 
-  // public to_city :string ;
-  // public to_address :string ;
-  // public to_location:any;
-  // public from_governate :string ;
-  // public from_city :string ;
-  // public from_address :string ;
  
-  //public from_location :any ;
-  //public sender_phone_number:number ;
-
 
   id: number ;
   created_at: Date ; 
   duration: number ; 
-  state: string ;
+  state: {
+    type : string  , 
+    description : string , 
+    img : string
+  } ;
   owner: number ;
-  sender_address: string ;
-  sender_city:  string ;
-  sender_governate:  string ;
   sender_phone_number:  string ;
   receiver_name:  string ;
   receiver_phone_number:  string ;
-  receive_address:  string ;
-  receive_city:  string ;
-  receive_governate:  string ;
   time_since: string ;
   updated_at:  string ;
   wassally_salary: number ;
   weight: number ;
-  transport_way:  string ;
   note:  string ;
-  sender_location: {
-    latitude: number, 
-    longitude: number
-  } ; 
-  receive_location: {
-    latitude: number, 
-    longitude: number
-  };
+  captain_name:string; 
+  delivery_state: string;
+  package_address:{
+     from_address:{
+          id: number,
+          location: {
+            latitude: number 
+            longitude: number
+          } ,
+          formated_address: string,
+          address_description: string
+    }
+     to_address: {
+          id: number, 
+          formated_address: string, 
+          location: {
+            latitude: number 
+            longitude: number
+          } ,
+          address_description: string}
+  }
+
 
      constructor(userPackage?:any){
       this.id=userPackage.id ; 
       this.created_at=userPackage.created_at  ; 
       this.duration=userPackage. duration ; 
-      this.state=userPackage.state  ;
+    
       this.owner=userPackage.owner  ;
-      this.sender_address=userPackage.from_address ;
-      this.sender_city=userPackage.from_city  ;
-      this.sender_governate=userPackage.from_governate  ;
       this.sender_phone_number=userPackage.sender_phone_number  ;
       this.receiver_name=userPackage.receiver_name  ;
       this.receiver_phone_number=userPackage.receiver_phone_number  ;
-      this.receive_address=userPackage.to_address  ;
-      this.receive_city=userPackage.to_city  ;
-      this.receive_governate=userPackage.to_governate  ;
       this.time_since=userPackage.time_since ;
       this.updated_at=userPackage.updated_at  ;
       this.wassally_salary=userPackage.wassally_salary  ;
       this.weight=userPackage.weight ;
-      this.transport_way=userPackage.transport_way  ;
-      this.note=userPackage.note  ;   
+      this.note=userPackage.note  ;
+     this.captain_name=userPackage.captain_name;
+     this.delivery_state = userPackage.delivery_state ; 
+     this.package_address = userPackage.package_address;
+
+      if(userPackage.state == "waiting"){
+        this.state =  {
+          type : "waiting"  , 
+          description : "Your Package is scucefully created, we will be in touch with you soon" , 
+          img : "assets/img/client/package/packageState/waiting.png"
+        }
+      }else if(userPackage.state == "pending"){
+        this.state =  {
+          type : "pending"  , 
+          description : "captin just took package from you , we will inform you when he is ready to go " , 
+          img : "assets/img/client/package/packageState/pending.png"
+        }
+
+      }else if(userPackage.state == "delivered"){
+        this.state =  {
+          type : "delivered"  , 
+          description : "your package has been successfuly delivered !" , 
+          img : "assets/img/client/package/packageState/delivered.png"
+        }
+
+      }else if(userPackage.state == "on_way"){
+        this.state =  {
+          type : "On way"  , 
+          description : "captin is ready to go , he is on way" , 
+          img : "assets/img/client/package/packageState/onway.png"
+        }
+      } else {
+        this.state =  {
+          type : "waiting"  , 
+          description : "Your Package is scucefully created, we will be in touch with you soon" , 
+          img : "assets/img/client/package/packageState/waiting.png"
+        }
         
+      }
+
      }
 
     

@@ -43,6 +43,13 @@ li , span{
             color: $client-primary-color;
             font-weight: 400 ;
         }
+        &-location{
+            width: 100% ; 
+           
+            span{
+                font-size: 1.5rem;
+            }
+        }
     }
 }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { User } from '@app/client/core/models/user.model';
+import { UserService } from '@app/client/core/services/user.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -7,19 +10,30 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userServices : UserService , 
+    
+  ) { }
 
 
-   userS = {
-    firstname: 'Ahmed' , 
-    lastName: 'Kenawy' , 
-    email : 'ahmed.elkenawy95@gmail.com' , 
-    phoneNumber :  "010978862814" , 
-
-  }
-
+   user:User = this.userServices.user ; 
 
   ngOnInit() {
+  }
+
+  submitEdit(form:NgForm){
+    const updatedData = {
+      "firstName" : form.value.firstName ,   
+      "email" : form.value.email ,
+      "lastName" : form.value.lastName ,
+      "phone_number" : form.value.phoneNumber 
+    }
+      this.userServices.updateUserData(updatedData).subscribe(
+        ()=>{
+          console.log("updated");
+          
+        }
+      )
   }
 
 }

@@ -99,3 +99,79 @@ a{
     width: 100%;
   }
   
+
+  //////////////////////
+
+.package{
+
+    &__state{
+        display: flex ; 
+        flex-wrap: wrap ;
+        justify-content: center ; 
+
+        border-bottom: 1px solid black ;
+       
+        &--img{
+           
+            width:  25% ;
+            img{
+                   width: 12rem;
+                 height: 10rem;
+                  margin: 3px 15%;
+
+                  @include respond(phone){
+                    width: 100%;
+                    margin: 3px 0;
+            }
+            }
+        }
+        &--description{
+            width: 55%;
+    font-size: 1.6rem;
+    padding: 0 2rem;
+        }
+        &--type{
+            width:  20% ;
+            font-size: 2.5rem; 
+            color: #CC2D6F ;
+        } 
+
+    }
+
+    &__information{
+        display: flex ; 
+        flex-wrap: wrap ; 
+        flex-direction: column ; 
+
+
+        &--location{
+            font-size: 2rem;
+                margin: 2rem;
+            svg{
+                width:2rem;
+                height: 2rem ;
+            }
+        }
+
+        &--reciverName{
+            font-size: 2rem;
+            margin-left: 2rem;
+            text-transform: capitalize ;
+            svg{
+                width: 2rem; 
+                height: 2rem;;
+            }
+        }
+        &--date{
+            font-size: 1.3rem;
+            margin-left: 90%;
+            margin-top: -2rem;
+            float: left;
+        
+        }
+
+    }
+
+
+} 
+

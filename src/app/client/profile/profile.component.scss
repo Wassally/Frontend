@@ -1,5 +1,7 @@
 @import '../../../sass/component/secHeading' ;
 @import '../../../sass/variable' ;
+@import '../../../sass/mixins' ;
+
 a{
     text-decoration: none ;
     
@@ -7,20 +9,20 @@ a{
 
 .fullProfile{
     display: flex ;
-    flex-direction: row ; 
+    flex-direction: column ; 
     align-items: center ; 
-    margin: 5rem;
-    border-bottom: 1px solid #000000;
+    margin: 0rem 5rem ;
+    border-bottom: 1px solid #b0bec5;
     
     
     
     
     &__img{
-        margin-bottom: 2rem ;
+        margin-bottom: 1.5rem ;
         position: relative;
         img{
-            width: 20rem ; 
-            height: 20rem;
+            width: 22rem ; 
+            height: 22rem;
             border-radius: 50%;
         }
       
@@ -143,14 +145,16 @@ a{
 
 .ProfileSecSection{
     display: flex;
+    flex-direction: column ; 
+    align-items: flex-start ;
 }
 
 .extraInfo{
-    width: 50% ;
     display: flex;
     flex-direction: column;
-    justify-content:flex-start ; 
-    align-items: center ;
+    justify-content:center ; 
+    align-items: flex-start ;
+    margin: 2rem;
     
     &__address{
         font-size: 2.5rem;
@@ -177,6 +181,10 @@ a{
     margin-left: 7rem;
     align-self: flex-start;
     margin-top: 2rem;
+    display: flex;
+    position: absolute;
+    top: 5vh;
+    right: 4%;
     &-btn{
        background-color: #1B7F79 ;
        padding: 1rem .5rem;
@@ -198,3 +206,73 @@ a{
         display: none ; 
     }
 }
+
+.editAddressButton{
+    border: none ; 
+    text-decoration: none ; 
+    color: #1B7F79 ;
+    font-size: 1.7rem;
+    background-color: inherit ;
+    margin-left: 2rem ;
+
+    svg{
+        width: 1.5em ; 
+        height: 1.5rem;
+        fill: $client-primary-color-1;
+        top:-.2rem; 
+    }
+}
+.addAddress{
+    left: 70%;
+    margin-top: 2rem;
+    position: relative;
+    
+    &-btn{
+     color: #007bff ;
+     font-size: 2rem;
+     svg{
+        width: 2.5rem ; 
+        height: 2.5rem;
+        fill: $client-primary-color-1;
+        
+    } 
+}
+}
+
+.delete-btn{
+  color:   #dc3545 ; 
+}
+.GetAddressFromMap{
+    margin-bottom: 2rem; 
+
+}
+
+.filedInput{
+    margin-top: 2rem ; 
+   
+    justify-content: center ; 
+    
+    @include respond(phone){
+          flex-direction: column ; 
+          align-items: flex-start ;
+    }
+     
+
+}
+.restaddress{
+    
+    font-size: 2rem ; 
+    margin-right: 1rem ;
+}
+
+
+.updateBtn{
+    background-color: #1B7F79;
+    padding: 1rem .5rem;
+    color: #ffffff;
+    height: 5rem;
+    margin-left: 7rem; 
+ }
+
+//////////////
+

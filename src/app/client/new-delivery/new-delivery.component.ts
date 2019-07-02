@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { ClientPackagesService } from '../core/services/client-packages.service';
 import { NewDelivery } from '../core/models/newDelivery.model';
 import { MapService } from '../core/services/map.service';
+import { UserService } from '../core/services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,39 +16,54 @@ export class NewDeliveryComponent implements OnInit {
 /**
  * object of  Address  with default location 
  * formated Address the address from google map
- * restaddress bulding number and floor number , street number   
+ * address_description bulding number and floor number , street number   
  */
-  sourceAddress={
-    location: 
-        {
-         
-          lat:26.77580395481242 , 
-          lng:32.35276413720135  
-        } , 
-    forrmatted_address:'default' ,
-    restaddress: 'default str 1 '
-  }
-  destinationAddress={
-    location: 
-        {
-         lat:26.77580395481242 , 
-          lng:32.35276413720135  
-        } , 
-    forrmatted_address:'default' ,
-    restaddress: 'default str 2'
-  }
+constructor(
+  private  packageServer : ClientPackagesService , 
+ 
+  private mapService :MapService , 
+  private userService  :UserService , 
+  private route : Router
+  
+  
+  ) { }
+  createNewPackage   = {
+    	"sender_phone_number":"000000",
+    "receiver_name": "Not assigned",
+    "receiver_phone_number": "000000",
+    "note": "no note",
+    "weight": 0,
+    "transport_way": "wassally",
+    "duration": 0,
+    "package_address": {
+        "to_address": {
+            "location": {
+                "latitude": 20,
+                "longitude":20
+            },
+            "formated_address":"Not assigned",
+            "address_description": "Not assigned",
+        },
+        "from_address": {
+            "location": {
+                "latitude": 20,
+                "longitude": 20
+            },
+              
+            "formated_address": "Not assigned",
+            "address_description": "Not assigned"
+        }
+    }
+} ; 
+  
+  
+
   // create package  steps 
   sourceSection : boolean = true ; 
   destinationSection:boolean=false ; 
   otherDetailesSection:boolean=false ; 
 
-  constructor(
-     private  packageServer : ClientPackagesService , 
-    
-     private mapService :MapService
-     
-     
-     ) { }
+  
  
 
                
@@ -63,20 +80,20 @@ export class NewDeliveryComponent implements OnInit {
         //assign the source location to the sourcelocation object when the user in the From Page  
         if(this.sourceSection){
         
-          that.sourceAddress.location.lat = address.location.lat ; 
-          that.sourceAddress.location.lng = address.location.lng;
-          that.sourceAddress.forrmatted_address = address.forrmatted_address ;
+          that.createNewPackage.package_address.from_address.location.latitude = address.location.lat ; 
+          that.createNewPackage.package_address.from_address.location.longitude = address.location.lng;
+          that.createNewPackage.package_address.from_address.formated_address = address.forrmatted_address ;
 
         }
        //assign the destination location to the destinationlocation object when the user in the To Page  
 
       if(this.destinationSection){
-        that.destinationAddress.location.lat = address.location.lat ; 
-          that.destinationAddress.location.lng =address.location.lng;
-          that.destinationAddress.forrmatted_address =address.forrmatted_address ;
+        that.createNewPackage.package_address.to_address.location.latitude = address.location.lat ; 
+          that.createNewPackage.package_address.to_address.location.longitude =address.location.lng;
+          that.createNewPackage.package_address.to_address.formated_address =address.forrmatted_address ;
         }
 
-        console.log(this.sourceAddress)
+        
 
       }
     )
@@ -84,37 +101,46 @@ export class NewDeliveryComponent implements OnInit {
  
 // Post the package Send it to server 
   postOrder(form:NgForm){
-  
-   const fromForm  = {
-    from_governate:form.value.from_governate,
-    from_city:form.value.from_city ,
-    from_address:form.value.from_address ,
-    to_governate:form.value.to_governate ,
-    to_city:form.value.to_city,
-    to_address:form.value.to_address,
-    receiver_name:form.value.receiver_name,
-    receiver_phone_number:form.value.receiver_phone_number,
-    duration:form.value.duration,
-    weight:form.value.weight,
-    note:form.value.note,
-    transportation:form.value.transportation,
-    cost_estimation:form.value.cost_estimation,
-    transport_way:"wassally",
-   }
-   const newPackage= new NewDelivery(fromForm)
-
-   console.log (newPackage) ;
-
-   this.packageServer.postPackage(newPackage) 
-   .subscribe((Response) => {
-     console.log(Response) 
-     console.log('package Created successfuly') ; 
+   
     
-   } ,
-   (error)=>{
-     console.log(error)
-   }
-    );
+    
+    receiver_name :form.value.receiver_name,
+   
+    this.createNewPackage.duration =form.value.duration;
+    this.createNewPackage.weight =form.value.weight;
+    this.createNewPackage.note =form.value.note;
+    this.createNewPackage.transport_way ="wassally" ;
+    this.createNewPackage.sender_phone_number = this.userService.user? this.userService.user.phone_number : "0000" ;
+    this.packageServer.newCreatedPackage = this.createNewPackage ; 
+    
+    
+    const PriceEq = {
+      
+        "to_formated_address" : this.createNewPackage.package_address.to_address.formated_address,
+        
+        "from_formated_address" :this.createNewPackage.package_address.from_address.formated_address,
+        
+        "to_location": {
+                      "latitude": this.createNewPackage.package_address.to_address.location.latitude,
+                      "longitude": this.createNewPackage.package_address.to_address.location.longitude
+                  },
+                  
+        "from_location": {
+                      "latitude": this.createNewPackage.package_address.from_address.location.latitude,
+                      "longitude": this.createNewPackage.package_address.from_address.location.longitude
+                  },
+                  
+          
+          "weight" : this.createNewPackage.weight
+      
+    }
+    this.packageServer.getShipmemtPrice(PriceEq).subscribe(
+    (r:any)=>{
+     const cost : number = r.expected_salary ; 
+     this.packageServer.setPrice(cost) ; 
+     this.route.navigate(['/main/newDelivery/confirmShippment']);
+  
+    })
 
   }
 
@@ -126,14 +152,21 @@ export class NewDeliveryComponent implements OnInit {
     this.sourceSection=true ;
     this.destinationSection=false;
     this.otherDetailesSection=false
-  }
-  openReciver(){
+  } 
+  openReciver(m :NgForm){
+    const value = m.value ;
+    
+    this.createNewPackage.package_address.from_address.address_description =value ;
+    
     this.sourceSection=false ;
     this.destinationSection=true;
     this.otherDetailesSection=false
-
+    
   }
-  openotherDetailes(){
+  openotherDetailes(restAddress , Dname , Dphone){
+    this.createNewPackage.package_address.to_address.address_description = restAddress.value ; 
+    this.createNewPackage.receiver_name =Dname.value ; 
+    this.createNewPackage.receiver_phone_number=Dphone.value ; 
     this.sourceSection=false ;
     this.destinationSection=false;
     this.otherDetailesSection=true;

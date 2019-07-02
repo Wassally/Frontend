@@ -6,11 +6,52 @@
     </span>
     <h2 class="secHeading__text"> My packages</h2>
     </div>
-  <ul   class="packages  d-flex flex-column" 
-  *ngFor =  "let package of packages">
-    <li class="package" [routerLink]="[id]">
+  <div   class=" package  packages  d-flex flex-column" 
+  *ngFor =  "let package of packages"
+  [routerLink]="[id]"  
+  >
+
+  <div class="package__state" (click) = "openPackage(package)">
+    <div class="package__state--img">
+      <img src="{{package.state.img}}" alt="state photo">
+    </div>
+    <div class="package__state--description">
+        {{package.state.description}}
+    </div>
+
+    <div class="package__state--type">
+        {{package.state.type}}
+    </div>
+  </div>
+
+  <div class="package__information" (click) = "openPackage(package)" >
+
+    <h2 class="package__information--location">
+        <svg class="locationSvgPK">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
+        </svg>   {{package.package_address.to_address.address_description}} ,  {{package.package_address.to_address.formated_address}}
+    </h2>
+    <p class="package__information--reciverName">
+        <svg class="locationSvgPK">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-user-solid-circle"></use>
+        </svg>    {{package.receiver_name }}
+    </p>
+    <p class="package__information--date">
+
+      12/5/2019
+    </p>
+  </div>
+
+
+
+
+
+
+
+
+    <!--<li class="package" [routerLink]="[id]">
      
-      <ul class="package__details "  (click) = "openPackage(package)"> 
+      <u0.l class="package__details "  (click) = "openPackage(package)"> 
         <li class="package__detail  "  >
           <h3 class="package__detail--h">Package Number</h3>
           <span class="package__detail--v"> {{package.id}}</span >
@@ -22,13 +63,13 @@
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
                 </svg>
               
-              {{package.receive_governate}}, {{package.receive_city}} </span >
+              {{package.package_address.to_address.address_description}} </span >
           </li>
           <li class="package__detail  "  >
-              <h3 class="package__detail--h">Offers</h3>
+              <h3 class="package__detail--h">To</h3>
               <span class="package__detail--v"> 
-                 <!--<img src="{{package.captin.imageUrl ? package.captin.imageUrl: 'assets\img\client\captinProfile/headingPhoto.png' }}" alt="captin photo" class="captin-photo-sm">-->
-                {{package.relatedoffersCoumt }}
+                 <img src="{{package.captin.imageUrl ? package.captin.imageUrl: 'assets\img\client\captinProfile/headingPhoto.png' }}" alt="captin photo" class="captin-photo-sm">
+                {{package.receiver_name }}
               </span >
             </li>
           
@@ -39,8 +80,8 @@
               
       </ul>
     
-    </li>
-  </ul>
+    </li>-->
+  </div>
 
  
 

@@ -13,8 +13,8 @@ export class MapComponent implements OnInit {
   @ViewChild("placesRef") placesRef : GooglePlaceDirective;
   
   //Egypt random cordinate to start the map 
-  lat: number = 26.77580395481242;
-  lng: number =32.35276413720135;
+  lat: number = 31.0409483;
+  lng: number = 31.37847039999997;
   
   constructor(
     private mapServicea : MapService
@@ -53,6 +53,8 @@ export class MapComponent implements OnInit {
     console.log(address)
     const latitude=  address.geometry.location.lat();
     const longitude= address.geometry.location.lng();
+    console.log("latitude : " +latitude ) ; 
+    console.log("longitude : " +longitude ) ; 
 
     this.lng= longitude;
     this.lat =  latitude;

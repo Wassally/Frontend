@@ -25,7 +25,9 @@ export class ClientPackagesService {
   ) {
    
   }
-   path  = '/packages/' ;
+   
+   private  sippmentTempPrice : number  = 0 ; 
+   newCreatedPackage : any  ; 
 
   /**
    * userPackages  =>  Array of object  package Model 
@@ -33,6 +35,8 @@ export class ClientPackagesService {
  
     currentUser  :User ; 
     userPackages : Array<Package> = []; 
+    NewPackage : any ; 
+    
     
     setUser (){
       this.currentUser = this.userServices.user;
@@ -54,11 +58,38 @@ export class ClientPackagesService {
         return element.id == packageNumber ;
       })
     }
+
+    //get package api 
+
+    getAllPackage(){
+      const  path  = '/packages/' ;
+      return this.api.get(path) ; 
+    }
+    getPackageById(id:number){
+      const  path  = `/packages/${id}` ;
+      return this.api.get(path) ; 
+    }
+
+    //get pacakge Price to confermation 
+    
+    getShipmemtPrice(PriceEq:any){
+      const path = '/computingsalary/' ; 
+      return this.api.post(path , PriceEq) ; 
+    }
+    setPrice(price:number ) { 
+     this.sippmentTempPrice = price ; 
+    }
+    returnPrice () {
+      return this.sippmentTempPrice ; 
+    }
+    
     //create New Package 
     postPackage(Newpackage:{}){
-      
-      return this.api.post(this.path , Newpackage) ;
+      const  path  = '/packages/' ;
+      return this.api.post(path , Newpackage) ;
     }
+
+
 
 
 } 
