@@ -40,7 +40,7 @@
                 <div class="form__group  form__password">
                     <input type="password" class=" form__input form__password-input " 
                     name="password" id="password" aria-describedby="Registration" placeholder="Password" required ngModel>
-                    <label   for="password" class="form__lable" > Password </label> 
+                    <label   for="password" class="form__lable" >  Password must contain at least 8 characters </label> 
                   </div>
                   <div class="d-flex flex-row ">
                      <div class="form__group  form__phoneKey">
@@ -56,7 +56,9 @@
                           <label   for="phoneNumber" class="form__lable" > Phone Number </label> 
                         </div>
                     </div>
-                    
+                    <p class="signupFailed" *ngIf="invalidsignUp">
+                       {{errorMessage}}
+                    </p>
                       <div class="d-flex flex-column">
                       <div class="submit-buttons d-flex ">
                       <button type="submit" class="Cbtn Cbtn--pink ">sign up </button>
