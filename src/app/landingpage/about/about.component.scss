@@ -67,7 +67,7 @@
     h3{
         margin-top: 2rem ;
         font-size: 2.5rem ; 
-        font-weight: 400 ; 
+        font-weight: 500 ; 
     }
     &__jobTitle{
         font-size: 1.8rem;
@@ -89,4 +89,39 @@
         
 
     }
+}
+.supervised{
+    h2{
+        font-size: 3rem ; 
+        font-weight: 600 ;
+        margin-top: 2rem;
+    }
+   
+    margin: 3rem  6rem ; 
+   &-info{ 
+    
+    display: flex ; 
+    flex-direction: column ;
+    align-items: center ; 
+    justify-content: center ;
+  
+img{
+    width: 25rem;
+    height: 25rem;
+}
+h3{
+    margin-top: 2rem ;
+    font-size: 2.5rem ; 
+    font-weight: 500 ; 
+
+}
+}
+
+
+
+
+
+
+
+
 }

@@ -6,15 +6,15 @@ import { IfStmt } from '@angular/compiler';
  */
 
 export class Package{
- 
+  
 
   id: number ;
   created_at: Date ; 
   duration: number ; 
-  state: {
-    type : string  , 
-    description : string , 
-    img : string
+  delivery_state: {
+    type : string , 
+          description : string, 
+          img :string 
   } ;
   owner: number ;
   sender_phone_number:  string ;
@@ -26,7 +26,7 @@ export class Package{
   weight: number ;
   note:  string ;
   captain_name:string; 
-  delivery_state: string;
+  state: string;
   package_address:{
      from_address:{
           id: number,
@@ -67,33 +67,33 @@ export class Package{
      this.package_address = userPackage.package_address;
 
       if(userPackage.state == "waiting"){
-        this.state =  {
+        this.delivery_state =  {
           type : "waiting"  , 
           description : "Your Package is scucefully created, we will be in touch with you soon" , 
           img : "assets/img/client/package/packageState/waiting.png"
         }
-      }else if(userPackage.state == "pending"){
-        this.state =  {
+      }else if(userPackage.delivery_state == "pending"){
+        this.delivery_state =  {
           type : "pending"  , 
           description : "captin just took package from you , we will inform you when he is ready to go " , 
           img : "assets/img/client/package/packageState/pending.png"
         }
 
-      }else if(userPackage.state == "delivered"){
-        this.state =  {
+      }else if(userPackage.delivery_state == "delivered"){
+        this.delivery_state =  {
           type : "delivered"  , 
           description : "your package has been successfuly delivered !" , 
           img : "assets/img/client/package/packageState/delivered.png"
         }
 
-      }else if(userPackage.state == "on_way"){
-        this.state =  {
+      }else if(userPackage.delivery_state == "on_way"){
+        this.delivery_state =  {
           type : "On way"  , 
           description : "captin is ready to go , he is on way" , 
           img : "assets/img/client/package/packageState/onway.png"
         }
       } else {
-        this.state =  {
+        this.delivery_state =  {
           type : "waiting"  , 
           description : "Your Package is scucefully created, we will be in touch with you soon" , 
           img : "assets/img/client/package/packageState/waiting.png"

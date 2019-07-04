@@ -9,7 +9,7 @@ export class User {
      packages: [{}] ;
      phone_number: string;
      username: string ; 
-    userAddress : [] ; 
+    userAddress :[] ; 
     
      Address :{
         formated_address : string,
@@ -29,7 +29,7 @@ export class User {
         this.phone_number = UserRespond.phone_number ;
         this.username = UserRespond.username ; 
         this.packages = UserRespond.packages ; 
-        this.userAddress = UserRespond.user_addresses
+        this.userAddress = UserRespond ? UserRespond.user_addresses : [{}]; 
 
          
       

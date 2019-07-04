@@ -33,12 +33,12 @@ export class DeliveriesComponent implements OnInit {
    // this.packagesService.getUserpackages();
    this.packagesService.getAllPackage().subscribe((r:Array<Package>)=>
    { 
-   console.log(r);
+  
 
   }
    )
    
-    console.log(this.packages) ;
+   
   }
   packages : Array<Package> = this.packagesService.getUserpackages() ; 
   

@@ -16,8 +16,10 @@ const clientRouter : Routes =[
     {
 
         path: '' , 
+      //  redirectTo:'deliveries' ,
        component: MainComponent  , 
       canActivateChild :[AuthGuard] ,
+ 
        children :[
            {
                path : 'deliveries' , 
@@ -54,7 +56,7 @@ const clientRouter : Routes =[
             } ,
 
          
-       ]
+      ]
 
     },
     

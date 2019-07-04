@@ -1,4 +1,4 @@
-<div class="container backdrop">
+<div class="container backdrop" >
 <div class="secHeading">
   <span class="secHeading__icone">
     <img src="assets/img/client/Profile/profileHeading.png" alt="Box icone" class="secHeading__icone-img">
@@ -9,7 +9,7 @@
   <div class="fullProfile">
     <label for="uploadPhoto">
     <div class="fullProfile__img imageHover-img">
-      <img src="{{user.image}}" alt="Profile Picture">
+      <img src="{{user?.image}}" alt="Profile Picture">
       <div class="imageHover-text"> Upload Photo </div>
       <div class="imageHover-background"></div>
       
@@ -56,7 +56,8 @@
         Add Address  
        </button>
   </div>
-  <div class="extraInfo" *ngFor = "let addr of address let i = index"  >   
+  <div class="extraInfo"
+  *ngFor = "let addr of address let i = index"  >   
      <h3 class="extraInfo__address" >
         <svg class="">
             <use xlink:href="assets/img/svg/allSvg.svg#icon-location

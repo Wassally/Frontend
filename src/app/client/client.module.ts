@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { clientRoutingModule } from './client-routing.module';
@@ -46,8 +49,10 @@ import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.c
       PackageTrackComponent, 
       RightSideComponent, 
       UpdatesComponent, 
-      MapComponent, ConfirmPostComponent 
+      MapComponent, ConfirmPostComponent  , 
+     
   ],
+  
   imports: [
     CommonModule ,
     clientRoutingModule , 
@@ -62,6 +67,7 @@ import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.c
     
   ] , 
   providers:[
+    BrowserAnimationsModule ,
     {
       provide:HTTP_INTERCEPTORS , useClass:HeaderInterceptor , multi: true 
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, OnDestroy } from '@angular/core';
 import { UserService } from '../core/services/user.service';
 import { User } from '../core/models/user.model';
 import { MapService } from '../core/services/map.service';
@@ -17,7 +17,7 @@ import { Subscription } from 'rxjs';
 })
 
 
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit  ,OnDestroy {
   constructor(
     private userServices :UserService , 
     private mapService : MapService , 
@@ -25,11 +25,53 @@ export class ProfileComponent implements OnInit {
      
     
   ) { }
-  subscription :Subscription
-  user : User =this.userServices.user ;
+  //subscription :Subscription
+  user : User;
   url ='' ;
-  address= this.clientLocations.getUserAddress()//array of user address
+  address  = []; 
+  sub:Subscription ; 
+
+  
+
+  //array of user address
  
+
+
+  ngOnInit() {
+
+this.sub = this.userServices.getUserData().subscribe((r) => 
+    {  
+       this.userServices.user= new User(r);
+       this.user = this.userServices.user ;
+      this.address = this.user.userAddress ; 
+      console.log(this.user) ; 
+      console.log(this.address) ;
+     
+    }
+     ) ;
+   
+      
+   
+    
+    //subscripe To Map changes 
+   
+      this.mapService.sharedLocation.subscribe((loc:any)=>{
+      this.Address.location.latitude= loc.location.lat;
+      this.Address.location.longitude= loc.location.lng;
+      this.Address.formated_address=loc.forrmatted_address;
+      
+
+    }) ; 
+   
+  // this.address = this.clientLocations.getUserAddress() ; 
+   
+  }
+
+  ngOnDestroy() {
+
+    this.sub.unsubscribe();
+  }
+
  /**
   * Every address Stored with uniqe id  so we want the id of selected addddress
   *   Address Id we want to delete Or update
@@ -63,17 +105,7 @@ export class ProfileComponent implements OnInit {
   }
   }
 
-  ngOnInit() {
-    //subscripe To Map changes 
-      this.mapService.sharedLocation.subscribe((loc:any)=>{
-      this.Address.location.latitude= loc.location.lat;
-      this.Address.location.longitude= loc.location.lng;
-      this.Address.formated_address=loc.forrmatted_address;
-      
-
-    }) ; 
-   this.userServices.getUserData().subscribe((r:User) => this.userServices.user=r )
-}
+  
 //update Address 
 
 
@@ -170,7 +202,7 @@ deleteAddress(id:number){
 updateUserAdddress(){
   this.userServices.getUserData().subscribe(
     ()=>{
-    this.address=this.clientLocations.getUserAddress() ;
+   // this.address=this.clientLocations.getUserAddress() ;
   })
 }
 
