@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SignupService } from '../signup-services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup-page',
@@ -10,8 +11,10 @@ import { SignupService } from '../signup-services.service';
 export class SignupPageComponent implements OnInit {
 
 
-  constructor(private signupServices : SignupService) { }
-
+  constructor(private signupServices : SignupService , 
+    private route :Router) { }
+  invalidsignUp=false ;
+  errorMessage:string = '' ; 
   ngOnInit() {
   }
   onSignup(form:NgForm){
@@ -32,12 +35,20 @@ export class SignupPageComponent implements OnInit {
       "is_captain": "false",
       "phone_number":phone
     } ;
-    console.log(userData);
     
     this.signupServices.signup(userData)
     .subscribe(
-      (Response) => console.log(Response) ,
-      (error) => console.log(error)
+      (Response:any) => {
+        this.invalidsignUp=false ; 
+        localStorage.setItem('token' , Response.auth_token);
+        this.route.navigate(['/main/deliveries']);
+      
+      } ,
+      (error) =>{ 
+       this.errorMessage = error.error.errors[0];  
+        this.invalidsignUp=true ;
+      }
+        
     );
 
     
