@@ -3,7 +3,7 @@
     <div class="track__head">
         <h2 class="track__head--h2">Package Number : </h2> 
         <span class="track__head--value ">
-          <a href="#" class="track__head--link"  > 12255</a>
+          <a href="#" class="track__head--link"  > {{Package?.id}}</a>
         </span>
     </div>
 
@@ -11,7 +11,7 @@
    <div class="track__head"> 
       <h2 class="track__head--h2 ">current state : </h2> 
     <span class="track__head--value">
-      <a href="#" class="track__head--link"  > waiting</a>
+      <a href="#" class="track__head--link"  > {{Package?.delivery_state.type}}</a>
     </span>
    </div>
    
@@ -25,7 +25,7 @@
 </div>
 <div class="track__Progress--figure-state">
     <img src="assets/img/client/track/shipping.png" alt="state Package">
-    <h3> shipping</h3>
+    <h3> On way</h3>
   </div>
   <div class="track__Progress--figure-state">
       <img src="assets/img/client/track/done.png" alt="state Package">

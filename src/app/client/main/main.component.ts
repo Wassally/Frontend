@@ -37,7 +37,8 @@ export class MainComponent implements OnInit , OnChanges {
       this.userService.user = currentUser ; 
       this.packagesService.setUser();
       this.user=currentUser ;
-      this.router.navigate(['/main/deliveries']);
+      console.log(this.user.userAddress);
+    //  this.router.navigate(['/main/deliveries']);
 
        
     }

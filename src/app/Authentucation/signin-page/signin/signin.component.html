@@ -18,7 +18,9 @@
                 placeholder="Password" name="password" required ngModel>
                 <label   for="Password" class="form__lable" > Password</label>
               </div>
-              
+              <p class="loginFailed" *ngIf="invalidLogIn">
+                  invalid Email Or Password
+              </p>
               <button type="submit" class="Cbtn Cbtn--pink">log in </button>
               <div class="option row">
               <div class="col">

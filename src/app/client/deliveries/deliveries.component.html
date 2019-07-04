@@ -13,14 +13,14 @@
 
   <div class="package__state" (click) = "openPackage(package)">
     <div class="package__state--img">
-      <img src="{{package.state.img}}" alt="state photo">
+      <img src="{{package?.delivery_state.img}}" alt="state photo">
     </div>
     <div class="package__state--description">
-        {{package.state.description}}
+        {{package?.delivery_state.description}}
     </div>
 
     <div class="package__state--type">
-        {{package.state.type}}
+        {{package?.delivery_state.type}}
     </div>
   </div>
 
@@ -29,7 +29,7 @@
     <h2 class="package__information--location">
         <svg class="locationSvgPK">
             <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
-        </svg>   {{package.package_address.to_address.address_description}} ,  {{package.package_address.to_address.formated_address}}
+        </svg>   {{package?.package_address.to_address.address_description}} ,  {{package?.package_address.to_address.formated_address}}
     </h2>
     <p class="package__information--reciverName">
         <svg class="locationSvgPK">
@@ -37,8 +37,8 @@
         </svg>    {{package.receiver_name }}
     </p>
     <p class="package__information--date">
-
-      12/5/2019
+     
+        {{package.created_at}}
     </p>
   </div>
 

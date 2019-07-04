@@ -15,7 +15,8 @@ import { throwError } from 'rxjs';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-  [x: string]: any;
+  invalidLogIn = false ; 
+  
 
   constructor( private signinAuth : SigninAuthService 
      ,private router :Router
@@ -31,7 +32,6 @@ export class SigninComponent implements OnInit {
      onSignin(form:NgForm){
     const email =form.value.email;
     const password =form.value.password;
-    console.log(email);
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
       (user : {
@@ -40,31 +40,33 @@ export class SigninComponent implements OnInit {
         email:string ,
         name:string , 
         user_id:number
-      })=> {console.log(user);
-      
+      })=> {
+    
+      this.invalidLogIn= false ;     
         localStorage.setItem('token' , user.auth_token);
         this.userService.id= user.user_id;
         
         localStorage.setItem('id' , JSON.stringify(user.user_id) ) ;
-        this.userService.getUserData() 
-        .subscribe(
-          (respond)=> {
-            console.log(respond) ; 
-            const currentUser  = new User(respond) ;
-            this.userService.user = currentUser ; 
-            this.packagesService.setUser();
-            this.router.navigate(['/main']) ;
-          } , 
-          (err)=>{
-            console.log(err)
-          }
-        )
+        this.router.navigate(['/main/deliveries']);
+       // this.userService.getUserData() 
+        // .subscribe(
+        //   (respond)=> {
+        //     console.log(respond) ; 
+        //     const currentUser  = new User(respond) ;
+        //     this.userService.user = currentUser ; 
+        //     this.packagesService.setUser();
+        //     this.router.navigate(['/main']) ;
+        //   } , 
+        //   (err)=>{
+        //     console.log(err)
+        //   }
+        // )
      
       },
       (error:HttpErrorResponse)=>{
-        
+          console.log(error) ;
                 if(error.status==400){
-                  alert("invalid Email or password ");
+                  this.invalidLogIn= true ;     
                 }
        
       }

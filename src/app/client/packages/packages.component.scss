@@ -26,11 +26,17 @@ li , span{
     margin-top:3rem;
     
     &__ul{
-
+        display: flex;
+        flex-wrap: wrap ;
     }
     &__li{
+        display: flex ; 
+        flex-direction: column ; 
+        
+        
+       
         width: 45%;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin:2rem 0 0 2rem; 
         font-weight: 400;
         @include respond(phone){
@@ -40,11 +46,13 @@ li , span{
         
         &-value{
             font-size: 2rem;
-            color: $client-primary-color;
-            font-weight: 400 ;
+             color: #563d7c;
+         font-weight: 500;
+     align-self: c;
+        margin: 1rem;
         }
         &-location{
-            width: 100% ; 
+           // width: 100% ; 
            
             span{
                 font-size: 1.5rem;
@@ -105,4 +113,12 @@ a{
        background-color: #DC3545; 
        color: #ffffff;
      }
+ }
+
+ .locationSvgPK{
+     width: 2rem ;
+     height: 2rem ;
+     fill: #c2185b ;
+     margin-right: .5rem 
+
  }

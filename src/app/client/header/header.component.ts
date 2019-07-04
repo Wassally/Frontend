@@ -29,7 +29,10 @@ export class HeaderComponent implements OnInit, OnDestroy  , OnChanges{
     //private authService: SigninAuthService , 
     private signOut : SignOutServices , 
     private userService : UserService 
-    ) { }
+    ) { 
+
+
+    }
 
   
   
