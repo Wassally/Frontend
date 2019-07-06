@@ -20,6 +20,7 @@ package : any ;
 
   ngOnInit() {
     this.cost = this.PackageService.returnPrice();
+    this.PackageService.setPrice(null);
     this.package = this.PackageService.newCreatedPackage ; 
   }
   ConfirmShippment(){

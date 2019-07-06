@@ -3,11 +3,11 @@
   <nav class="sidebar" >
     <ul class="side-nav">
         <li class="side-nav__item " >
-            <a  class="side-nav__link" routerLink = "deliveries" routerLinkActive = "activeNav">
+            <a  class="side-nav__link"  routerLink = "aa" routerLinkActive = "activeNav">
                 <svg class="side-nav__icon">
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-give"></use>
                 </svg>
-                <span>Deliveries</span>
+                <span>Home</span>
             </a>
 
         </li>
@@ -27,23 +27,33 @@
 
       
         <li class="side-nav__item ">
-            <a  class="side-nav__link" routerLink = "**" routerLinkActive = "activeNav" >
+            <a  class="side-nav__link" (click)= "update()" routerLink = "deliveries" routerLinkActive = "activeNav" >
                 <svg class="side-nav__icon">
                     <use xlink:href="assets/img/svg/allSvg.svg#icon-truck"></use>
                 </svg>
-                <span>Orders</span>
+                <span>MY Packages</span>
             </a>
         </li>
         <nav class="sub-nav">
           <ul class="sub-nav__ul">
-           <li class="sub-nav__item">
-             <a href="#" class="sub-nav__link">Pending</a>
+           <li class="sub-nav__item"  >
+             <a routerLink = "deliveries"
+             (click)="runFilter('pending')"
+             class="sub-nav__link">Pending</a>
            </li>
-           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link">Accepted</a>
+           <li
+           
+            class="sub-nav__item">
+            <a 
+            routerLink = "deliveries"
+            (click)="runFilter('delivered')"
+            class="sub-nav__link">delivered</a>
           </li>
           <li class="sub-nav__item">
-            <a href="#" class="sub-nav__link">Finished</a>
+            <a 
+            routerLink = "deliveries" 
+            (click)="runFilter('on_way')"
+            class="sub-nav__link">On Way</a>
           </li>
           </ul>
         </nav>

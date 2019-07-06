@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { UserService } from './user.service';
 import { Package } from '../models/package.model';
 import { User } from '../models/user.model';
 import { environment } from 'src/environments/environment';
 import { APIService } from './api.service';
+import { Observable } from 'rxjs';
 
 
 
@@ -35,20 +36,34 @@ export class ClientPackagesService {
  
     currentUser  :User ; 
     userPackages : Array<Package> = []; 
-    NewPackage : any ; 
+    NewPackage : any ;
+    displayedPackages : any  ; 
     
     
-    setUser (){
-      this.currentUser = this.userServices.user;
-      if(this.currentUser.packages){
-      this.currentUser.packages.forEach((element  , index :number) =>{
-      this.userPackages[index] =  new Package(element) ;
-       })  
+    setPackages (packages : [{}] , filterMode?:boolean){
+      //this.currentUser = this.userServices.user;
+      console.log(this.userServices.user.packages.length )
+      if(packages){
+        if(filterMode)  this.userPackages=[] ; 
+      packages.forEach((element  , index :number) =>{
+        this.userPackages[index] =  new Package(element) ;
+       })
+     
       }
+
+     
+    }
+    setdisplayedPackage(packages:[{}]) { 
+      if(packages){
+      packages.forEach((el , i) => {
+        this.displayedPackages[i]= new Package(el) ; 
+      }) ; 
+      return this.displayedPackages ; 
     }
     
-    getUserpackages(){
-     
+  }
+    
+    getUserpackages():Array<Package>{
       return this.userPackages;  
     } 
 
@@ -88,8 +103,28 @@ export class ClientPackagesService {
       const  path  = '/packages/' ;
       return this.api.post(path , Newpackage) ;
     }
+ //// Package Filter 
+
+ filter(filterParameter : string){
+  const param = new HttpParams({
+    fromString : `delivery__state=${filterParameter}`
+  }) ;
+  const  path  = '/packages/';
+
+  return this.api.get(path,param) ; 
+ }
 
 
 
+
+
+
+ //
+ simpleObservable = new Observable((observer) => {
+    
+  // observable execution
+  observer.next(this.userPackages)
+  observer.complete()
+})
 
 } 

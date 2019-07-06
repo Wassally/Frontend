@@ -48,7 +48,7 @@ export class Package{
   }
 
 
-     constructor(userPackage?:any){
+     constructor(userPackage:any){
       this.id=userPackage.id ; 
       this.created_at=userPackage.created_at  ; 
       this.duration=userPackage. duration ; 
