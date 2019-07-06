@@ -24,12 +24,18 @@ const clientRouter : Routes =[
            {
                path : 'deliveries' , 
                component : DeliveriesComponent
-           }, 
+           },
+           {
+            path: 'delivered' , 
+            component: DeliveriesComponent , 
+            }  , 
+
            
            {
             path: 'deliveries/:id' , 
             component: PackagesComponent , 
             children:[]} ,
+           
             {
                 path:'deliveries/:id/captin' , 
                 component:CaptinProfileComponent

@@ -6,7 +6,11 @@
     </span>
     <h2 class="secHeading__text"> My packages</h2>
     </div>
-  <div   class=" package  packages  d-flex flex-column" 
+  <div class="deiveriesPart"
+   
+  >
+    <div 
+  class=" package  packages  d-flex flex-column" 
   *ngFor =  "let package of packages"
   [routerLink]="[id]"  
   >
@@ -41,50 +45,19 @@
         {{package.created_at}}
     </p>
   </div>
-
-
-
-
-
-
-
-
-    <!--<li class="package" [routerLink]="[id]">
-     
-      <u0.l class="package__details "  (click) = "openPackage(package)"> 
-        <li class="package__detail  "  >
-          <h3 class="package__detail--h">Package Number</h3>
-          <span class="package__detail--v"> {{package.id}}</span >
-        </li>
-        <li class="package__detail  "  >
-            <h3 class="package__detail--h">Location</h3>
-            <span class="package__detail--v">
-                <svg class="locationSvgPK">
-                    <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
-                </svg>
-              
-              {{package.package_address.to_address.address_description}} </span >
-          </li>
-          <li class="package__detail  "  >
-              <h3 class="package__detail--h">To</h3>
-              <span class="package__detail--v"> 
-                 <img src="{{package.captin.imageUrl ? package.captin.imageUrl: 'assets\img\client\captinProfile/headingPhoto.png' }}" alt="captin photo" class="captin-photo-sm">
-                {{package.receiver_name }}
-              </span >
-            </li>
-          
-            <li class="package__detail  "  >
-                <h3 class="package__detail--h">State</h3>
-                <span class="package__detail--v"> {{package.state}}</span >
-              </li>
-              
-      </ul>
-    
-    </li>-->
   </div>
 
  
 
 </div>
 
+<div class="noPackage"  *ngIf="!noPackages">
+    <img src="assets/img/client/package/noPackage.png" alt="state photo">
+    <h2 class="noPackage__heading">
+    You Don't have any Package yet ! 
+    </h2> 
+    <button type="button" class="Cbtn noPackage__createNew">Create New Package</button>
+       
+</div>
+</div>
 

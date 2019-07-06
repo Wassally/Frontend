@@ -29,7 +29,9 @@ export class UserService {
   // }
 
   updateUserData(updatedData:any){
-    const path = `/accounts/${this.id}/`;
+    const id = this.user.id ; 
+    debugger ;
+    const path = `/accounts/${id}/`;
     console.log(updatedData);
     return this.apiServer.patch(path , updatedData)
   }

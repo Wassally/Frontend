@@ -26,47 +26,40 @@ export class SigninComponent implements OnInit {
      
      ) { }
  
- /***
-  * need to be arranged ! ! 
-  */
+    /**
+     * 
+     * Sign in 
+     * get data  from input and pass it to sign in service 
+     * subscribe for responce 
+     */
      onSignin(form:NgForm){
     const email =form.value.email;
     const password =form.value.password;
     this.signinAuth.signIn({"username" : email , "password" :password})
     .subscribe(
       (user : {
-        
         auth_token :string  ,
         email:string ,
         name:string , 
-        user_id:number
-      })=> {
-    
-      this.invalidLogIn= false ;     
-        localStorage.setItem('token' , user.auth_token);
+        user_id:number })=> {
+          
+        this.invalidLogIn= false ;     //No error Message to user
+       // store  Token in local Storage for authentication  
+        localStorage.setItem('token' , user.auth_token); 
         this.userService.id= user.user_id;
-        
-       // localStorage.setItem('id' , JSON.stringify(user.user_id) ) ;
+        //navigate To home 
         this.router.navigate(['/main/deliveries']);
-       // this.userService.getUserData() 
-        // .subscribe(
-        //   (respond)=> {
-        //     console.log(respond) ; 
-        //     const currentUser  = new User(respond) ;
-        //     this.userService.user = currentUser ; 
-        //     this.packagesService.setUser();
-        //     this.router.navigate(['/main']) ;
-        //   } , 
-        //   (err)=>{
-        //     console.log(err)
-        //   }
-        // )
+      
      
       },
       (error:HttpErrorResponse)=>{
           console.log(error) ;
-                if(error.status==400){
+          // if Authentication Error 
+                if(error.status==400){ 
                   this.invalidLogIn= true ;     
+                }
+                else{
+                  location.reload();
                 }
        
       }

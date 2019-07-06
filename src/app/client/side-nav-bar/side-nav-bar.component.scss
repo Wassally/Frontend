@@ -100,9 +100,10 @@ position: relative;
     &__item{
         font-size: 1.4rem;
     }
+    &__link,
     &__link:link,
     &__link:visited {
-
+        cursor: pointer ;
         color: $color-grey-light-1;
         text-decoration: none;
         
@@ -119,6 +120,9 @@ position: relative;
             color: $client-primary-color;
         }
        
+    }
+    &__link:hover{
+        color: $client-primary-color;
     }
 
     

@@ -202,7 +202,7 @@ deleteAddress(id:number){
 updateUserAdddress(){
   this.userServices.getUserData().subscribe(
     ()=>{
-   // this.address=this.clientLocations.getUserAddress() ;
+   this.address=this.clientLocations.getUserAddress() ;
   })
 }
 
