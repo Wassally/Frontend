@@ -1,65 +1,58 @@
-@import '../../../../sass/variable.scss';
-@import '../../../../sass/mixins.scss';
+@import "../../../../sass/variable.scss";
+@import "../../../../sass/mixins.scss";
 
+.header {
+  width: 100%;
+  height: 5rem;
+  background-color: #0d0d0d;
 
-
-.header{
-    width: 100%; 
-    height: 5rem;
-    background-color :#0D0D0D ; 
-
-&-text{
-    
-   text-align: center ; 
-    padding: .5rem  0 ;
+  &-text {
+    text-align: center;
+    padding: 0.5rem 0;
     font-size: 3rem;
     color: #ffffff;
-    left:50% ; 
-    top:50% ;
-}
-
+    left: 50%;
+    top: 50%;
+  }
 }
 
 .form {
-    margin-top: 10rem;
-    &__input{
-        width:100% ;
-        &:focus:valid{
-            border-bottom: 3px solid #22B24C;
-
-        }
-        &:focus:invalid{
-            border-bottom: 3px solid #FF1D23;
-        }
-
+  margin-top: 10rem;
+  &__input {
+    width: 100%;
+    &:focus:valid {
+      border-bottom: 3px solid #22b24c;
     }
-
-}
-
-.Cbtn{
-    transform: translate(-50% , -50%); 
-    left: 50%; 
-    margin-top :4rem ;
-}
-.option{
-    
-    
-    &__img{
-        //display: inline-block;
-        height: 5rem;
-        width: auto ;    
+    &:focus:invalid {
+      border-bottom: 3px solid #ff1d23;
     }
+  }
 }
-.loginFailed{
-    color: red;
-    text-align: center;
-    font-size: 1.4rem;
-    margin-top: -1rem;
+
+.Cbtn {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  margin-top: 4rem;
 }
-footer{
-  
-position: absolute;
+.option {
+  &__img {
+    //display: inline-block;
+    height: 5rem;
+    width: auto;
+  }
+}
+.loginFailed {
+  color: red;
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: -1rem;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #ff1d23;
+}
+footer {
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
-

@@ -30,7 +30,7 @@ export class UserService {
 
   updateUserData(updatedData:any){
     const id = this.user.id ; 
-    debugger ;
+    
     const path = `/accounts/${id}/`;
     console.log(updatedData);
     return this.apiServer.patch(path , updatedData)

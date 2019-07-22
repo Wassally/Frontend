@@ -11,6 +11,7 @@ import { EditProfileComponent } from './profile/edit-profile/edit-profile.compon
 import { TrackComponent } from './track/track.component';
 import { AuthGuard } from '@app/Authentucation/signin-page/auth/auth.guard';
 import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.component';
+import { HomeComponent } from './home/home.component';
 
 const clientRouter : Routes =[
     {
@@ -29,6 +30,10 @@ const clientRouter : Routes =[
             path: 'delivered' , 
             component: DeliveriesComponent , 
             }  , 
+            {
+                path: 'home' , 
+                component: HomeComponent , 
+                }  ,
 
            
            {

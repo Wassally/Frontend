@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy, OnChanges, Input } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Subscription, fromEvent } from 'rxjs';
 import { SignOutServices } from '@app/Authentucation/signin-page/auth/signOut.service';
 import { SigninAuthService } from '@app/Authentucation/signin-page/auth/signin-auth.service';
 import { UserService } from '../core/services/user.service';
 import { User } from '../core/models/user.model';
+import { delay } from 'q';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy  , OnChanges{
   }
 
   show:boolean = false ;
+ 
   @Input()  user : User ;
   
    
@@ -34,17 +36,19 @@ export class HeaderComponent implements OnInit, OnDestroy  , OnChanges{
 
     }
 
-  
-  
-  
-  
-  
-    ngOnInit() { }
+    ngOnInit() { 
+//  const popupClose = fromEvent(document , 'click') ;  
+//       popupClose.subscribe(()=>{
+//        console.log("44")
+//       })
+
+   }
 
   ngOnDestroy() {
   }
 
   showop(){
+ 
     this.show = !this.show ; 
     
   }

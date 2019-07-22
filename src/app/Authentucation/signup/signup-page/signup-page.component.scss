@@ -1,236 +1,212 @@
-@import '../../../../sass/variable.scss';
-@import '../../../../sass/mixins.scss';
+@import "../../../../sass/variable.scss";
+@import "../../../../sass/mixins.scss";
 
-.header{
-    width: 100%; 
-    height: 5rem;
-    background-color :#0D0D0D ;
-    &-text{
-    
-        text-align: center ; 
-         padding: .5rem  0 ;
-         font-size: 3rem;
-         color: #ffffff;
-         left:50% ; 
-         top:50% ;
-     }
+.header {
+  width: 100%;
+  height: 5rem;
+  background-color: #0d0d0d;
+  &-text {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 3rem;
+    color: #ffffff;
+    left: 50%;
+    top: 50%;
+  }
 }
-a{
-    text-decoration: none;
-}
-
-.mainR{
-    margin-top : 5rem ;
-  
-
+a {
+  text-decoration: none;
 }
 
-.heading{
-    &__text{
-        font-size: 2.5rem ; 
-        color:#101C28 ; 
-        font-weight: 700 ;
-        margin-bottom: 3rem ; 
-
-    }
-    &__img{
-        &-cont{
-            height: 40rem;
-            width: 90% ; 
-        
-            @include respond(phone){
-                display: none;
-                visibility: hidden;
-              }  
-        }
-    }
+.mainR {
+  margin-top: 5rem;
 }
 
-form{
-    margin-left: 5%;
-    margin-right: 5%;
-}
+.heading {
+  &__text {
+    font-size: 2.5rem;
+    color: #101c28;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+  &__img {
+    &-cont {
+      height: 40rem;
+      width: 90%;
 
-label{
-    
-    font-size: 1rem ; 
-    margin-bottom: 0 ; 
-    margin-top: .4rem;
-    margin-left: 2rem ;  
-
-}
-.form{
-    &__input
-    {
-        padding: .7rem 2rem ;
-        @include respond(phone){  
-            padding: .7rem 1rem ;
-    }
-        
-        
-    }
-    &__firstName{
-      width: 40% ;
-      @include respond(phone){  
-        width: 100%;
-}
-      
-      &-input{
-          width: 75% ;
-          @include respond(phone){  
-            width: 100%;
-    }
+      @include respond(phone) {
+        display: none;
+        visibility: hidden;
       }
     }
-    &__lastName {
-      width: 40%   ;
-      @include respond(phone){  
-        width: 100%;
-}
-      &-input{
-        width: 75% ;
-        @include respond(phone){  
-            width: 100%;
-    }
-    }
-    }
-    &__emailAddress
-    {
-        &-input{
-            width: 70%;
-            &:focus:valid{
-                border-bottom: 3px solid #22B24C;
-    
-            }
-            &:focus:invalid{
-                border-bottom: 3px solid #FF1D23;
-
-            @include respond(phone){  
-                width: 100% ;
-
-              
-                }
-        }
-        }
-    }
-        
-    &__password{
-        
-        &-input{
-            width: 70%;
-            @include respond(phone){  
-                width: 100% ;
-        }
-        }
-    }
-    &__phoneKey{
-        width: 20%;
-        @include respond(phone){  
-            width: 70% ;
-                }
-
-        
-        &-input{
-            width: 70%;
-        }
-    }
-    &__phoneNumber{
-        width: 62%;
-        @include respond(phone){  
-            width: 100% ;
-    }
-        &-input{
-            width: 80%;
-            @include respond(phone){  
-                width: 100% ;
-        }
-        }
-
-    }
+  }
 }
 
-            .locationSelect{
-                width: 70%;
-                @include respond(phone){  
-                    width: 100% ;
-            }
-            }
+form {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
-
-.select{
-  
-    font-size:1.5rem ; 
-    font-family: inherit; 
-    padding:  1rem 1rem ; 
-    background-color: #ffffff ; 
-    border: none ; 
-    border: 1px solid #74e0d4 ;
-    border-radius: 2px ;
-    color:#000000;
-    width: 45%;
-    & {
-        margin-bottom: 1rem;
+label {
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-top: 0.4rem;
+  margin-left: 2rem;
+}
+.form {
+  &__input {
+    padding: 0.7rem 2rem;
+    @include respond(phone) {
+      padding: 0.7rem 1rem;
     }
-@include respond(phone){  
-        width: 100% ;
-}
-    
-}
-
-
-.submit-buttons{
-    margin: 3rem 0 0 15rem ; 
-    @include respond(phone){  
-        margin: 3rem auto 0 5rem ;
-}
-    }
-
-.otherSignup{
-    margin: 1rem auto 0 1rem ; 
-    @include respond(phone){
-        flex-direction: column ;
-        margin-bottom: 2rem ;  
-
-      }  
-
-    &__link{
-        margin-left: 1rem;
-
-        @include respond(phone){
-            margin-left: 0rem;  
-  
-          }  
-    }
-    &__img{
-        height: 5rem ; 
-        width :auto;
-        
-
-    }
-}
-
-.respondCase{
-    @include respond (phone){
-        flex-direction: column !important;
-    }
-}
-.signupFailed{
-    color: red;
-    
-    font-size: 1.4rem;
-    margin-top: -1rem;
-}
-.footer{
-  
-    position: absolute;
-      bottom: 0;
+  }
+  &__firstName {
+    width: 40%;
+    @include respond(phone) {
       width: 100%;
-      height: 5rem;
+    }
 
-      @include respond(phone){
-       position: relative ; 
-       }  
-         }
+    &-input {
+      width: 75%;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__lastName {
+    width: 40%;
+    @include respond(phone) {
+      width: 100%;
+    }
+    &-input {
+      width: 75%;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__emailAddress {
+    &-input {
+      width: 70%;
+      &:focus:valid {
+        border-bottom: 3px solid #22b24c;
+      }
+      &:focus:invalid {
+        border-bottom: 3px solid #ff1d23;
 
+        @include respond(phone) {
+          width: 100%;
+        }
+      }
+    }
+  }
 
+  &__password {
+    &-input {
+      width: 70%;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+  }
+  &__phoneKey {
+    width: 20%;
+    @include respond(phone) {
+      width: 70%;
+    }
 
+    &-input {
+      width: 70%;
+    }
+  }
+  &__phoneNumber {
+    width: 62%;
+    @include respond(phone) {
+      width: 100%;
+    }
+    &-input {
+      width: 80%;
+      @include respond(phone) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.locationSelect {
+  width: 70%;
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.select {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1rem 1rem;
+  background-color: #ffffff;
+  border: none;
+  border: 1px solid #74e0d4;
+  border-radius: 2px;
+  color: #000000;
+  width: 45%;
+  & {
+    margin-bottom: 1rem;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.submit-buttons {
+  margin: 3rem 0 0 15rem;
+  @include respond(phone) {
+    margin: 3rem auto 0 5rem;
+  }
+}
+
+.otherSignup {
+  margin: 1rem auto 0 1rem;
+  @include respond(phone) {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    margin-left: 1rem;
+
+    @include respond(phone) {
+      margin-left: 0rem;
+    }
+  }
+  &__img {
+    height: 5rem;
+    width: auto;
+  }
+}
+
+.respondCase {
+  @include respond(phone) {
+    flex-direction: column !important;
+  }
+}
+.signupFailed {
+  color: red;
+
+  font-size: 1.4rem;
+  margin-top: -1rem;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+
+  @include respond(phone) {
+    position: relative;
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #ff1d23;
+}

@@ -21,7 +21,7 @@
   <div class="track__Progress--figure"> 
 <div class="track__Progress--figure-state">
   <img src="assets/img/client/track/deliverd.png" alt="state Package">
-  <h3> Deliverd</h3>
+  <h3> Delivered</h3>
 </div>
 <div class="track__Progress--figure-state">
     <img src="assets/img/client/track/shipping.png" alt="state Package">
@@ -42,15 +42,15 @@
     </svg>
     </div>
 
-    <div [ngClass]="styleTrackbar('shipped')"></div>
-    <div [ngClass]="styleTrackmark('shipped')">
+    <div [ngClass]="styleTrackbar('on-way')"></div>
+    <div [ngClass]="styleTrackmark('on-way')">
       <svg >
         <use xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
         "></use>
     </svg>
     </div>
-    <div [ngClass]="styleTrackbar('done')"></div>
-    <div [ngClass]="styleTrackmark('done')">
+    <div [ngClass]="styleTrackbar('delivered')"></div>
+    <div [ngClass]="styleTrackmark('delivered')">
       <svg >
         <use xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
         "></use>

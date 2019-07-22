@@ -11,24 +11,34 @@ export class PackageTrackComponent implements OnInit {
  @Input() Package : Package ; 
  
   state={
-   waiting:true, 
-   pending:true, 
-   shipped:true, 
-   done:true , 
+   waiting:false, 
+   pending:false, 
+   shipped:false, 
+   done:false , 
  }
   constructor(
   
   ) { }
 
   ngOnInit() {
-   if( this.Package.delivery_state.type!= "delivered"){
-     this.state.done=false ; 
-   }
-   if( this.Package.delivery_state.type!= "On way"){
-    this.state.shipped=false ; 
+    console.log(this.Package.delivery_state.type);
+   
+    
+ if (this.Package.delivery_state.type == 'pending'){
+
+    this.state.pending=true ; 
   }
-  if( this.Package.delivery_state.type!= "pending"){
-    this.state.pending=false ; 
+
+   else if( this.Package.delivery_state.type == "On way"){
+    this.state.pending=true ;
+    this.state.shipped = true ;  
+
+  }
+  else if( this.Package.delivery_state.type == "delivered"){
+    this.state.pending=true ;
+    this.state.shipped = true ; 
+    this.state.done = true ; 
+
   }
 
   }
@@ -38,7 +48,7 @@ export class PackageTrackComponent implements OnInit {
     if(state == "pending") {
         if(this.state.pending) fill = true ;
     } 
-    if(state == "On way") {
+    if(state == "on-way") {
       if(this.state.shipped) fill = true ;
   } 
   if(state == "delivered") {
@@ -50,15 +60,15 @@ export class PackageTrackComponent implements OnInit {
       'track__Progress--state-barFill' :fill
     }
   } 
-  styleTrackmark(state){
+  styleTrackmark(state:string){
     let fill = false ; 
     if(state == "pending") {
         if(this.state.pending) fill = true ;
     } 
-    if(state == "shipped") {
+    if(state == "on-way") {
       if(this.state.shipped) fill = true ;
   } 
-  if(state == "done") {
+  if(state == "delivered") {
     if(this.state.done) fill = true ;
 } 
    
