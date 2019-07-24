@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientPackagesService } from '@app/client/core/services/client-packages.service';
 import { APIService } from '@app/client/core/services/api.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ cost : number ;
 package : any ;
   constructor(
     private PackageService : ClientPackagesService  ,
-    private apiServerice : APIService 
+    private apiServerice : APIService  , 
+    private route  : Router
     
   
   ) { }
@@ -25,8 +27,9 @@ package : any ;
   }
   ConfirmShippment(){
     const NewPackage = this.PackageService.newCreatedPackage  ; 
-    this.PackageService.postPackage(NewPackage).subscribe((r)=>{
-      console.log(r) ;
+    this.PackageService.postPackage(NewPackage).subscribe((r)=>{  
+      this.route.navigate(['main/deliveries'])
+      
        })
 
   }

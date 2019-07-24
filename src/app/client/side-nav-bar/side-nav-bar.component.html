@@ -1,109 +1,156 @@
 <div class="sideContent">
-
-  <nav class="sidebar" >
+  <nav class="sidebar">
     <ul class="side-nav">
-        <li class="side-nav__item " >
-            <a  class="side-nav__link"  routerLink = "aa" routerLinkActive = "activeNav">
-                <svg class="side-nav__icon">
-                    <use xlink:href="assets/img/svg/allSvg.svg#icon-give"></use>
-                </svg>
-                <span>Home</span>
-            </a>
-
-        </li>
-        <nav class="sub-nav">
-          <ul class="sub-nav__ul">
-           <li class="sub-nav__item">
-             <a href="#" class="sub-nav__link" routerLink = "newDelivery"  routerLinkActive = "Sub_activeNav">New Delivery</a>
-           </li>
-           <li class="sub-nav__item">
-            <a  class="sub-nav__link" routerLink = "track" routerLinkActive = "Sub_activeNav">Track</a>
+      <li class="side-nav__item ">
+        <a
+          class="side-nav__link"
+          routerLink="deliveries"
+          routerLinkActive="activeNav"
+          (click)="changeMode()"
+        >
+          <svg class="side-nav__icon">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-give"></use>
+          </svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <nav class="sub-nav">
+        <ul class="sub-nav__ul">
+          <li class="sub-nav__item">
+            <a
+              href="#"
+              class="sub-nav__link"
+              routerLink="newDelivery"
+              routerLinkActive="Sub_activeNav"
+              >New Delivery</a
+            >
           </li>
+          <li class="sub-nav__item">
+            <a
+              class="sub-nav__link"
+              routerLink="track"
+              routerLinkActive="Sub_activeNav"
+              >Track</a
+            >
+          </li>
+
+          <!--
           <li class="sub-nav__item">
             <a href="#" class="sub-nav__link">History</a>
           </li>
-          </ul>
-        </nav>
+          -->
+        </ul>
+      </nav>
 
-      
-        <li class="side-nav__item ">
-            <a  class="side-nav__link" (click)= "update()" routerLink = "deliveries" routerLinkActive = "activeNav" >
-                <svg class="side-nav__icon">
-                    <use xlink:href="assets/img/svg/allSvg.svg#icon-truck"></use>
-                </svg>
-                <span>MY Packages</span>
-            </a>
-        </li>
-        <nav class="sub-nav">
-          <ul class="sub-nav__ul">
-           <li class="sub-nav__item"  >
-             <a routerLink = "deliveries"
-             (click)="runFilter('pending')"
-             class="sub-nav__link">Pending</a>
-           </li>
-           <li
-           
-            class="sub-nav__item">
-            <a 
-            routerLink = "deliveries"
-            (click)="runFilter('delivered')"
-            class="sub-nav__link">delivered</a>
+      <li class="side-nav__item ">
+        <a class="side-nav__link" (click)="update()" routerLink="deliveries">
+          <svg class="side-nav__icon">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-truck"></use>
+          </svg>
+          <span>MY Packages</span>
+        </a>
+      </li>
+      <nav class="sub-nav">
+        <ul class="sub-nav__ul">
+          <li class="sub-nav__item">
+            <a
+              routerLink="deliveries"
+              (click)="runFilter('waiting')"
+              [ngClass]="activeRouter('waiting')"
+              class="sub-nav__link"
+              >Waiting</a
+            >
           </li>
           <li class="sub-nav__item">
-            <a 
-            routerLink = "deliveries" 
-            (click)="runFilter('on_way')"
-            class="sub-nav__link">On Way</a>
+            <a
+              routerLink="deliveries"
+              (click)="runFilter('pending')"
+              [ngClass]="activeRouter('pending')"
+              class="sub-nav__link"
+              >Pending</a
+            >
           </li>
-          </ul>
-        </nav>
-
-      </ul>
+          <li class="sub-nav__item">
+            <a
+              routerLink="deliveries"
+              (click)="runFilter('on_way')"
+              [ngClass]="activeRouter('on_way')"
+              class="sub-nav__link"
+              >On Way</a
+            >
+          </li>
+          <li class="sub-nav__item">
+            <a
+              routerLink="deliveries"
+              (click)="runFilter('delivered')"
+              [ngClass]="activeRouter('delivered')"
+              class="sub-nav__link"
+              >delivered</a
+            >
+          </li>
+        </ul>
       </nav>
-<footer>
-  <div class="footer">
+    </ul>
+  </nav>
+  <footer>
+    <div class="footer">
       <div class="footer__logo">
         <h1>
-          <img src="assets/img/logo/whiteLogo.png" alt="wasally white logo " class="footer__logo-white">
-      </h1>
-
+          <img
+            src="assets/img/logo/whiteLogo.png"
+            alt="wasally white logo "
+            class="footer__logo-white"
+          />
+        </h1>
       </div>
-    <div class="footer__downloadApp">
-      <a href="#" class="footer__downloadApp-link">
-         <img src="assets/img/social media/getonplaystore.png" alt="download Andorid application" class="footer__downloadApp-img">
-      </a>
+      <div class="footer__downloadApp">
+        <a href="#" class="footer__downloadApp-link">
+          <img
+            src="assets/img/social media/getonplaystore.png"
+            alt="download Andorid application"
+            class="footer__downloadApp-img"
+          />
+        </a>
       </div>
-    <div class="footer__social">
-
-      <p>
-        follow us on : 
-      </p>
+      <div class="footer__social">
+        <p>
+          follow us on :
+        </p>
         <ul class="list-unstyled list-inline">
-            <li class="list-inline-item">
-              <a class="btn-floating ">
-                  <img src="assets/img/social media/facebook.jpg" class="social-img">
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating">
-                  <img src="assets/img/social media/twitter.jpg" class="social-img">
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating ">
-                <img src="assets/img/social media/youtube.jpg" class="social-img">
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating">
-                  <img src="assets/img/social media/instagram.jpg" class="social-img">
-              </a>
-            </li>
-          </ul>
-
+          <li class="list-inline-item">
+            <a class="btn-floating ">
+              <img
+                src="assets/img/social media/facebook.jpg"
+                class="social-img"
+              />
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating">
+              <img
+                src="assets/img/social media/twitter.jpg"
+                class="social-img"
+              />
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating ">
+              <img
+                src="assets/img/social media/youtube.jpg"
+                class="social-img"
+              />
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating">
+              <img
+                src="assets/img/social media/instagram.jpg"
+                class="social-img"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-  </div>
-</footer>
+  </footer>
 </div>
-

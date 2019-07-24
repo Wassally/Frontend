@@ -17,47 +17,58 @@ import { Package } from '../core/models/package.model';
 export class DeliveriesComponent implements OnInit {
  
    id :number;
+   noPackage = true ; 
     
-   @Input() userPackages : any ; 
+   //@Input() userPackages : any ; 
 
   constructor(
     private router : Router , 
     private packagesService:ClientPackagesService , 
     private userServives :UserService
     ) {
-        
+         
      
      }
      @Input()  packages: Array<Package>  ;
-    noPackages =true ;
-    
-     
-  
-
+    //noPackages =this.packages.length !=0 ? false : true ;
   ngOnInit() {
+  if (this.packagesService.filterMode) { 
+    
+    this.packages=this.packagesService.userPackages ;
+    if(this.packages.length !=0)  this.noPackage = false ; 
+   // this.packagesService.filterMode= false ;
   
-    this.packages=this.packagesService.getUserpackages() ; 
-    // this.packagesService.getAllPackage().subscribe( (res:any)=>{
-    //   this.packagesService.setPackages(res, false) ; 
-    //   this.packages=this.packagesService.getUserpackages() ; 
-    // }
+
+  }
+  
+  else{
 
 
-   // );  
-   // this.packagesService.simpleObservable.subscribe((res:any)=>this.packages=res)
-  //   this.packagesService.getAllPackage().subscribe((r: Array<Package>) =>{
-  //   const serverPackage  = [] ; 
-  //   if(r.length == 0){
-  //     this.noPackages=false ; 
-  //   } 
-  //   r.forEach((el , i)=>{
-  //     serverPackage[i] = new Package(el) ; 
-  //   })
-  //   this.packagesService.displayedPackages = serverPackage; 
-  // })
+    this.packagesService.getAllPackage().subscribe(
+      res =>{
+        this.packagesService.setPackages(res , false) ; 
+        this.packages = this.packagesService.getUserpackages() ; 
+        if(this.packages.length !=0)  this.noPackage = false ; 
+      }
+    )
+  
+  }
+
+
+
+
+
+
+
+
+
+
+  
   
   
   }
+
+  
     openPackage( inpackage :Package){
     
     

@@ -29,6 +29,7 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { Keys } from 'src/Keys';
 import { ConfirmPostComponent } from './new-delivery/confirm-post/confirm-post.component';
 import { DeliveredComponent } from './deliveries/delivered/delivered.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -50,7 +51,7 @@ import { DeliveredComponent } from './deliveries/delivered/delivered.component';
       PackageTrackComponent, 
       RightSideComponent, 
       UpdatesComponent, 
-      MapComponent, ConfirmPostComponent, DeliveredComponent  , 
+      MapComponent, ConfirmPostComponent, DeliveredComponent, HomeComponent  , 
      
   ],
   

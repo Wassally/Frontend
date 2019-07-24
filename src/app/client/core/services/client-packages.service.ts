@@ -5,7 +5,8 @@ import { Package } from '../models/package.model';
 import { User } from '../models/user.model';
 import { environment } from 'src/environments/environment';
 import { APIService } from './api.service';
-import { Observable } from 'rxjs';
+import { Observable, observable, Observer } from 'rxjs';
+
 
 
 
@@ -38,18 +39,26 @@ export class ClientPackagesService {
     userPackages : Array<Package> = []; 
     NewPackage : any ;
     displayedPackages : any  ; 
+    NoPackage =false ; 
+    filterMode  = false ; 
     
     
     setPackages (packages : [{}] , filterMode?:boolean){
+      
+
       //this.currentUser = this.userServices.user;
-      console.log(this.userServices.user.packages.length )
       if(packages){
+        this.NoPackage = false ; 
         if(filterMode)  this.userPackages=[] ; 
       packages.forEach((element  , index :number) =>{
         this.userPackages[index] =  new Package(element) ;
        })
      
       }
+      else{
+        this.NoPackage = true ; 
+      }
+      
 
      
     }
@@ -66,6 +75,10 @@ export class ClientPackagesService {
     getUserpackages():Array<Package>{
       return this.userPackages;  
     } 
+
+
+    
+
 
     //search with package by id 
     getpackage(packageNumber:number)  {
