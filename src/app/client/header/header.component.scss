@@ -1,104 +1,88 @@
-@import '../../../sass/variable.scss';
+@import "../../../sass/variable.scss";
 
-.header{
-    height:8vh;
-    background-color:#435964;
-    width: 100%;
-    
-    
-    &__logo{
-        margin-left:3%;
-        &-white{
-            height: 3rem;
-            width: auto ; 
-        }
-        
+.header {
+  height: 8vh;
+  background-color: #435964;
+  width: 100%;
+
+  &__logo {
+    margin-left: 3%;
+    &-white {
+      height: 3rem;
+      width: auto;
     }
+  }
 
-   
-    &__profile{
-        
-        margin-right: 10%;
+  &__profile {
+    margin-right: 10%;
 
-        &-img-{
-            display: inline-block;
-            height: 4rem;
-            width: 4rem;
-            border-radius: 50%;
-            border:2px solid $color-white;
-        }
-        &-link{
-            margin-left:5%;
-            font-size: 2rem ; 
-            color: $color-white;
-        }
-        &__notification{
-            margin-left: 10%;
-            &-bell{
-                height: 2rem;
-                
-                width: 2rem;
-                fill: $color-white;
-            }
-            }
-   
+    &-img- {
+      display: inline-block;
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      border: 2px solid $color-white;
     }
+    &-link {
+      margin-left: 5%;
+      font-size: 2rem;
+      color: $color-white;
+    }
+    &__notification {
+      margin-left: 10%;
+      &-bell {
+        height: 2rem;
 
-
+        width: 2rem;
+        fill: $color-white;
+      }
+    }
+  }
 }
-a  { text-decoration: none ;}
+a {
+  text-decoration: none;
+}
 
+///// drop down
 
-///// drop down 
+.dropDowm-option {
+  display: flex;
+  flex-direction: column;
+  &--sel {
+    cursor: pointer;
+    color: $color-white;
+    font-size: 1.6rem;
+    margin: 0 1rem;
+  }
+  &--down {
+    position: absolute;
+    top: 7.5vh;
+    right: 8%;
+    z-index: 100000;
+    border-radius: 2px;
 
-.dropDowm-option{
-    display: flex ; 
-    flex-direction: column ; 
-    &--sel{
+    background-color: $color-white;
+    -webkit-box-shadow: 5px 6px 6px 0px rgba(148, 148, 148, 1);
+    -moz-box-shadow: 5px 6px 6px 0px rgba(148, 148, 148, 1);
+    box-shadow: 5px 6px 6px 0px rgba(148, 148, 148, 1);
+
+    > ul {
+      list-style: none;
+
+      align-items: center;
+      padding: 0;
+    }
+    li {
+      > a {
         cursor: pointer;
-        color: $color-white; 
-        font-size: 1.6rem; 
-        margin: 0 1rem ;
+        font-size: 1.5rem;
+        padding: 0.5rem 2rem;
+        color: inherit;
+      }
+      > a:hover {
+        background-color: #365899;
+        color: $color-white;
+      }
     }
-    &--down{
-
-        position: absolute ; 
-        top: 7.5vh;
-    right: 8%; 
-        z-index: 100000;
-       border-radius: 2px ;
-        
-        background-color: $color-white;
-        -webkit-box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
-        -moz-box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
-        box-shadow: 5px 6px 6px 0px rgba(148,148,148,1);
-
-        >ul{
-            list-style: none;
-            
-            align-items: center;
-            padding: 0 ;
-        }
-        li{ 
-            
-           
-            >a{
-                cursor: pointer;
-                font-size: 1.5rem ;
-                padding: .5rem 2rem; 
-                color: inherit;
-            }
-            >a:hover{
-                background-color:#365899 ;
-                color:$color-white ; 
-    
-            }
-            
-           
-        }
-        
-    }
+  }
 }
-
-
-

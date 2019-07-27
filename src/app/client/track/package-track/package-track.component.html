@@ -1,66 +1,68 @@
 <div class="track">
   <div class="track__heading">
     <div class="track__head">
-        <h2 class="track__head--h2">Package Number : </h2> 
-        <span class="track__head--value ">
-          <a href="#" class="track__head--link"  > {{Package?.id}}</a>
-        </span>
+      <h2 class="track__head--h2">Package Number :</h2>
+      <span class="track__head--value ">
+        <a href="#" class="track__head--link"> {{ Package?.id }}</a>
+      </span>
     </div>
 
-
-   <div class="track__head"> 
-      <h2 class="track__head--h2 ">current state : </h2> 
-    <span class="track__head--value">
-      <a href="#" class="track__head--link"  > {{Package?.delivery_state.type}}</a>
-    </span>
-   </div>
-   
-
-  </div>
-<div class="track__Progress">
-  <div class="track__Progress--figure"> 
-<div class="track__Progress--figure-state">
-  <img src="assets/img/client/track/deliverd.png" alt="state Package">
-  <h3> Delivered</h3>
-</div>
-<div class="track__Progress--figure-state">
-    <img src="assets/img/client/track/shipping.png" alt="state Package">
-    <h3> On way</h3>
-  </div>
-  <div class="track__Progress--figure-state">
-      <img src="assets/img/client/track/done.png" alt="state Package">
-      <h3> shipped</h3>
+    <div class="track__head">
+      <h2 class="track__head--h2 ">current state :</h2>
+      <span class="track__head--value">
+        <a href="#" class="track__head--link">
+          {{ Package?.delivery_state.type }}</a
+        >
+      </span>
     </div>
   </div>
-<div class="track__Progress--state">
-  <div class="track__Progress--state-1">
-    <div [ngClass]="styleTrackbar('pending')"></div>
-    <div [ngClass]="styleTrackmark('pending')">
-      <svg >
-        <use xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
-        "></use>
-    </svg>
+  <div class="track__Progress">
+    <div class="track__Progress--figure">
+      <div class="track__Progress--figure-state">
+        <img src="assets/img/client/track/deliverd.png" alt="state Package" />
+        <h3>Delivered</h3>
+      </div>
+      <div class="track__Progress--figure-state">
+        <img src="assets/img/client/track/shipping.png" alt="state Package" />
+        <h3>On way</h3>
+      </div>
+      <div class="track__Progress--figure-state">
+        <img src="assets/img/client/track/done.png" alt="state Package" />
+        <h3>shipped</h3>
+      </div>
     </div>
+    <div class="track__Progress--state">
+      <div class="track__Progress--state-1">
+        <div [ngClass]="styleTrackbar('pending')"></div>
+        <div [ngClass]="styleTrackmark('pending')">
+          <svg>
+            <use
+              xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
+        "
+            ></use>
+          </svg>
+        </div>
 
-    <div [ngClass]="styleTrackbar('on-way')"></div>
-    <div [ngClass]="styleTrackmark('on-way')">
-      <svg >
-        <use xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
-        "></use>
-    </svg>
+        <div [ngClass]="styleTrackbar('on-way')"></div>
+        <div [ngClass]="styleTrackmark('on-way')">
+          <svg>
+            <use
+              xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
+        "
+            ></use>
+          </svg>
+        </div>
+        <div [ngClass]="styleTrackbar('delivered')"></div>
+        <div [ngClass]="styleTrackmark('delivered')">
+          <svg>
+            <use
+              xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
+        "
+            ></use>
+          </svg>
+        </div>
+      </div>
     </div>
-    <div [ngClass]="styleTrackbar('delivered')"></div>
-    <div [ngClass]="styleTrackmark('delivered')">
-      <svg >
-        <use xlink:href="assets/img/svg/allSvg.svg#icon-checkmark
-        "></use>
-    </svg>
-    </div>
-  </div>
-
-  
-</div>
-
   </div>
   <div class="track__sammary"></div>
 </div>

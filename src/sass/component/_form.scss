@@ -1,4 +1,4 @@
-@import '../variable.scss';
+@import "../variable.scss";
 
 /*
 How to use 
@@ -9,102 +9,86 @@ How to use
                 </div>
               
 */
-// input 
-.form{
-    &__group{
+// input
+.form {
+  &__group {
     margin-bottom: 1rem;
-    }   
+  }
 
-    &__input{
-        font-size:1.5rem ; 
-        font-family: inherit; 
-        padding:  1.5rem 2rem ; 
-        background-color: #ffffff ; 
-        border: 1px solid #32ffe7 ;
-        border-radius: 2px ;
-        color:#000000;
-        display: block; 
-        &:focus{
-            outline: none ; 
-            box-shadow: 0 1rem 2rem rgba(#000000, .1) ; 
-            
-        }
-        &::-webkit-input-placeholder{
-            color: #555555;
-
-        }
-
-
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff;
+    border: 1px solid #32ffe7;
+    border-radius: 2px;
+    color: #000000;
+    display: block;
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#000000, 0.1);
     }
-    &__lable{
-        font-size: 1.2rem ; 
-        font-weight: 700 ; 
-        margin-left: 2rem ; 
-        margin-top :.7rem ; 
-        display: block ; 
-        transition: all .3s;
-    } 
-    &__input:placeholder-shown + &__lable{
-        opacity: 0;
-        visibility: hidden;
-        transform:translateY(-4rem);
-
+    &::-webkit-input-placeholder {
+      color: #555555;
     }
+  }
+  &__lable {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+  &__input:placeholder-shown + &__lable {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
 
-&__radio-group{
-    width:49%;
-    display: inline-block ; 
+  &__radio-group {
+    width: 49%;
+    display: inline-block;
+  }
 
-}
-
-&__radio-input{
-    display: none ; 
-}
-&__radio-label{
-    font-size: 1.6rem ;
+  &__radio-input {
+    display: none;
+  }
+  &__radio-label {
+    font-size: 1.6rem;
     cursor: pointer;
     position: relative;
     padding-left: 4.5rem;
-}
-&__radio-button{
-    display: inline-block ; 
-    width: 3rem ; 
+  }
+  &__radio-button {
+    display: inline-block;
+    width: 3rem;
     height: 3rem;
-    border: 5px solid $client-primary-color ; 
-    border-radius: 50% ; 
-    position: absolute ; 
-    top:-.7rem ; 
-    left: 0 ; 
-    &::after{
-        content: "";
-        width:1.3rem ; 
-        height: 1.3rem;
-        border-radius: 50% ;
-        position: absolute ;
-        top: 50% ; 
-        left: 50% ; 
-        transform: translate(-50% , -50%) ; 
-        background-color: $client-primary-color;
-        opacity: 0;
-        transition: opacity .2s ;
-
-        
+    border: 5px solid $client-primary-color;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.7rem;
+    left: 0;
+    &::after {
+      content: "";
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $client-primary-color;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
-
-}
-&__radio-input:checked ~ &__radio-label &__radio-button::after{
+  }
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
     opacity: 1;
-
+  }
 }
 
-
-
-
-}
-
-
-
-//////radio buttons 
+//////radio buttons
 /*
 <div class="form__group  ">
                                 <div class="form__radio-group">
@@ -126,63 +110,59 @@ How to use
 
 */
 
+/// search bar
+.trackSearch {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin: 5rem auto;
+  @include respond(phone) {
+    width: 100%;
+  }
+  &__form {
+    display: flex;
+    flex: 0 0 70%;
+    justify-content: center;
+    align-items: center;
 
-
-/// search bar 
-.trackSearch{
-    display: flex ; 
-    width: 90%; 
-    justify-content: center ; 
-    margin: 5rem auto;
-    @include respond(phone){
-      width: 100%;  
+    @include respond(phone) {
+      flex: 0 0 90%;
     }
-    &__form{
-        display: flex ; 
-        flex: 0 0 70% ; 
-         justify-content: center;
-         align-items: center;
+    &--input {
+      font-size: 2rem;
+      font-family: inherit;
+      color: inherit;
+      background-color: #f4f2f2;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 100px;
+      width: 90%;
+      transition: all 0.2s;
+      margin-right: -4rem;
 
-         @include respond(phone){
-          flex: 0 0 90% ; 
-        }
-      &--input{
-         font-size: 2rem;
-        font-family: inherit;
-        color: inherit;
-        background-color:#f4f2f2 ; 
-        border: none;
-        padding: .7rem 2rem;
-        border-radius: 100px;
-        width: 90%;
-        transition: all .2s;
-        margin-right: -4rem;
-
-        @include respond(phone){
-          font-size: 1.5rem;
-        }
-
-        &:focus {
-            outline: none;
-            width: 100%;
-            background-color: #f0eeee;
-        }
-
-        &::-webkit-input-placeholder {
-            font-weight: 400;
-            color: #999;
-        }
-
+      @include respond(phone) {
+        font-size: 1.5rem;
       }
-      &--button{
-        background-color:#f4f2f2 ; 
-        border: none;
-        border-radius: 100px;
 
+      &:focus {
+        outline: none;
+        width: 100%;
+        background-color: #f0eeee;
       }
-      &--icon{
-        width:2rem;
-        height: 2rem;
+
+      &::-webkit-input-placeholder {
+        font-weight: 400;
+        color: #999;
       }
-  }  
+    }
+    &--button {
+      background-color: #f4f2f2;
+      border: none;
+      border-radius: 100px;
+    }
+    &--icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
 }

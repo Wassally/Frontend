@@ -1,100 +1,123 @@
 <div class="container">
   <div class="detailesSeceading">
     <span class="detailesSeceading__icone">
-      <img src="assets/img/client/package/box.png" alt="Box icone" class="detailesSeceading__icone-img">
+      <img
+        src="assets/img/client/package/box.png"
+        alt="Box icone"
+        class="detailesSeceading__icone-img"
+      />
     </span>
-    <h2 class="detailesSeceading__text"> Package Details</h2>
-
-</div>
-<div class="packageDetailes">
-  <ul class="packageDetailes__ul">
+    <h2 class="detailesSeceading__text">Package Details</h2>
+  </div>
+  <div class="packageDetailes">
+    <ul class="packageDetailes__ul">
       <li class="packageDetailes__li packageDetailes__li-location">
-          <h2>  
-             <svg class="locationSvgPK">
-              <use xlink:href="assets/img/svg/allSvg.svg#icon-home"></use>
-          </svg> 
-          Source Address  </h2> 
-           <span class="packageDetailes__li-value"> 
-            {{package?.package_address.from_address.address_description}},<br>  {{package?.package_address.from_address.formated_address}} </span>
-        </li>
-        <li class="packageDetailes__li packageDetailes__li-location">
-              <h2> 
-                  <svg class="locationSvgPK">
-                      <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
-                  </svg> 
-                Destination  Address  </h2> 
-             <span class="packageDetailes__li-value">
-              {{package?.package_address.to_address.address_description}},<br> {{package?.package_address.to_address.formated_address}}
-              </span>
-            </li>
-    <li class="packageDetailes__li">
-      <h2>   Package Number    </h2>  <span class="packageDetailes__li-value">{{package?.id}}</span>
-    </li>
-    <li class="packageDetailes__li">
-        <h2>  Captin  </h2> 
-          <span class="packageDetailes__li-value">
-          <a [routerLink]="['captin']" class="Packagevisit-profile">
-          <img src="assets/img/client/package/captin1.png" alt="captin small photo" class="packageDetailes-img-sm">
-          {{package?.captain_name}} 
-        </a> 
+        <h2>
+          <svg class="locationSvgPK">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-home"></use>
+          </svg>
+          Source Address
+        </h2>
+        <span class="packageDetailes__li-value">
+          {{ package?.package_address.from_address.address_description }},<br />
+          {{ package?.package_address.from_address.formated_address }}
         </span>
       </li>
-      
+      <li class="packageDetailes__li packageDetailes__li-location">
+        <h2>
+          <svg class="locationSvgPK">
+            <use xlink:href="assets/img/svg/allSvg.svg#icon-location1"></use>
+          </svg>
+          Destination Address
+        </h2>
+        <span class="packageDetailes__li-value">
+          {{ package?.package_address.to_address.address_description }},<br />
+          {{ package?.package_address.to_address.formated_address }}
+        </span>
+      </li>
       <li class="packageDetailes__li">
-         <h2> 
-            
-          Reciver Name </h2> 
-          <span class="packageDetailes__li-value">
-              <a href="#" class="Packagevisit-profile">
-              {{package?.receiver_name}}
-            </a>
-          </span>
-        </li>
-        <li class="packageDetailes__li">
-            <h2> 
-                
-              Phone   </h2>   <span class="packageDetailes__li-value">
-              <a href="#" class="Packagevisit-profile">
-              {{package?.receiver_phone_number}}
-            </a>
-          </span>
-        </li>
-        
-          
-          
+        <h2>Package Number</h2>
+        <span class="packageDetailes__li-value">{{ package?.id }}</span>
+      </li>
+      <li class="packageDetailes__li">
+        <h2>Captin</h2>
+        <span class="packageDetailes__li-value">
+          <a [routerLink]="['captin']" class="Packagevisit-profile">
+            <img
+              src="assets/img/client/package/captin1.png"
+              alt="captin small photo"
+              class="packageDetailes-img-sm"
+            />
+            {{ package?.captain_name }}
+          </a>
+        </span>
+      </li>
 
-            <li class="packageDetailes__li">
-                <h2>                      
-                  weight    </h2>  <span class="packageDetailes__li-value">{{package?.weight}}</span>
-              </li>
-              <li class="packageDetailes__li">
-                 <h2>    State    </h2>  <span class="packageDetailes__li-value"> 
+      <li class="packageDetailes__li">
+        <h2>
+          Reciver Name
+        </h2>
+        <span class="packageDetailes__li-value">
+          <a href="#" class="Packagevisit-profile">
+            {{ package?.receiver_name }}
+          </a>
+        </span>
+      </li>
+      <li class="packageDetailes__li">
+        <h2>
+          Phone
+        </h2>
+        <span class="packageDetailes__li-value">
+          <a href="#" class="Packagevisit-profile">
+            {{ package?.receiver_phone_number }}
+          </a>
+        </span>
+      </li>
 
-                    {{package?.delivery_state.type}}
-                 </span>
-              </li>
-              <li class="packageDetailes__li">
-                  <h2>  created at  </h2>  <span class="packageDetailes__li-value">{{package?.created_at}}</span>
-              </li>
-              <li class="packageDetailes__li">
-                   <h2>   My Note   </h2>  <span class="packageDetailes__li-value">
-                    {{package?.note}}
-                  </span>
-                </li>
-                <li class="packageDetailes__li">
-                  Cost    <h2>  From </h2>  <span class="packageDetailes__li-value">
-                    {{package?.wassally_salary}} LE
-                  </span>
-                </li>
-  </ul>
-
-  
-</div>
+      <li class="packageDetailes__li">
+        <h2>
+          weight
+        </h2>
+        <span class="packageDetailes__li-value">{{ package?.weight }}</span>
+      </li>
+      <li class="packageDetailes__li">
+        <h2>State</h2>
+        <span class="packageDetailes__li-value">
+          {{ package?.delivery_state.type }}
+        </span>
+      </li>
+      <li class="packageDetailes__li">
+        <h2>created at</h2>
+        <span class="packageDetailes__li-value">{{ package?.created_at }}</span>
+      </li>
+      <li class="packageDetailes__li">
+        <h2>My Note</h2>
+        <span class="packageDetailes__li-value">
+          {{ package?.note }}
+        </span>
+      </li>
+      <li class="packageDetailes__li">
+        Cost
+        <h2>From</h2>
+        <span class="packageDetailes__li-value">
+          {{ package?.wassally_salary }} LE
+        </span>
+      </li>
+    </ul>
+  </div>
   <!--Edit cancelOrder(when state is pending)  Buttons -->
   <div class=" editCancelButtons" *ngIf="stateIsPending">
-
-      <button type="button" class="Cbtn c_button  c_button__join PD-button PD-button-Primary ">Edit Package</button>
-      <button type="button" class="Cbtn c_button  c_button__join PD-button PD-button-danger">Cancel Package</button>
+    <button
+      type="button"
+      class="Cbtn c_button  c_button__join PD-button PD-button-Primary "
+    >
+      Edit Package
+    </button>
+    <button
+      type="button"
+      class="Cbtn c_button  c_button__join PD-button PD-button-danger"
+    >
+      Cancel Package
+    </button>
   </div>
 </div>
-

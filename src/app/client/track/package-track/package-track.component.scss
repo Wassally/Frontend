@@ -1,152 +1,126 @@
-@import '../.../../../../../sass/variable';
-@import '../.../../../../../sass/mixins';
+@import "../.../../../../../sass/variable";
+@import "../.../../../../../sass/mixins";
 
-.track{
-    display: flex ; 
-    flex: 0  0 80% ;  
-    flex-direction: column;   
-    justify-content: center; 
-    margin: 6rem 4rem  4rem 4rem;
+.track {
+  display: flex;
+  flex: 0 0 80%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 6rem 4rem 4rem 4rem;
 
-    &__heading{
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+
+    &--h2 {
+      font-size: 2rem;
+    }
+    &--value {
+      margin-left: 2rem;
+      display: inline-block;
+
+      > a {
+        font-size: 2rem;
+        color: inherit;
+        color: $client-green-color;
+        text-decoration: none;
+        margin-top: -0.5rem;
+      }
+    }
+  }
+
+  &__Progress {
+    margin: 6rem 8rem 4rem;
+    @include respond(phone) {
+      margin: 6rem 0rem 4rem;
+    }
+    &--figure {
+      margin-left: 8rem;
+      display: flex;
+      justify-content: space-between;
+
+      @include respond(phone) {
+        margin-left: 2rem;
+      }
+      &-state {
+        > img {
+          width: 10rem;
+          height: auto;
+          @include respond(phone) {
+            width: 6rem;
+          }
+        }
+        > h3 {
+          margin: 2rem 2rem;
+          @include respond(phone) {
+            margin: 2rem 0rem;
+          }
+        }
+      }
+    }
+
+    &--state {
+      margin-left: 8rem;
+      @include respond(phone) {
+        margin-left: 0rem;
+      }
+
+      &-1 {
         display: flex;
-        justify-content:space-between ;
-        @include respond(phone){
-           flex-direction: column ;
-          } 
-        
+        align-items: center;
+      }
+      &-bar {
+        margin-left: -1.2rem;
+        width: 25%;
+
+        height: 1.5rem;
+
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border: 1px solid $client-green-color;
+        z-index: 1;
+      }
+
+      &-barFill {
+        border: none;
+        background-color: $client-green-color;
+      }
+      &-mark {
+        margin-left: -1.2rem;
+        z-index: 1000;
+
+        > svg {
+          width: 5rem;
+          height: 5rem;
+          padding: 0;
+          background-color: $client-green-color;
+
+          border-radius: 50%;
+          fill: #ffffff;
+        }
+      }
+      &-markFill {
+        border-radius: 50%;
+        > svg {
+          background-color: #fff;
+          border: 1px solid $client-green-color;
+          border-radius: 50%;
+          fill: $client-green-color;
+          > use {
+            color: $client-green-color;
+          }
+        }
+      }
     }
-
-    &__head{
-        display:  flex; 
-        align-items: center ;
-
-        &--h2{
-            font-size: 2rem ; 
-        }
-        &--value{
-           
-                margin-left: 2rem ; 
-                display:  inline-block ;
-
-            >a{
-                font-size: 2rem; 
-                color: inherit ;
-                color: $client-green-color;
-                text-decoration: none ; 
-                margin-top:-.5rem;
-
-
-
-            }
-        }
-    
-     
-        
-
-
-   
-   
-    }
-    
-    
-    
-    
-    
-    &__Progress{
-        margin:6rem 8rem 4rem ;
-        @include respond(phone){
-            margin:6rem 0rem 4rem ;
-           } 
-        &--figure{
-            margin-left: 8rem;
-            display: flex ; 
-            justify-content: space-between;
-
-            @include respond(phone){
-                margin-left: 2rem;
-               } 
-            &-state{
-                >img{
-                    width:10rem;
-                    height: auto;
-                    @include respond(phone){
-                        width:6rem;
-                       } 
-                }
-                >h3{
-                 margin: 2rem 2rem;
-                 @include respond(phone){
-                    margin: 2rem 0rem;
-                   }
-                }
-            }
-        }
-
-
-
-
-        &--state{
-         margin-left: 8rem;
-         @include respond(phone){
-            margin-left: 0rem;
-           } 
-
-            &-1{
-                
-               display: flex ;
-                align-items: center;
-            }
-                &-bar{
-                    margin-left: -1.2rem;
-                    width:25%;
-
-                    height: 1.5rem;
-                    
-                    border-top-left-radius: 20px;
-                    border-bottom-left-radius: 20px;
-                    border: 1px solid $client-green-color;
-                    z-index:1 ;
-                    
-             }
-
-             &-barFill{
-                 border:none ;
-                background-color: $client-green-color;
-             }
-                &-mark{
-                    margin-left:-1.2rem;
-                    z-index:1000 ;
-                   
-                    >svg{
-                      
-                        width:5rem;
-                        height: 5rem;
-                        padding: 0;
-                        background-color: $client-green-color;
-                        
-                        border-radius: 50%;
-                        fill:#ffffff;
-                      
-                    }
-
-            }
-            &-markFill{
-                border-radius: 50%;
-                >svg{ 
-                    background-color: #fff;
-                    border:1px solid $client-green-color;
-                    border-radius: 50%;
-                    fill:$client-green-color;
-                    >use{
-                        color: $client-green-color
-                    }
-                  
-                }
-            }
-        }
-
-    }
-    &__sammary{}
-
+  }
+  &__sammary {
+  }
 }

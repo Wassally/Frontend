@@ -1,278 +1,245 @@
-@import '../../../sass/component/secHeading' ;
-@import '../../../sass/variable' ;
-@import '../../../sass/mixins' ;
+@import "../../../sass/component/secHeading";
+@import "../../../sass/variable";
+@import "../../../sass/mixins";
 
-a{
-    text-decoration: none ;
-    
+a {
+  text-decoration: none;
 }
 
-.fullProfile{
-    display: flex ;
-    flex-direction: column ; 
-    align-items: center ; 
-    margin: 0rem 5rem ;
-    border-bottom: 1px solid #b0bec5;
-    
-    
-    
-    
-    &__img{
-        margin-bottom: 1.5rem ;
-        position: relative;
-        img{
-            width: 22rem ; 
-            height: 22rem;
-            border-radius: 50%;
-        }
-      
+.fullProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0rem 5rem;
+  border-bottom: 1px solid #b0bec5;
+
+  &__img {
+    margin-bottom: 1.5rem;
+    position: relative;
+    img {
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
     }
+  }
 
-   //// upload photo 
-   #uploadPhoto{
-    display: none ;
-}
+  //// upload photo
+  #uploadPhoto {
+    display: none;
+  }
 
-.imageHover {
-    &-text{
-        display: none;
-        color: #ffffff ;
-        font-size: 1.4rem ; 
+  .imageHover {
+    &-text {
+      display: none;
+      color: #ffffff;
+      font-size: 1.4rem;
 
-        position: absolute ;
-        top: 50% ; 
-        left: 50%;
-        transform: translate(-50% , -50%) ; 
-        z-index: 2; 
-        
-
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
     }
-    &-background{
-        position: absolute;
-        display: none;
-        top: 0;
-        left:  0;
-        bottom: 0;
-        right: 0;
-        background-color:rgba(2, 2, 2, 0.5);
-        pointer-events: none;
-        border-radius: 50%;
-        z-index: 1;
-        
+    &-background {
+      position: absolute;
+      display: none;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(2, 2, 2, 0.5);
+      pointer-events: none;
+      border-radius: 50%;
+      z-index: 1;
     }
-    
-    
-
-}
-.imageHover-img img:hover{
+  }
+  .imageHover-img img:hover {
     filter: blur(2px);
-  -webkit-filter: blur(2px) ; 
-  transition: all .1s
-}
-.imageHover-img:hover .imageHover-background{
-    display: block ; 
-    transition:  all .3s;
-
-}
-.imageHover-img:hover .imageHover-text{
-    display: block ; 
-    transition: all .1s;
-    
-}
-////////////
-    &__info{
-        display: flex ;
-    flex-direction: column ; 
-    justify-content: center ;
-    align-items: center ;
-    margin-left: 3rem ; 
-       &-name{
-        margin-bottom: 1rem ;
-        h2{
-            font-size: 2.5rem ;
-            font-weight: 600 ;
-        }
-       } 
-       &-address{
-        margin-bottom: 1rem ;
-           display: flex ;
-
-        svg{
-            width: 2rem ; 
-            height: 2rem;
-            margin-right: .5rem;
-            fill: $client-primary-color
-        }
-        h3{
-            font-size: 2rem ;
-        }
-    } 
-    &-phoneNumber{
-        
-        display: flex ;
-        svg{
-            width: 2rem ; 
-            height: 2rem;
-            margin-right: .5rem ;
-            fill: $client-primary-color-1
-
-        }
-        h3{
-            font-size: 2rem ;
-        }
-    }
-    &-email{
-        
-        display: flex ;
-        svg{
-            width: 2rem ; 
-            height: 2rem;
-            margin-right: .5rem ;
-            fill: $client-primary-color-1
-        }
-        h3{
-            font-size: 1.7rem ;
-        }
-    }  
-    }
-
-
-
-    
-
-
-}
-
-.ProfileSecSection{
-    display: flex;
-    flex-direction: column ; 
-    align-items: flex-start ;
-}
-
-.extraInfo{
+    -webkit-filter: blur(2px);
+    transition: all 0.1s;
+  }
+  .imageHover-img:hover .imageHover-background {
+    display: block;
+    transition: all 0.3s;
+  }
+  .imageHover-img:hover .imageHover-text {
+    display: block;
+    transition: all 0.1s;
+  }
+  ////////////
+  &__info {
     display: flex;
     flex-direction: column;
-    justify-content:center ; 
-    align-items: flex-start ;
-    margin: 2rem;
-    
-    &__address{
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    &-name {
+      margin-bottom: 1rem;
+      h2 {
         font-size: 2.5rem;
-        margin-left: 1rem ;
-        font-weight: 600 ;
-        svg{
-            width: 2.5rem ; 
-            height: 2.5rem;
-            fill: $client-primary-color-1;
-            top:-.2rem;
-        }
-        
+        font-weight: 600;
+      }
     }
-   
-     p {
-         font-size: 2rem ;
-         margin-left: 2rem ;
-         color: $color-grey-dark-3 ; 
-     }
+    &-address {
+      margin-bottom: 1rem;
+      display: flex;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        fill: $client-primary-color;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+    }
+    &-phoneNumber {
+      display: flex;
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        fill: $client-primary-color-1;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+    }
+    &-email {
+      display: flex;
+      svg {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        fill: $client-primary-color-1;
+      }
+      h3 {
+        font-size: 1.7rem;
+      }
+    }
+  }
 }
 
-
-.editProfile{
-    margin-left: 7rem;
-    align-self: flex-start;
-    margin-top: 2rem;
-    display: flex;
-    position: absolute;
-    top: 5vh;
-    right: 4%;
-    &-btn{
-       background-color: #1B7F79 ;
-       padding: 1rem .5rem;
-       color: #ffffff ; 
-    }
+.ProfileSecSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.extraInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem;
 
-#uploadPhoto{
-    display: none ;
+  &__address {
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    font-weight: 600;
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: $client-primary-color-1;
+      top: -0.2rem;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: $color-grey-dark-3;
+  }
+}
+
+.editProfile {
+  margin-left: 7rem;
+  align-self: flex-start;
+  margin-top: 2rem;
+  display: flex;
+  position: absolute;
+  top: 5vh;
+  right: 4%;
+  &-btn {
+    background-color: #1b7f79;
+    padding: 1rem 0.5rem;
+    color: #ffffff;
+  }
+}
+
+#uploadPhoto {
+  display: none;
 }
 
 .imageHover {
-    &-text{
-        display: none;
+  &-text {
+    display: none;
+  }
+  &-background {
+    display: none;
+  }
+}
 
+.editAddressButton {
+  border: none;
+  text-decoration: none;
+  color: #1b7f79;
+  font-size: 1.7rem;
+  background-color: inherit;
+  margin-left: 2rem;
+
+  svg {
+    width: 1.5em;
+    height: 1.5rem;
+    fill: $client-primary-color-1;
+    top: -0.2rem;
+  }
+}
+.addAddress {
+  left: 70%;
+  margin-top: 2rem;
+  position: relative;
+
+  &-btn {
+    color: #007bff;
+    font-size: 2rem;
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      fill: $client-primary-color-1;
     }
-    &-background{
-        display: none ; 
-    }
+  }
 }
 
-.editAddressButton{
-    border: none ; 
-    text-decoration: none ; 
-    color: #1B7F79 ;
-    font-size: 1.7rem;
-    background-color: inherit ;
-    margin-left: 2rem ;
-
-    svg{
-        width: 1.5em ; 
-        height: 1.5rem;
-        fill: $client-primary-color-1;
-        top:-.2rem; 
-    }
+.delete-btn {
+  color: #dc3545;
 }
-.addAddress{
-    left: 70%;
-    margin-top: 2rem;
-    position: relative;
-    
-    &-btn{
-     color: #007bff ;
-     font-size: 2rem;
-     svg{
-        width: 2.5rem ; 
-        height: 2.5rem;
-        fill: $client-primary-color-1;
-        
-    } 
-}
+.GetAddressFromMap {
+  margin-bottom: 2rem;
 }
 
-.delete-btn{
-  color:   #dc3545 ; 
-}
-.GetAddressFromMap{
-    margin-bottom: 2rem; 
+.filedInput {
+  margin-top: 2rem;
 
-}
+  justify-content: center;
 
-.filedInput{
-    margin-top: 2rem ; 
-   
-    justify-content: center ; 
-    
-    @include respond(phone){
-          flex-direction: column ; 
-          align-items: flex-start ;
-    }
-     
-
+  @include respond(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
-.restaddress{
-    
-    font-size: 2rem ; 
-    margin-right: 1rem ;
+.restaddress {
+  font-size: 2rem;
+  margin-right: 1rem;
 }
 
-
-.updateBtn{
-    background-color: #1B7F79;
-    padding: 1rem .5rem;
-    color: #ffffff;
-    height: 5rem;
-    margin-left: 7rem; 
- }
+.updateBtn {
+  background-color: #1b7f79;
+  padding: 1rem 0.5rem;
+  color: #ffffff;
+  height: 5rem;
+  margin-left: 7rem;
+}
 
 //////////////
-
