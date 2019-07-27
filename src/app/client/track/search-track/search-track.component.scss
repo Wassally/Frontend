@@ -1,18 +1,14 @@
-@import '../.../../../../../sass/variable';
-@import '../.../../../../../sass/mixins';
+@import "../.../../../../../sass/variable";
+@import "../.../../../../../sass/mixins";
 
-        /*
+/*
         @include respond(phone){
           width: 20rem;
         }
         */
-.SearchNotFound{
-
-  h2{
-    text-align: center ; 
-    color: #c2185b ;
+.SearchNotFound {
+  h2 {
+    text-align: center;
+    color: #c2185b;
   }
 }
-
-        
- 

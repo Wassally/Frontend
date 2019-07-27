@@ -1,78 +1,83 @@
 <div class="container">
-
-
-
-<div class="secHeading">
-
+  <div class="secHeading">
     <span class="secHeading__icone">
-      <img src="assets/img/client/package/box.png" alt="Box icone" class="secHeading__icone-img">
+      <img
+        src="assets/img/client/package/box.png"
+        alt="Box icone"
+        class="secHeading__icone-img"
+      />
     </span>
-    <h2 class="secHeading__text"> confirm Shippment </h2>
+    <h2 class="secHeading__text">confirm Shippment</h2>
   </div>
-     <div class= " row packageConfer">
+  <div class=" row packageConfer">
     <div class=" col-12  col-md-8 packageConfer__detailes">
       <ul>
         <li>
-        package source  : <span>
-
-         {{package.package_address.from_address.formated_address}} ,  {{package.package_address.from_address.address_description}}  
-        </span> 
+          package source :
+          <span>
+            {{ package.package_address.from_address.formated_address }} ,
+            {{ package.package_address.from_address.address_description }}
+          </span>
         </li>
         <li>
-           pacage Destination  : <span>
-            {{package.package_address.to_address.formated_address}} ,  {{package.package_address.to_address.address_description}}  
-           </span> 
+          pacage Destination :
+          <span>
+            {{ package.package_address.to_address.formated_address }} ,
+            {{ package.package_address.to_address.address_description }}
+          </span>
         </li>
         <li>
-            reciver Name  : <span>
-              {{package.receiver_name}}
-            </span> 
-         </li>
-         <li>
-            Package weight  
-            <span>
-              {{package.weight}}
-            </span> 
-         </li>
-         <li>
-            deuration  : <span>
-              {{package.duration}}
-            </span> 
-         </li>
+          reciver Name :
+          <span>
+            {{ package.receiver_name }}
+          </span>
+        </li>
+        <li>
+          Package weight
+          <span>
+            {{ package.weight }}
+          </span>
+        </li>
+        <li>
+          deuration :
+          <span>
+            {{ package.duration }}
+          </span>
+        </li>
       </ul>
-
     </div>
     <div class="col-6 col-md-4  ">
-      
       <div class="packageConfer__pricing">
-
-      
-      <h2  class="packageConfer__pricing-head">
-        Shippment Cost 
-         
-      </h2>
-      <p>
-            
-          {{cost}}
+        <h2 class="packageConfer__pricing-head">
+          Shippment Cost
+        </h2>
+        <p>
+          {{ cost }}
           <span>
-              LE
+            LE
           </span>
-           
-        
-      </p>
+        </p>
+      </div>
     </div>
-    </div>
-
-     </div>
-
-     <div class="buttonGroup">
-        
-        <div class="postButton ">
-         <button type="button" class="Cbtn c_button  c_button__join postButton__btn cancelButton" >Cancel</button>
-        </div>
-        <div class="postButton">
-           <button type="button" class="Cbtn c_button  c_button__join postButton__btn" (click)= " ConfirmShippment()"  >Confirm </button>
-          </div>
-       </div> 
   </div>
-    
+
+  <div class="buttonGroup">
+    <div class="postButton ">
+      <button
+        type="button"
+        class="Cbtn c_button  c_button__join postButton__btn cancelButton"
+      >
+        Cancel
+      </button>
+    </div>
+    <div class="postButton">
+      <button
+        type="button"
+        class="Cbtn c_button  c_button__join postButton__btn"
+        (click)="ConfirmShippment()"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>

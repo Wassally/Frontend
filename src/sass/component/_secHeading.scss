@@ -1,5 +1,3 @@
-
-
 //Html usage
 /*
   <div class="secHeading">
@@ -9,18 +7,17 @@
     <h2 class="secHeading__text"> New package</h2>
     </div>
 */
-.secHeading{
-    display: flex ;
-    margin: 3rem 2rem;
-    &__icone{
-        margin-right: 1rem ;
-        &-img{
-            width:4rem ; 
-            height: auto;
-
-        }
+.secHeading {
+  display: flex;
+  margin: 3rem 2rem;
+  &__icone {
+    margin-right: 1rem;
+    &-img {
+      width: 4rem;
+      height: auto;
     }
-    &__text{
-        margin-top:.5rem;
-    }
+  }
+  &__text {
+    margin-top: 0.5rem;
+  }
 }

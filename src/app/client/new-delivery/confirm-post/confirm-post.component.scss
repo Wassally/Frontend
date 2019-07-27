@@ -1,101 +1,75 @@
-@import '../../../../sass/variable';
-@import '../../../../sass/mixins' ;
-@import '../../../../sass/component/secHeading' ;
-@import '../../../../sass/component/form';
+@import "../../../../sass/variable";
+@import "../../../../sass/mixins";
+@import "../../../../sass/component/secHeading";
+@import "../../../../sass/component/form";
 
-.packageConfer{
+.packageConfer {
+  &__detailes {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
 
-&__detailes{
+      li {
+        font-size: 2rem;
+        margin: 1rem 0;
 
-ul{ 
-    list-style: none ; 
-    display: flex ; 
-       flex-direction: column;
-        justify-content: center;
-        align-items: flex-start ;  
-
-    li{
-        
-        font-size: 2rem ;
-        margin: 1rem 0 ; 
-
-        span{
-            color: #E01C55 ; 
-            font-size: 1.7rem  ; 
-            
+        span {
+          color: #e01c55;
+          font-size: 1.7rem;
         }
+      }
     }
-}
+  }
 
+  &__pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-}
-
-
-&__pricing{
-    display: flex ; 
-       flex-direction: column;
-        justify-content: center;
-        align-items: center ; 
-
-    &-head{
-
-     
-        
+    &-head {
     }
-    p { 
-        
-        font-size: 4.5rem;
-        margin: 4rem 0;
-        color: #007bff;
+    p {
+      font-size: 4.5rem;
+      margin: 4rem 0;
+      color: #007bff;
 
-         span{
-             font-size: 2rem ;
-
-         }
-        
-
-        
+      span {
+        font-size: 2rem;
+      }
     }
-}
+  }
 }
 
+.postButton {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0rem 0.5rem 0rem;
+  @include respond(phone) {
+    margin: 0rem 0rem 2rem 0rem;
+  }
 
-.postButton{
-    display: flex ; 
-    justify-content: center ;
-    margin: 3rem  0rem .5rem 0rem; 
-    @include respond(phone){
-        margin: 0rem  0rem 2rem 0rem; 
-       
-    }  
-  
-    &__btn{
-        color: #ffffff ; 
-        background-color: #007bff;
-        width: 20rem ;
-        @include respond(phone){
-            width: 40rem ;
-           
-        }  
+  &__btn {
+    color: #ffffff;
+    background-color: #007bff;
+    width: 20rem;
+    @include respond(phone) {
+      width: 40rem;
     }
-   
-    
-
-
+  }
 }
-.buttonGroup{
-     display: flex ;
-     justify-content: space-around ; 
-     align-items: center ;  
-     @include respond(phone){
-        flex-direction: column-reverse ; 
-        justify-content: center ;
-    }
-
-
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include respond(phone) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 }
-.cancelButton{
-   
-    background-color: #F21313 ;
+.cancelButton {
+  background-color: #f21313;
 }
-

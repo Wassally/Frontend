@@ -1,267 +1,229 @@
-@import '../../../sass/variable';
-@import '../../../sass/mixins';
-@import '../../../sass/component/secHeading' ;
-@import '../../../sass/component/form';
+@import "../../../sass/variable";
+@import "../../../sass/mixins";
+@import "../../../sass/component/secHeading";
+@import "../../../sass/component/form";
 
-.secHeading{
-    margin: 3rem 2rem 0rem ;
+.secHeading {
+  margin: 3rem 2rem 0rem;
 }
-.newPackageForm{
-    margin : 3rem 0rem 1rem 1rem;
+.newPackageForm {
+  margin: 3rem 0rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  .depSection {
     display: flex;
-    flex-direction: column ;
     flex-wrap: wrap;
-    @include respond(phone){
-        flex-direction: column;
+
+    flex-direction: column;
+
+    // -webkit-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+    // -moz-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+    // box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
+    @include respond(phone) {
+      flex-direction: column;
     }
 
-
-    .depSection{
-        display: flex; 
-        flex-wrap: wrap ;
-      
-        flex-direction: column ;
-       
-        // -webkit-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
-        // -moz-box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
-        // box-shadow: 5px 0px 12px -6px rgba(0,0,0,0.48);
-        @include respond(phone){
-            flex-direction: column;
-        }
-
-    
-        >h2 {
-            color: #1B7F79;
-            width: 100% ; 
-            margin: 0 2rem 2rem 0  ; 
-            font-weight: 600;
-            text-align: center;
-    
-        }
+    > h2 {
+      color: #1b7f79;
+      width: 100%;
+      margin: 0 2rem 2rem 0;
+      font-weight: 600;
+      text-align: center;
     }
-
+  }
 }
 
+.filedInput {
+  display: flex;
+  margin-right: 1rem;
+  align-items: center;
+  margin-top: 1rem;
 
-.filedInput{
-    display: flex ;
-    margin-right: 1rem;
-    align-items: center ; 
-    margin-top: 1rem ; 
-   
+  @include respond(phone) {
+    width: 100%;
+  }
 
-    @include respond(phone){
-       width: 100% ;     
-    }
+  &-nolable {
+    margin-bottom: 1rem;
+    width: 48%;
+  }
 
-    &-nolable{
-        margin-bottom: 1rem;
-        width: 48%;
+  > span {
+    font-size: 2rem;
+    margin: 0rem 1rem 2rem 1rem;
+    @include respond(phone) {
+      font-size: 1.7rem;
+      margin: 1rem 1rem 0 0rem;
     }
-  
-    >span{
-        font-size: 2rem;
-        margin: 0rem 1rem 2rem 1rem ;
-        @include respond(phone){
-            font-size: 1.7rem;
-            margin: 1rem 1rem 0 0rem ;
-        }
-    }
+  }
 }
 
-.form{
-
-    &__input{
-        margin-right: 0 ;
-         padding:  1rem 2rem;
-        border: none ;
-        border-bottom: 1px solid $client-primary-color ;
-        border-radius: 3px ;
-        width: 22rem;
-        &::-webkit-input-placeholder{
-            color: #363636;
-
-        }
-
-        &-sm{
-            width: 18rem; 
-        }
-        @include respond(phone){
-            width: 20rem;
-        }
-
+.form {
+  &__input {
+    margin-right: 0;
+    padding: 1rem 2rem;
+    border: none;
+    border-bottom: 1px solid $client-primary-color;
+    border-radius: 3px;
+    width: 22rem;
+    &::-webkit-input-placeholder {
+      color: #363636;
     }
-    &__group{
-        display: flex;
-       /// align-items: center;
-        flex-direction: column ;
-        justify-content: center;
-        margin-bottom: 0;
+
+    &-sm {
+      width: 18rem;
     }
-    &__unit{
-        font-size: 1.5rem !important ; 
-        color: #363636;
+    @include respond(phone) {
+      width: 20rem;
     }
-  
+  }
+  &__group {
+    display: flex;
+    /// align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  &__unit {
+    font-size: 1.5rem !important ;
+    color: #363636;
+  }
 }
 
 //select Menue styling
-.selectInput{
-    display: flex ;
-    align-content: center;
-    align-items: center ;
-    margin-bottom: 2rem ;
-    width: 50% ;
-    @include respond(phone){
-        width: 90% ;;
-    }
- 
-    label{
-        font-size: 2em ;
-        margin : 0rem 1rem  0rem 1rem ;
-    }
+.selectInput {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 50%;
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  label {
+    font-size: 2em;
+    margin: 0rem 1rem 0rem 1rem;
+  }
 }
 
-.select{
-
-    font-size:1.5rem ; 
-    font-family: inherit; 
-    padding:  1rem 1rem ; 
-    background-color: #ffffff ; 
-    border: none ; 
-    border-bottom: 1px solid $client-primary-color ;
-    border-radius: 2px ;
-    color:#000000;
-    width:70% ;
-    
-    
-    }
-
-.select-lable{
-    //display: block ; 
-    font-size: 1.5rem ;
-}
-//Custome styling 
-.fullAddress{
-    width: 30rem;
-      
-     
-   
-    @include respond(phone){
-        width: 25rem;
-    }
+.select {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1rem 1rem;
+  background-color: #ffffff;
+  border: none;
+  border-bottom: 1px solid $client-primary-color;
+  border-radius: 2px;
+  color: #000000;
+  width: 70%;
 }
 
+.select-lable {
+  //display: block ;
+  font-size: 1.5rem;
+}
+//Custome styling
+.fullAddress {
+  width: 30rem;
 
-.transportation{
-    width: 35% ;
-
-    @include respond(phone){
-        width: 70rem;
-    }
+  @include respond(phone) {
+    width: 25rem;
+  }
 }
 
-//Radio custome 
-.shipprdOptions{
-    background-color:#251f2b ;
-    margin: 4rem 2rem 2rem 5rem;
-    width: 65%;
-    
-    border-radius: 5px;
-    @include respond(phone){
-        margin: 2rem 1rem 3rem .8rem;
-        width: 100%;
-    }
-  >span{
-    color: #ffffff ;
-    @include respond(phone){
-        margin-bottom: 1rem;
-    }
+.transportation {
+  width: 35%;
+
+  @include respond(phone) {
+    width: 70rem;
+  }
 }
+
+//Radio custome
+.shipprdOptions {
+  background-color: #251f2b;
+  margin: 4rem 2rem 2rem 5rem;
+  width: 65%;
+
+  border-radius: 5px;
+  @include respond(phone) {
+    margin: 2rem 1rem 3rem 0.8rem;
+    width: 100%;
+  }
+  > span {
+    color: #ffffff;
+    @include respond(phone) {
+      margin-bottom: 1rem;
+    }
+  }
 }
-.radioFormGroup{
-    width: 100% ;
-   
+.radioFormGroup {
+  width: 100%;
+
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: ce;
+
+  flex-direction: row;
+  margin-left: 6rem;
+
+  &-lable {
     display: flex;
-    margin-bottom: 2rem;
-    justify-content: space-between;
-    align-items: ce;
-    
-
-    ;
-    flex-direction: row ;
-    margin-left: 6rem;
-
-    &-lable{
-       display: flex ; 
-       align-items: center ; 
-       
-    }
+    align-items: center;
+  }
 }
-.shippedByWasally{
-    width: 10rem ; 
-    height: auto;
+.shippedByWasally {
+  width: 10rem;
+  height: auto;
 }
-.form__radio-label{
-    color: #ffffff ;
-    
+.form__radio-label {
+  color: #ffffff;
 }
 
-.form__radio-group-2{
-    margin: 0 3rem 0 0rem;
-    
-    
-    
+.form__radio-group-2 {
+  margin: 0 3rem 0 0rem;
 }
-.commingSoon{
-    color: red ; 
-    font-size: 1rem ;
+.commingSoon {
+  color: red;
+  font-size: 1rem;
   //  display: block ;
 }
 
+.postButton {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0rem 0.5rem 0rem;
+  @include respond(phone) {
+    margin: 0rem 0rem 2rem 0rem;
+  }
 
- 
-
-
-.postButton{
-    display: flex ; 
-    justify-content: center ;
-    margin: 3rem  0rem .5rem 0rem; 
-    @include respond(phone){
-        margin: 0rem  0rem 2rem 0rem; 
-       
-    }  
-  
-    &__btn{
-        color: #ffffff ; 
-        background-color: #007bff;
-        width: 20rem ;
-        @include respond(phone){
-            width: 40rem ;
-           
-        }  
+  &__btn {
+    color: #ffffff;
+    background-color: #007bff;
+    width: 20rem;
+    @include respond(phone) {
+      width: 40rem;
     }
-   
-    
-
-
+  }
 }
-.buttonGroup{
-     display: flex ;
-     justify-content: space-around ; 
-     align-items: center ;  
-     @include respond(phone){
-        flex-direction: column-reverse ; 
-        justify-content: center ;
-    }
-
-
+.buttonGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @include respond(phone) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 }
-.backButton{
-   
-    background-color: #F21313 ;
+.backButton {
+  background-color: #f21313;
 }
-
 
 //////////////////////////////////////////
-

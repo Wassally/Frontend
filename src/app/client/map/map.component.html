@@ -1,29 +1,24 @@
 <div class="mapSearch">
-<input ngx-google-places-autocomplete 
-[options]='options'
- #placesRef="ngx-places" 
- class="trackSearch__form--input mapSearch__input"
- (onAddressChange)="handleAddressChange($event)"/>
- <button class="trackSearch__form--button">
+  <input
+    ngx-google-places-autocomplete
+    [options]="options"
+    #placesRef="ngx-places"
+    class="trackSearch__form--input mapSearch__input"
+    (onAddressChange)="handleAddressChange($event)"
+  />
+  <button class="trackSearch__form--button">
     <svg class="trackSearch__form--icon">
       <use xlink:href="assets/img/svg/allSvg.svg#icon-search"></use>
-  </svg>
-</button>
-
+    </svg>
+  </button>
 </div>
-<agm-map 
-[latitude]="lat"
- [longitude]="lng"
- [zoom]="15"
- (mapClick)="onMapClick($event)">
-    <agm-marker 
-    [latitude]="lat" 
-    [longitude]="lng"
-    ></agm-marker>
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="15"
+  (mapClick)="onMapClick($event)"
+>
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
 
-    <agm-marker 
-    [latitude]="40" 
-    [longitude]="40"
-    ></agm-marker>
-
-  </agm-map>
+  <agm-marker [latitude]="40" [longitude]="40"></agm-marker>
+</agm-map>

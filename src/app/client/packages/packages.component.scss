@@ -1,124 +1,111 @@
-@import '../../../sass/variable';
-@import '../../../sass/mixins';
-li , span{
-    display: inline-block; 
+@import "../../../sass/variable";
+@import "../../../sass/mixins";
+li,
+span {
+  display: inline-block;
 }
-.detailesSeceading{
-    display: flex ;
-    margin: 3rem 2rem;
-    &__icone{
-        margin-right: 1rem ;
-        &-img{
-            width:4rem ; 
-            height: auto;
-
-        }
+.detailesSeceading {
+  display: flex;
+  margin: 3rem 2rem;
+  &__icone {
+    margin-right: 1rem;
+    &-img {
+      width: 4rem;
+      height: auto;
     }
-    &__text{
-        margin-top:.5rem;
+  }
+  &__text {
+    margin-top: 0.5rem;
+  }
+}
+
+//detailes body
+
+.packageDetailes {
+  margin-top: 3rem;
+
+  &__ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__li {
+    display: flex;
+    flex-direction: column;
+
+    width: 45%;
+    font-size: 2rem;
+    margin: 2rem 0 0 2rem;
+    font-weight: 400;
+    @include respond(phone) {
+      width: 90%;
+      font-size: 2rem;
     }
-}
 
-//detailes body 
-
-
-.packageDetailes{
-    margin-top:3rem;
-    
-    &__ul{
-        display: flex;
-        flex-wrap: wrap ;
+    &-value {
+      font-size: 2rem;
+      color: #563d7c;
+      font-weight: 500;
+      align-self: c;
+      margin: 1rem;
     }
-    &__li{
-        display: flex ; 
-        flex-direction: column ; 
-        
-        
-       
-        width: 45%;
-        font-size: 2rem;
-        margin:2rem 0 0 2rem; 
-        font-weight: 400;
-        @include respond(phone){
-            width: 90%; 
-            font-size: 2rem;
-        }
-        
-        &-value{
-            font-size: 2rem;
-             color: #563d7c;
-         font-weight: 500;
-     align-self: c;
-        margin: 1rem;
-        }
-        &-location{
-           // width: 100% ; 
-           
-            span{
-                font-size: 1.5rem;
-            }
-        }
+    &-location {
+      // width: 100% ;
+
+      span {
+        font-size: 1.5rem;
+      }
     }
+  }
 }
 
-
-
-
-
-
-
-.packageDetailes-img-sm{
-
-    height: 3rem ;
-    width:3rem;
-    border-radius: 50%; 
+.packageDetailes-img-sm {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
 }
 
-a{
-    text-decoration: none ;
-
+a {
+  text-decoration: none;
 }
-.Packagevisit-profile{
-    color: inherit ; 
-&:hover{
-    color: #563D7C ;
-}
+.Packagevisit-profile {
+  color: inherit;
+  &:hover {
+    color: #563d7c;
+  }
 }
 
 /////////// Edit Cancel Butons style //////
 
- .editCancelButtons{
-     display: flex ;
-     justify-content: center ;
-     align-content: center ;
-     margin-top: 7rem;
+.editCancelButtons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 7rem;
+}
 
- }
+.PD-button {
+  margin-right: 6rem;
 
- .PD-button{
-     margin-right: 6rem ;
+  text-decoration: none;
+  width: 20rem;
+  font-size: 1.5rem;
+  padding: 1.2rem 2rem;
 
-     text-decoration: none ;
-        width: 20rem ; 
-        font-size: 1.5rem;
-        padding: 1.2rem 2rem; 
-       
-         border-radius: 1rem;
-         
-     &-Primary{
-         color: #ffffff;
-         background-color: #007BFF ; 
-     }
-     &-danger{
-       background-color: #DC3545; 
-       color: #ffffff;
-     }
- }
+  border-radius: 1rem;
 
- .locationSvgPK{
-     width: 2rem ;
-     height: 2rem ;
-     fill: #c2185b ;
-     margin-right: .5rem 
+  &-Primary {
+    color: #ffffff;
+    background-color: #007bff;
+  }
+  &-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+}
 
- }
+.locationSvgPK {
+  width: 2rem;
+  height: 2rem;
+  fill: #c2185b;
+  margin-right: 0.5rem;
+}
